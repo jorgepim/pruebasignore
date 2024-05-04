@@ -125,6 +125,7 @@ namespace farmacia
                 llenador.Close();
             }else
             {
+                CBProductos.Items.Clear();
                 LlenarDeProductos();
             }
             
