@@ -5,6 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using farmacia.Clases.Entidades;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Text.RegularExpressions;
 
 namespace farmacia.Clases.DataAccess
 {
@@ -19,13 +22,13 @@ namespace farmacia.Clases.DataAccess
         //Crud de Categorias
         public SqlDataReader ObtenerTodasLasCategorias()
         {
-            string consulta = "SELECT * FROM Categorias";
+            String consulta = "SELECT * FROM Categorias";
             return conexionBD.EjecutarPeticion(consulta);
         }
 
-        public void InsertarCategoria(string nombreCategoria)
+        public void InsertarCategoria(String nombreCategoria)
         {
-            string consulta = "INSERT INTO Categorias (NombreCategoria) VALUES (@NombreCategoria)";
+            String consulta = "INSERT INTO Categorias (NombreCategoria) VALUES (@NombreCategoria)";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@NombreCategoria", nombreCategoria);
@@ -33,9 +36,9 @@ namespace farmacia.Clases.DataAccess
             conexionBD.EjecutarComando(comando);
         }
 
-        public void ActualizarCategoria(int idCategoria, string nombreCategoria)
+        public void ActualizarCategoria(int idCategoria, String nombreCategoria)
         {
-            string consulta = "UPDATE Categorias SET NombreCategoria = @NombreCategoria WHERE id_Categoria = @idCategoria";
+            String consulta = "UPDATE Categorias SET NombreCategoria = @NombreCategoria WHERE id_Categoria = @idCategoria";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@NombreCategoria", nombreCategoria);
@@ -46,7 +49,7 @@ namespace farmacia.Clases.DataAccess
 
         public void EliminarCategoria(int idCategoria)
         {
-            string consulta = "DELETE FROM Categorias WHERE id_Categoria = @idCategoria";
+            String consulta = "DELETE FROM Categorias WHERE id_Categoria = @idCategoria";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@idCategoria", idCategoria);
@@ -57,13 +60,13 @@ namespace farmacia.Clases.DataAccess
         //Crud de Marcas
         public SqlDataReader ObtenerTodasLasMarcas()
         {
-            string consulta = "SELECT * FROM Marcas";
+            String consulta = "SELECT * FROM Marcas";
             return conexionBD.EjecutarPeticion(consulta);
         }
 
-        public void InsertarMarca(string nombreMarca)
+        public void InsertarMarca(String nombreMarca)
         {
-            string consulta = "INSERT INTO Marcas (NombreMarca) VALUES (@NombreMarca)";
+            String consulta = "INSERT INTO Marcas (NombreMarca) VALUES (@NombreMarca)";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@NombreMarca", nombreMarca);
@@ -71,9 +74,9 @@ namespace farmacia.Clases.DataAccess
             conexionBD.EjecutarComando(comando);
         }
 
-        public void ActualizarMarca(int idMarca, string nombreMarca)
+        public void ActualizarMarca(int idMarca, String nombreMarca)
         {
-            string consulta = "UPDATE Marcas SET NombreMarca = @NombreMarca WHERE id_Marca = @idMarca";
+            String consulta = "UPDATE Marcas SET NombreMarca = @NombreMarca WHERE id_Marca = @idMarca";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@NombreMarca", nombreMarca);
@@ -84,7 +87,7 @@ namespace farmacia.Clases.DataAccess
 
         public void EliminarMarca(int idMarca)
         {
-            string consulta = "DELETE FROM Marcas WHERE id_Marca = @idMarca";
+            String consulta = "DELETE FROM Marcas WHERE id_Marca = @idMarca";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@idMarca", idMarca);
@@ -96,13 +99,13 @@ namespace farmacia.Clases.DataAccess
 
         public SqlDataReader ObtenerTodasLasPresentaciones()
         {
-            string consulta = "SELECT * FROM Presentaciones";
+            String consulta = "SELECT * FROM Presentaciones";
             return conexionBD.EjecutarPeticion(consulta);
         }
 
-        public void InsertarPresentacion(string tipoDePre)
+        public void InsertarPresentacion(String tipoDePre)
         {
-            string consulta = "INSERT INTO Presentaciones (TipoDePre) VALUES (@TipoDePre)";
+            String consulta = "INSERT INTO Presentaciones (TipoDePre) VALUES (@TipoDePre)";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@TipoDePre", tipoDePre);
@@ -110,9 +113,9 @@ namespace farmacia.Clases.DataAccess
             conexionBD.EjecutarComando(comando);
         }
 
-        public void ActualizarPresentacion(int idPresentacion, string tipoDePre)
+        public void ActualizarPresentacion(int idPresentacion, String tipoDePre)
         {
-            string consulta = "UPDATE Presentaciones SET TipoDePre = @TipoDePre WHERE id_Presentacion = @idPresentacion";
+            String consulta = "UPDATE Presentaciones SET TipoDePre = @TipoDePre WHERE id_Presentacion = @idPresentacion";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@TipoDePre", tipoDePre);
@@ -123,7 +126,7 @@ namespace farmacia.Clases.DataAccess
 
         public void EliminarPresentacion(int idPresentacion)
         {
-            string consulta = "DELETE FROM Presentaciones WHERE id_Presentacion = @idPresentacion";
+            String consulta = "DELETE FROM Presentaciones WHERE id_Presentacion = @idPresentacion";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@idPresentacion", idPresentacion);
@@ -135,13 +138,13 @@ namespace farmacia.Clases.DataAccess
 
         public DataTable ObtenerTodosLosDetallesDeCompra()
         {
-            string consulta = "SELECT * FROM DetalleCompras";
+            String consulta = "SELECT * FROM DetalleCompras";
             return conexionBD.EjecutarConsulta(consulta);
         }
 
         public void InsertarDetalleCompra(int idProducto, int idLote, int idFactura, decimal total, decimal descuento, int cantidad)
         {
-            string consulta = "INSERT INTO DetalleCompras (id_Producto, id_Lote, id_Factura, Total, Descuento, Cantidad) " +
+            String consulta = "INSERT INTO DetalleCompras (id_Producto, id_Lote, id_Factura, Total, Descuento, Cantidad) " +
                               "VALUES (@IdProducto, @IdLote, @IdFactura, @Total, @Descuento, @Cantidad)";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
@@ -157,7 +160,7 @@ namespace farmacia.Clases.DataAccess
 
         public void ActualizarDetalleCompra(int idDetalleCompra, int idProducto, int idLote, int idFactura, decimal total, decimal descuento, int cantidad)
         {
-            string consulta = "UPDATE DetalleCompras SET id_Producto = @IdProducto, id_Lote = @IdLote, id_Factura = @IdFactura, " +
+            String consulta = "UPDATE DetalleCompras SET id_Producto = @IdProducto, id_Lote = @IdLote, id_Factura = @IdFactura, " +
                               "Total = @Total, Descuento = @Descuento, Cantidad = @Cantidad WHERE id_DetalleCompra = @IdDetalleCompra";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
@@ -174,7 +177,7 @@ namespace farmacia.Clases.DataAccess
 
         public void EliminarDetalleCompra(int idDetalleCompra)
         {
-            string consulta = "DELETE FROM DetalleCompras WHERE id_DetalleCompra = @IdDetalleCompra";
+            String consulta = "DELETE FROM DetalleCompras WHERE id_DetalleCompra = @IdDetalleCompra";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@IdDetalleCompra", idDetalleCompra);
@@ -185,41 +188,50 @@ namespace farmacia.Clases.DataAccess
         //Productos
         public SqlDataReader ObtenerTodosLosProductos()
         {
-            string consulta = "SELECT * FROM Productos";
+            String consulta = "SELECT * FROM Productos";
             return conexionBD.EjecutarPeticion(consulta);
         }
 
+        public SqlDataReader BuscadorDeProductos(String termino)
+        {
+            String consulta = "SELECT* FROM Productos WHERE NombreProducto LIKE '%' + @termino + '%' OR CONVERT(VARCHAR, id_Producto) LIKE '%' + @termino";
+            conexionBD.AbrirConexion();
+            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
+            comando.Parameters.AddWithValue("@termino", termino);
+            return comando.ExecuteReader();
+        }
+  
         //Filtros de productos
-        public SqlDataReader ConsultarPorMarca(string marca)
+        public SqlDataReader ConsultarPorMarca(String marca)
         {
-            string consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca";
+            String consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca";
             conexionBD.AbrirConexion();
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@Marca", marca);
             return comando.ExecuteReader();
         }
 
-        public SqlDataReader ConsultarPorPresentacion(string presentacion)
+        public SqlDataReader ConsultarPorPresentacion(String presentacion)
         {
-            string consulta = "SELECT * FROM Productos WHERE id_Presentacion = @Presentacion";
+            String consulta = "SELECT * FROM Productos WHERE id_Presentacion = @Presentacion";
             conexionBD.AbrirConexion();
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@Presentacion", presentacion);
             return comando.ExecuteReader();
         }
 
-        public SqlDataReader ConsultarPorCategoria(string categoria)
+        public SqlDataReader ConsultarPorCategoria(String categoria)
         {
-            string consulta = "SELECT * FROM Productos WHERE id_Categoria = @Categoria";
+            String consulta = "SELECT * FROM Productos WHERE id_Categoria = @Categoria";
             conexionBD.AbrirConexion();
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@Categoria", categoria);
             return comando.ExecuteReader();
         }
 
-        public SqlDataReader ConsultarPorMarcaYPresentacion(string marca, string presentacion)
+        public SqlDataReader ConsultarPorMarcaYPresentacion(String marca, String presentacion)
         {
-            string consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca AND id_Presentacion = @Presentacion";
+            String consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca AND id_Presentacion = @Presentacion";
             conexionBD.AbrirConexion();
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@Marca", marca);
@@ -227,9 +239,9 @@ namespace farmacia.Clases.DataAccess
             return comando.ExecuteReader();
         }
 
-        public SqlDataReader ConsultarPorMarcaYCategoria(string marca, string categoria)
+        public SqlDataReader ConsultarPorMarcaYCategoria(String marca, String categoria)
         {
-            string consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca AND id_Categoria = @Categoria";
+            String consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca AND id_Categoria = @Categoria";
             conexionBD.AbrirConexion();
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@Marca", marca);
@@ -237,9 +249,9 @@ namespace farmacia.Clases.DataAccess
             return comando.ExecuteReader();
         }
 
-        public SqlDataReader ConsultarPorPresentacionYCategoria(string presentacion, string categoria)
+        public SqlDataReader ConsultarPorPresentacionYCategoria(String presentacion, String categoria)
         {
-            string consulta = "SELECT * FROM Productos WHERE id_Presentacion = @Presentacion AND id_Categoria = @Categoria";
+            String consulta = "SELECT * FROM Productos WHERE id_Presentacion = @Presentacion AND id_Categoria = @Categoria";
             conexionBD.AbrirConexion();
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@Presentacion", presentacion);
@@ -247,9 +259,9 @@ namespace farmacia.Clases.DataAccess
             return comando.ExecuteReader();
         }
 
-        public SqlDataReader ConsultarPorMarcaPresentacionYCategoria(string marca, string presentacion, string categoria)
+        public SqlDataReader ConsultarPorMarcaPresentacionYCategoria(String marca, String presentacion, String categoria)
         {
-            string consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca AND id_Presentacion = @Presentacion AND id_Categoria = @Categoria";
+            String consulta = "SELECT * FROM Productos WHERE id_Marca = @Marca AND id_Presentacion = @Presentacion AND id_Categoria = @Categoria";
             conexionBD.AbrirConexion();
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
             comando.Parameters.AddWithValue("@Marca", marca);

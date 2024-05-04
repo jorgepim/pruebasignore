@@ -15,7 +15,7 @@ namespace farmacia
 
         private void MarcaCambio(object sender, EventArgs e)
         {
-            if (CBMarca.SelectedIndex>0)
+            if (CBMarca.SelectedIndex > 0)
             {
                 if (CBCategoria.SelectedIndex > 0 && CBPresentacion.SelectedIndex <= 0)
                 {
@@ -38,7 +38,7 @@ namespace farmacia
                     FiltrarPorMarcas();
                 }
             }
-            else if( CBMarca.SelectedIndex <= 0 && CBCategoria.SelectedIndex <= 0 && CBPresentacion.SelectedIndex <= 0)
+            else if (CBMarca.SelectedIndex <= 0 && CBCategoria.SelectedIndex <= 0 && CBPresentacion.SelectedIndex <= 0)
             {
                 CBProductos.Items.Clear();
                 LlenarDeProductos();
@@ -108,7 +108,28 @@ namespace farmacia
                 LlenarDeProductos();
             }
         }
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            String termino = txtBuscar.Text.ToString().Trim();
+            if (termino != "")
+            {
+                CBProductos.Items.Clear();
+                CrudDetalleCompras funcion = new CrudDetalleCompras();
+                SqlDataReader llenador = funcion.BuscadorDeProductos(termino);
+                CBProductos.Items.Add("Seleccionar");
+                while (llenador.Read())
+                {
+                    CBProductos.Items.Add(llenador.GetInt32(0).ToString() + "| " + llenador.GetString(1));
+                }
+                CBProductos.SelectedIndex = 0;
+                llenador.Close();
+            }else
+            {
+                LlenarDeProductos();
+            }
+            
 
+        }
         //Llenado inicial de combos
         public void LlenarCombos()
         {
@@ -160,7 +181,7 @@ namespace farmacia
         //Filtradores
         public void FiltrarPorMarcas()
         {
-            string marca = EncontrarSeleccion(CBMarca);
+            String marca = EncontrarSeleccion(CBMarca);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorMarca(marca);
@@ -175,7 +196,7 @@ namespace farmacia
 
         public void FiltrarPorCategorias()
         {
-            string categoria = EncontrarSeleccion(CBCategoria);
+            String categoria = EncontrarSeleccion(CBCategoria);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorCategoria(categoria);
@@ -190,7 +211,7 @@ namespace farmacia
 
         public void FiltrarPorPresentacion()
         {
-            string presentacion = EncontrarSeleccion(CBPresentacion);
+            String presentacion = EncontrarSeleccion(CBPresentacion);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorCategoria(presentacion);
@@ -205,8 +226,8 @@ namespace farmacia
 
         public void FiltrarPorMarcaYCategoria()
         {
-            string marca = EncontrarSeleccion(CBMarca);
-            string categoria = EncontrarSeleccion(CBCategoria);
+            String marca = EncontrarSeleccion(CBMarca);
+            String categoria = EncontrarSeleccion(CBCategoria);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorMarcaYCategoria(marca, categoria);
@@ -221,8 +242,8 @@ namespace farmacia
 
         public void FiltrarPorMarcaYPresentacion()
         {
-            string marca = EncontrarSeleccion(CBMarca);
-            string presentacion = EncontrarSeleccion(CBPresentacion);
+            String marca = EncontrarSeleccion(CBMarca);
+            String presentacion = EncontrarSeleccion(CBPresentacion);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorMarcaYPresentacion(marca, presentacion);
@@ -237,8 +258,8 @@ namespace farmacia
 
         public void FiltrarPorPresentacionYCategoria()
         {
-            string presentacion = EncontrarSeleccion(CBPresentacion);
-            string categoria = EncontrarSeleccion(CBCategoria);
+            String presentacion = EncontrarSeleccion(CBPresentacion);
+            String categoria = EncontrarSeleccion(CBCategoria);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorPresentacionYCategoria(presentacion, categoria);
@@ -252,10 +273,10 @@ namespace farmacia
         }
 
         public void FiltrarPorMarcaPresentacionYCategoria()
-        {           
-            string marca = EncontrarSeleccion(CBMarca);
-            string presentacion = EncontrarSeleccion(CBPresentacion);
-            string categoria = EncontrarSeleccion(CBCategoria);
+        {
+            String marca = EncontrarSeleccion(CBMarca);
+            String presentacion = EncontrarSeleccion(CBPresentacion);
+            String categoria = EncontrarSeleccion(CBCategoria);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorMarcaPresentacionYCategoria(marca, presentacion, categoria);
@@ -268,12 +289,14 @@ namespace farmacia
             llenador.Close();
         }
 
-        public string EncontrarSeleccion(ComboBox combo)
+        public String EncontrarSeleccion(ComboBox combo)
         {
-            string selectedItem = combo.SelectedItem.ToString();
-            string[] parts = selectedItem.Split('|');
-            string dato = parts[0].Trim();
+            String selectedItem = combo.SelectedItem.ToString();
+            String[] parts = selectedItem.Split('|');
+            String dato = parts[0].Trim();
             return dato;
         }
+
+        
     }
 }
