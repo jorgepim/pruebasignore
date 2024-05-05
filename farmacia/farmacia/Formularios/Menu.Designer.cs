@@ -105,7 +105,6 @@
             this.btnCitas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCitas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCitas.UseVisualStyleBackColor = true;
-            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // btnSucursales
             // 
@@ -124,7 +123,6 @@
             this.btnSucursales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSucursales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSucursales.UseVisualStyleBackColor = true;
-            this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click);
             // 
             // btnMembresias
             // 
@@ -139,11 +137,10 @@
             this.btnMembresias.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnMembresias.Size = new System.Drawing.Size(189, 56);
             this.btnMembresias.TabIndex = 3;
-            this.btnMembresias.Text = "   Membresias";
+            this.btnMembresias.Text = " Membresias";
             this.btnMembresias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMembresias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMembresias.UseVisualStyleBackColor = true;
-            this.btnMembresias.Click += new System.EventHandler(this.btnMembresias_Click);
             // 
             // btnFactura
             // 
@@ -162,7 +159,6 @@
             this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFactura.UseVisualStyleBackColor = true;
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // btnClientes
             // 
@@ -182,7 +178,6 @@
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // panelLogo
             // 
@@ -216,7 +211,6 @@
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(821, 75);
             this.panelTitulo.TabIndex = 1;
-            this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
             // btnMaximizar
             // 
@@ -225,9 +219,9 @@
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMaximizar.ForeColor = System.Drawing.Color.Yellow;
-            this.btnMaximizar.Location = new System.Drawing.Point(754, 5);
+            this.btnMaximizar.Location = new System.Drawing.Point(770, 0);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(24, 34);
+            this.btnMaximizar.Size = new System.Drawing.Size(27, 36);
             this.btnMaximizar.TabIndex = 6;
             this.btnMaximizar.Text = "O";
             this.btnMaximizar.UseVisualStyleBackColor = true;
@@ -240,9 +234,9 @@
             this.btnCerrarWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarWindow.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCerrarWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCerrarWindow.Location = new System.Drawing.Point(784, 3);
+            this.btnCerrarWindow.Location = new System.Drawing.Point(794, 0);
             this.btnCerrarWindow.Name = "btnCerrarWindow";
-            this.btnCerrarWindow.Size = new System.Drawing.Size(24, 45);
+            this.btnCerrarWindow.Size = new System.Drawing.Size(27, 36);
             this.btnCerrarWindow.TabIndex = 5;
             this.btnCerrarWindow.Text = "O";
             this.btnCerrarWindow.UseVisualStyleBackColor = true;
@@ -255,9 +249,9 @@
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnMinimizar.Location = new System.Drawing.Point(724, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(747, 0);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(24, 45);
+            this.btnMinimizar.Size = new System.Drawing.Size(27, 36);
             this.btnMinimizar.TabIndex = 4;
             this.btnMinimizar.Text = "O";
             this.btnMinimizar.UseVisualStyleBackColor = true;
@@ -273,7 +267,6 @@
             this.btnCerrar.Size = new System.Drawing.Size(75, 49);
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblTitle
             // 
@@ -351,5 +344,6 @@
         private Button btnCerrarWindow;
         private Button btnMinimizar;
         private Button button1;
+        private Button button2;
     }
 }

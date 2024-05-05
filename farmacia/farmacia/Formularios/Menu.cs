@@ -96,6 +96,7 @@ namespace farmacia.Formularios.multimedia
             childForm.BringToFront();
             childForm.Show();
             lblTitle.Text = childForm.Text;
+            lblTitle.ForeColor= Color.Black;
         }
 
 

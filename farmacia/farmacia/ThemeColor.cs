@@ -13,19 +13,18 @@ namespace farmacia
         public static Color SecondaryColor { get; set; }
         public static List<string> ColorList = new List<string>()
         {
-            "#E65C19",
-            "#FC4100",
-            "#00215E",
-            "#FC4100",
-            "#FFC55A",
-            "#FFC94A"};
+            "#DDDDDD",
+            "#EEEEEE",
+            "#EEEEEE",
+            "#C7C8CC",
+            "#EFECEC",
+            "#EFECEC"};
 
         public static Color ChangeColorBrightness(Color color, double correctionFactor) 
             {
             double red = color.R;
             double green = color.G;
             double blue = color.B;
-            //If correction factor is less than 0, darken color. if (correctionFactor ‹ 0)
             if (correctionFactor < 0)
             {
                 correctionFactor = 1 + correctionFactor;
@@ -35,7 +34,6 @@ namespace farmacia
                 
             }
 
-            //If correction factor is greater than zero, lighten colon.
             else
             {      
                 red = (255 - red) * correctionFactor + red;
