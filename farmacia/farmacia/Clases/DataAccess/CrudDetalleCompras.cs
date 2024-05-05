@@ -141,6 +141,14 @@ namespace farmacia.Clases.DataAccess
             String consulta = "SELECT * FROM DetalleCompras";
             return conexionBD.EjecutarConsulta(consulta);
         }
+        public DataTable ObtenerDetallePorFactura(String factura)
+        {
+            String consulta = "SELECT DetalleCompras.Cantidad, pr.NombreProducto as 'Producto', pr.PrecioV as 'p/u', DetalleCompras.Total as 'Subtotal'" +
+                "FROM DetalleCompras " +
+                "INNER JOIN Productos pr ON DetalleCompras.id_Producto = pr.id_Producto " +
+                "WHERE id_Factura = " + factura + ";";
+            return conexionBD.EjecutarConsulta(consulta);
+        }
 
         public void InsertarDetalleCompra(int idProducto, int idLote, int idFactura, decimal total, decimal descuento, int cantidad)
         {

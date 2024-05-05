@@ -44,11 +44,6 @@
             label7 = new Label();
             BtnAgregar = new Button();
             tablaProductos = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            cCantidad = new DataGridViewTextBoxColumn();
-            CProducto = new DataGridViewTextBoxColumn();
-            cPU = new DataGridViewTextBoxColumn();
-            CSub = new DataGridViewTextBoxColumn();
             label8 = new Label();
             CBProductos = new ComboBox();
             BtnEliminar = new Button();
@@ -64,6 +59,7 @@
             label13 = new Label();
             labelCambio = new Label();
             txtPrecio = new TextBox();
+            No = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)SPCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).BeginInit();
             SuspendLayout();
@@ -216,7 +212,7 @@
             // 
             tablaProductos.BackgroundColor = SystemColors.ButtonHighlight;
             tablaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tablaProductos.Columns.AddRange(new DataGridViewColumn[] { Column1, cCantidad, CProducto, cPU, CSub });
+            tablaProductos.Columns.AddRange(new DataGridViewColumn[] { No });
             tablaProductos.Location = new Point(490, 215);
             tablaProductos.Margin = new Padding(3, 2, 3, 2);
             tablaProductos.Name = "tablaProductos";
@@ -224,41 +220,7 @@
             tablaProductos.RowTemplate.Height = 29;
             tablaProductos.Size = new Size(592, 173);
             tablaProductos.TabIndex = 16;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "No";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
-            // 
-            // cCantidad
-            // 
-            cCantidad.HeaderText = "Cantidad";
-            cCantidad.MinimumWidth = 6;
-            cCantidad.Name = "cCantidad";
-            cCantidad.Width = 125;
-            // 
-            // CProducto
-            // 
-            CProducto.HeaderText = "Producto";
-            CProducto.MinimumWidth = 6;
-            CProducto.Name = "CProducto";
-            CProducto.Width = 125;
-            // 
-            // cPU
-            // 
-            cPU.HeaderText = "P/U";
-            cPU.MinimumWidth = 6;
-            cPU.Name = "cPU";
-            cPU.Width = 125;
-            // 
-            // CSub
-            // 
-            CSub.HeaderText = "Subtotal";
-            CSub.MinimumWidth = 6;
-            CSub.Name = "CSub";
-            CSub.Width = 125;
+            tablaProductos.CellContentClick += tablaProductos_CellContentClick;
             // 
             // label8
             // 
@@ -398,6 +360,12 @@
             txtPrecio.Size = new Size(110, 23);
             txtPrecio.TabIndex = 31;
             // 
+            // No
+            // 
+            No.HeaderText = "No.";
+            No.Name = "No";
+            No.ReadOnly = true;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -476,12 +444,8 @@
         private Label label12;
         private TextBox txtTotal;
         private Label label13;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn cCantidad;
-        private DataGridViewTextBoxColumn CProducto;
-        private DataGridViewTextBoxColumn cPU;
-        private DataGridViewTextBoxColumn CSub;
         private Label labelCambio;
         private TextBox txtPrecio;
+        private DataGridViewTextBoxColumn No;
     }
 }
