@@ -438,7 +438,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Factura";
-            Text = "Form1";
+            Text = "Factura";
             ((System.ComponentModel.ISupportInitialize)SPCantidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).EndInit();
             ResumeLayout(false);

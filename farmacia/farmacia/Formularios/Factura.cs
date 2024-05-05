@@ -123,12 +123,13 @@ namespace farmacia
                 }
                 CBProductos.SelectedIndex = 0;
                 llenador.Close();
-            }else
+            }
+            else
             {
                 CBProductos.Items.Clear();
                 LlenarDeProductos();
             }
-            
+
 
         }
         //Llenado inicial de combos
@@ -298,6 +299,5 @@ namespace farmacia
             return dato;
         }
 
-        
     }
 }
