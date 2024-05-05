@@ -44,6 +44,7 @@
             label7 = new Label();
             BtnAgregar = new Button();
             tablaProductos = new DataGridView();
+            No = new DataGridViewTextBoxColumn();
             label8 = new Label();
             CBProductos = new ComboBox();
             BtnEliminar = new Button();
@@ -53,13 +54,11 @@
             label11 = new Label();
             labelDescuento = new Label();
             LabelIva = new Label();
-            labelTotal = new Label();
             label12 = new Label();
             txtTotal = new TextBox();
             label13 = new Label();
             labelCambio = new Label();
             txtPrecio = new TextBox();
-            No = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)SPCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).BeginInit();
             SuspendLayout();
@@ -134,6 +133,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.ActiveCaptionText;
             label5.Location = new Point(475, 49);
@@ -144,6 +144,7 @@
             // 
             // txtBuscar
             // 
+            txtBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtBuscar.Location = new Point(581, 49);
             txtBuscar.Margin = new Padding(3, 2, 3, 2);
             txtBuscar.Name = "txtBuscar";
@@ -152,6 +153,7 @@
             // 
             // BtnBuscar
             // 
+            BtnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnBuscar.Location = new Point(890, 47);
             BtnBuscar.Margin = new Padding(3, 2, 3, 2);
             BtnBuscar.Name = "BtnBuscar";
@@ -210,10 +212,11 @@
             // 
             // tablaProductos
             // 
+            tablaProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaProductos.BackgroundColor = SystemColors.ButtonHighlight;
             tablaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tablaProductos.Columns.AddRange(new DataGridViewColumn[] { No });
-            tablaProductos.Location = new Point(490, 215);
+            tablaProductos.Location = new Point(429, 161);
             tablaProductos.Margin = new Padding(3, 2, 3, 2);
             tablaProductos.Name = "tablaProductos";
             tablaProductos.RowHeadersWidth = 51;
@@ -222,11 +225,18 @@
             tablaProductos.TabIndex = 16;
             tablaProductos.CellContentClick += tablaProductos_CellContentClick;
             // 
+            // No
+            // 
+            No.HeaderText = "No.";
+            No.Name = "No";
+            No.ReadOnly = true;
+            // 
             // label8
             // 
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = SystemColors.ActiveCaptionText;
-            label8.Location = new Point(490, 151);
+            label8.Location = new Point(425, 106);
             label8.Name = "label8";
             label8.Size = new Size(113, 32);
             label8.TabIndex = 17;
@@ -234,8 +244,9 @@
             // 
             // CBProductos
             // 
+            CBProductos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             CBProductos.FormattingEnabled = true;
-            CBProductos.Location = new Point(623, 155);
+            CBProductos.Location = new Point(558, 110);
             CBProductos.Margin = new Padding(3, 2, 3, 2);
             CBProductos.Name = "CBProductos";
             CBProductos.Size = new Size(459, 23);
@@ -264,9 +275,10 @@
             // 
             // label9
             // 
+            label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(880, 431);
+            label9.Location = new Point(842, 376);
             label9.Name = "label9";
             label9.Size = new Size(117, 32);
             label9.TabIndex = 21;
@@ -274,9 +286,10 @@
             // 
             // label10
             // 
+            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(880, 464);
+            label10.Location = new Point(842, 409);
             label10.Name = "label10";
             label10.Size = new Size(117, 32);
             label10.TabIndex = 22;
@@ -284,9 +297,10 @@
             // 
             // label11
             // 
+            label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label11.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(880, 496);
+            label11.Location = new Point(842, 440);
             label11.Name = "label11";
             label11.Size = new Size(117, 32);
             label11.TabIndex = 23;
@@ -294,33 +308,26 @@
             // 
             // labelDescuento
             // 
+            labelDescuento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labelDescuento.Location = new Point(1046, 440);
             labelDescuento.Name = "labelDescuento";
             labelDescuento.Size = new Size(63, 19);
             labelDescuento.TabIndex = 24;
-            labelDescuento.Text = "label12";
             // 
             // LabelIva
             // 
+            LabelIva.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             LabelIva.Location = new Point(1046, 470);
             LabelIva.Name = "LabelIva";
             LabelIva.Size = new Size(51, 15);
             LabelIva.TabIndex = 25;
-            LabelIva.Text = "label12";
-            // 
-            // labelTotal
-            // 
-            labelTotal.Location = new Point(1046, 502);
-            labelTotal.Name = "labelTotal";
-            labelTotal.Size = new Size(51, 15);
-            labelTotal.TabIndex = 26;
-            labelTotal.Text = "label12";
             // 
             // label12
             // 
+            label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label12.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(238, 485);
+            label12.Location = new Point(306, 427);
             label12.Name = "label12";
             label12.Size = new Size(160, 32);
             label12.TabIndex = 27;
@@ -328,17 +335,19 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(405, 490);
+            txtTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtTotal.Location = new Point(473, 432);
             txtTotal.Margin = new Padding(3, 2, 3, 2);
             txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(110, 23);
+            txtTotal.Size = new Size(92, 23);
             txtTotal.TabIndex = 28;
             // 
             // label13
             // 
+            label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label13.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = SystemColors.ActiveCaptionText;
-            label13.Location = new Point(570, 478);
+            label13.Location = new Point(611, 427);
             label13.Name = "label13";
             label13.Size = new Size(92, 32);
             label13.TabIndex = 29;
@@ -346,11 +355,11 @@
             // 
             // labelCambio
             // 
+            labelCambio.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labelCambio.Location = new Point(683, 485);
             labelCambio.Name = "labelCambio";
             labelCambio.Size = new Size(51, 15);
             labelCambio.TabIndex = 30;
-            labelCambio.Text = "label12";
             // 
             // txtPrecio
             // 
@@ -359,12 +368,6 @@
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(110, 23);
             txtPrecio.TabIndex = 31;
-            // 
-            // No
-            // 
-            No.HeaderText = "No.";
-            No.Name = "No";
-            No.ReadOnly = true;
             // 
             // Factura
             // 
@@ -378,7 +381,6 @@
             Controls.Add(label13);
             Controls.Add(txtTotal);
             Controls.Add(label12);
-            Controls.Add(labelTotal);
             Controls.Add(LabelIva);
             Controls.Add(labelDescuento);
             Controls.Add(label11);
@@ -440,7 +442,6 @@
         private Label label11;
         private Label labelDescuento;
         private Label LabelIva;
-        private Label labelTotal;
         private Label label12;
         private TextBox txtTotal;
         private Label label13;

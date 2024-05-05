@@ -126,6 +126,7 @@
             // 
             // tabalCitas
             // 
+            tabalCitas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabalCitas.BackgroundColor = SystemColors.ButtonHighlight;
             tabalCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tabalCitas.Columns.AddRange(new DataGridViewColumn[] { CNum, cCliente, CDoc, cEspecialidad, CFecha, cDetalles });
@@ -180,7 +181,7 @@
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);

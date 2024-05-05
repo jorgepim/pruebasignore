@@ -125,6 +125,7 @@ namespace farmacia.Formularios.multimedia
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new Formularios.Citas(), sender);
             ActiveButton(sender);
         }
 

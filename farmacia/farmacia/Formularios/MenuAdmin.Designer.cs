@@ -64,7 +64,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(200, 522);
+            panelMenu.Size = new Size(200, 520);
             panelMenu.TabIndex = 0;
             // 
             // btnRegisHora
@@ -84,7 +84,7 @@
             btnRegisHora.TabIndex = 5;
             btnRegisHora.Text = "Registrar\r\nHora";
             btnRegisHora.UseVisualStyleBackColor = false;
-            btnRegisHora.Click += btnRegisHora_Click;
+            btnRegisHora.Click += btnRegisHora_Click_1;
             // 
             // btnPagarEmp
             // 
@@ -141,7 +141,7 @@
             btnLotes.TabIndex = 2;
             btnLotes.Text = "Agregar\r\nLotes";
             btnLotes.UseVisualStyleBackColor = false;
-            btnLotes.Click += btnLotes_Click;
+            btnLotes.Click += btnLotes_Click_1;
             // 
             // btnConvenio
             // 
@@ -160,7 +160,7 @@
             btnConvenio.TabIndex = 1;
             btnConvenio.Text = "Agregar\r\nConvenios";
             btnConvenio.UseVisualStyleBackColor = false;
-            btnConvenio.Click += btnConvenio_Click_1;
+            btnConvenio.Click += btnConvenio_Click;
             // 
             // panelLogo
             // 
@@ -211,7 +211,7 @@
             btnCerrarTodo.TabIndex = 4;
             btnCerrarTodo.Text = "O";
             btnCerrarTodo.UseVisualStyleBackColor = true;
-            btnCerrarTodo.Click += btnCerrarTodo_Click;
+            btnCerrarTodo.Click += btnCerrarTodo_Click_1;
             // 
             // btnMaximizar
             // 
@@ -226,7 +226,7 @@
             btnMaximizar.TabIndex = 3;
             btnMaximizar.Text = "O";
             btnMaximizar.UseVisualStyleBackColor = true;
-            btnMaximizar.Click += btnMaximizar_Click;
+            btnMaximizar.Click += btnMaximizar_Click_1;
             // 
             // btnMinimizar
             // 
@@ -235,13 +235,13 @@
             btnMinimizar.FlatStyle = FlatStyle.Flat;
             btnMinimizar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnMinimizar.ForeColor = Color.FromArgb(128, 255, 128);
-            btnMinimizar.Location = new Point(599, 11);
+            btnMinimizar.Location = new Point(600, 11);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(21, 23);
             btnMinimizar.TabIndex = 2;
             btnMinimizar.Text = "O";
             btnMinimizar.UseVisualStyleBackColor = true;
-            btnMinimizar.Click += btnMinimizar_Click;
+            btnMinimizar.Click += btnMinimizar_Click_1;
             // 
             // btnCerrar
             // 
@@ -253,7 +253,7 @@
             btnCerrar.Size = new Size(65, 54);
             btnCerrar.TabIndex = 1;
             btnCerrar.UseVisualStyleBackColor = true;
-            btnCerrar.Click += btnCerrar_Click;
+            btnCerrar.Click += btnCerrar_Click_1;
             // 
             // labelTitle
             // 
@@ -273,7 +273,7 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(200, 100);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(686, 422);
+            panelDesktop.Size = new Size(686, 420);
             panelDesktop.TabIndex = 2;
             // 
             // pictureBox1
@@ -291,12 +291,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(886, 522);
+            ClientSize = new Size(886, 520);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitulo);
             Controls.Add(panelMenu);
-            MinimumSize = new Size(902, 561);
+            MinimumSize = new Size(902, 559);
             Name = "MenuAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);

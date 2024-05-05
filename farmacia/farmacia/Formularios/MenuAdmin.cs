@@ -40,12 +40,21 @@ namespace PharmaSync.formularios
             childForm.Show();
         }
 
-        private void btnConvenio_Click_1(object sender, EventArgs e)
+        public void reset()
+        {
+            //DisableButton();
+            labelTitle.Text = "HOME ADMIN";
+            panelTitulo.BackColor = Color.FromArgb(7, 65, 115);
+            currentButton = null;
+            btnCerrar.Visible = true;
+        }
+
+        private void btnConvenio_Click(object sender, EventArgs e)
         {
             openChildForm(new AgregarConvenios());
         }
 
-        private void btnLotes_Click(object sender, EventArgs e)
+        private void btnLotes_Click_1(object sender, EventArgs e)
         {
             openChildForm(new AgregarLotes());
         }
@@ -60,75 +69,17 @@ namespace PharmaSync.formularios
             openChildForm(new PagarEmpleados());
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnRegisHora_Click_1(object sender, EventArgs e)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            reset();
+            openChildForm(new RegistrarHoras());
         }
 
-        public void reset()
+        private void btnCerrarTodo_Click_1(object sender, EventArgs e)
         {
-            //DisableButton();
-            labelTitle.Text = "HOME ADMIN";
-            panelTitulo.BackColor = Color.FromArgb(7, 65, 115);
-            currentButton = null;
-            btnCerrar.Visible = true;
+            Application.Exit();
         }
 
-        private void ActiveButton(object btnSender)
-        {
-            if (btnSender != null)
-            {
-                if (currentButton != (Button)btnSender)
-                {
-                    DisableButton();
-                    Color color = SelectThemeColor();
-                    currentButton = (Button)btnSender;
-                    currentButton.BackColor = color;
-                    currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-                    panelTitulo.BackColor = color;
-                    panelLogo.BackColor = farmacia.ThemeColor.ChangeColorBrightness(color, -0.3);
-                    farmacia.ThemeColor.PrimaryColor = color;
-                    farmacia.ThemeColor.SecondaryColor = farmacia.ThemeColor.ChangeColorBrightness(color, -0.3);
-                    btnCerrar.Visible = true;
-                }
-            }
-        }
-
-        private Color SelectThemeColor()
-        {
-            int index = random.Next(farmacia.ThemeColor.ColorList.Count);
-            while (tempIndex == index)
-            {
-                index = random.Next(farmacia.ThemeColor.ColorList.Count);
-            }
-            tempIndex = index;
-            string color = farmacia.ThemeColor.ColorList[index];
-            return ColorTranslator.FromHtml(color);
-        }
-
-        private void DisableButton()
-        {
-            foreach (Control previusBtn in panelMenu.Controls)
-            {
-                if (previusBtn.GetType() == typeof(Button))
-                {
-                    previusBtn.BackColor = Color.FromArgb(22, 121, 171);
-                    previusBtn.ForeColor = Color.Black;
-                    previusBtn.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-                }
-            }
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnMaximizar_Click(object sender, EventArgs e)
+        private void btnMaximizar_Click_1(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
                 this.WindowState = FormWindowState.Maximized;
@@ -136,14 +87,17 @@ namespace PharmaSync.formularios
                 this.WindowState = FormWindowState.Normal;
         }
 
-        private void btnCerrarTodo_Click(object sender, EventArgs e)
+        private void btnMinimizar_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnRegisHora_Click(object sender, EventArgs e)
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new RegistrarHoras());
+            if (activeForm != null)
+                activeForm.Close();
+            reset();
         }
     }
 }

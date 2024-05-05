@@ -1,4 +1,5 @@
 ﻿using farmacia.Formularios.multimedia;
+using PharmaSync.formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace farmacia.Formularios
 {
@@ -25,7 +27,9 @@ namespace farmacia.Formularios
 
         }
 
-        private void IniciarSesion_Click(object sender, EventArgs e)
+
+
+        private void IniciarSesion_Click_1(object sender, EventArgs e)
         {
             cadenaConexion.Open();
             string consulta = "SELECT * FROM usuarios WHERE nombreUsuario = @Usuario AND Contraseña = @Contraseña";
@@ -46,16 +50,13 @@ namespace farmacia.Formularios
                 }
                 else if (id_tipoUsuario == "1")
                 {
-                    MessageBox.Show("Broder, es loco va, entró al admin");
+                    MenuAdmin menuAdmin = new MenuAdmin();
+                    menuAdmin.Show();
+                    this.Hide();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Contraseña o usuarios son incorrectos");
             }
             lector.Close();
             cadenaConexion.Close();
-
         }
     }
 }
