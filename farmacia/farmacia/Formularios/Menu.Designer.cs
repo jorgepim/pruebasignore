@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnSucursales = new System.Windows.Forms.Button();
             this.btnMembresias = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitulo.SuspendLayout();
@@ -68,6 +68,25 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(189, 685);
             this.panelMenu.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 355);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(189, 71);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "   Salir";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnCitas
             // 
@@ -206,9 +225,9 @@
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMaximizar.ForeColor = System.Drawing.Color.Yellow;
-            this.btnMaximizar.Location = new System.Drawing.Point(770, 0);
+            this.btnMaximizar.Location = new System.Drawing.Point(754, 5);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(27, 36);
+            this.btnMaximizar.Size = new System.Drawing.Size(24, 34);
             this.btnMaximizar.TabIndex = 6;
             this.btnMaximizar.Text = "O";
             this.btnMaximizar.UseVisualStyleBackColor = true;
@@ -221,9 +240,9 @@
             this.btnCerrarWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarWindow.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCerrarWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCerrarWindow.Location = new System.Drawing.Point(794, 0);
+            this.btnCerrarWindow.Location = new System.Drawing.Point(784, 3);
             this.btnCerrarWindow.Name = "btnCerrarWindow";
-            this.btnCerrarWindow.Size = new System.Drawing.Size(27, 36);
+            this.btnCerrarWindow.Size = new System.Drawing.Size(24, 45);
             this.btnCerrarWindow.TabIndex = 5;
             this.btnCerrarWindow.Text = "O";
             this.btnCerrarWindow.UseVisualStyleBackColor = true;
@@ -236,9 +255,9 @@
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnMinimizar.Location = new System.Drawing.Point(747, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(724, 3);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(27, 36);
+            this.btnMinimizar.Size = new System.Drawing.Size(24, 45);
             this.btnMinimizar.TabIndex = 4;
             this.btnMinimizar.Text = "O";
             this.btnMinimizar.UseVisualStyleBackColor = true;
@@ -288,25 +307,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 355);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(189, 71);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "   Salir";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -318,6 +318,7 @@
             this.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MinimumSize = new System.Drawing.Size(1028, 732);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panelMenu.ResumeLayout(false);

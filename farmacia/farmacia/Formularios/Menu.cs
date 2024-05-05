@@ -116,7 +116,7 @@ namespace farmacia.Formularios.multimedia
 
         private void btnMembresias_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Formularios.Clientes(), sender);
+            OpenChildForm(new Formularios.Membresia(), sender);
         }
 
         private void btnSucursales_Click(object sender, EventArgs e)
