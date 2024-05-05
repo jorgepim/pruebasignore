@@ -125,11 +125,17 @@ namespace farmacia
                 }
                 CBProductos.SelectedIndex = 0;
                 llenador.Close();
+                CBCategoria.SelectedIndex = 0;
+                CBMarca.SelectedIndex = 0;
+                CBPresentacion.SelectedIndex = 0;
             }
             else
             {
                 CBProductos.Items.Clear();
                 LlenarDeProductos();
+                CBCategoria.SelectedIndex = 0;
+                CBMarca.SelectedIndex = 0;
+                CBPresentacion.SelectedIndex = 0;
             }
 
 

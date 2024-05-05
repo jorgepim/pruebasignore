@@ -59,6 +59,10 @@
             label13 = new Label();
             labelCambio = new Label();
             txtPrecio = new TextBox();
+            LBCambio = new Label();
+            LBDescuento = new Label();
+            LBIva = new Label();
+            LBTotal = new Label();
             ((System.ComponentModel.ISupportInitialize)SPCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).BeginInit();
             SuspendLayout();
@@ -216,7 +220,7 @@
             tablaProductos.BackgroundColor = SystemColors.ButtonHighlight;
             tablaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tablaProductos.Columns.AddRange(new DataGridViewColumn[] { No });
-            tablaProductos.Location = new Point(429, 161);
+            tablaProductos.Location = new Point(406, 158);
             tablaProductos.Margin = new Padding(3, 2, 3, 2);
             tablaProductos.Name = "tablaProductos";
             tablaProductos.RowHeadersWidth = 51;
@@ -236,7 +240,7 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = SystemColors.ActiveCaptionText;
-            label8.Location = new Point(425, 106);
+            label8.Location = new Point(406, 108);
             label8.Name = "label8";
             label8.Size = new Size(113, 32);
             label8.TabIndex = 17;
@@ -246,7 +250,7 @@
             // 
             CBProductos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             CBProductos.FormattingEnabled = true;
-            CBProductos.Location = new Point(558, 110);
+            CBProductos.Location = new Point(539, 112);
             CBProductos.Margin = new Padding(3, 2, 3, 2);
             CBProductos.Name = "CBProductos";
             CBProductos.Size = new Size(459, 23);
@@ -278,7 +282,7 @@
             label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ActiveCaptionText;
-            label9.Location = new Point(842, 376);
+            label9.Location = new Point(778, 357);
             label9.Name = "label9";
             label9.Size = new Size(117, 32);
             label9.TabIndex = 21;
@@ -289,7 +293,7 @@
             label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = SystemColors.ActiveCaptionText;
-            label10.Location = new Point(842, 409);
+            label10.Location = new Point(778, 384);
             label10.Name = "label10";
             label10.Size = new Size(117, 32);
             label10.TabIndex = 22;
@@ -300,7 +304,7 @@
             label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label11.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = SystemColors.ActiveCaptionText;
-            label11.Location = new Point(842, 440);
+            label11.Location = new Point(778, 416);
             label11.Name = "label11";
             label11.Size = new Size(117, 32);
             label11.TabIndex = 23;
@@ -327,7 +331,7 @@
             label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label12.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = SystemColors.ActiveCaptionText;
-            label12.Location = new Point(306, 427);
+            label12.Location = new Point(249, 376);
             label12.Name = "label12";
             label12.Size = new Size(160, 32);
             label12.TabIndex = 27;
@@ -336,7 +340,7 @@
             // txtTotal
             // 
             txtTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            txtTotal.Location = new Point(473, 432);
+            txtTotal.Location = new Point(406, 381);
             txtTotal.Margin = new Padding(3, 2, 3, 2);
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(92, 23);
@@ -347,7 +351,7 @@
             label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label13.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = SystemColors.ActiveCaptionText;
-            label13.Location = new Point(611, 427);
+            label13.Location = new Point(560, 381);
             label13.Name = "label13";
             label13.Size = new Size(92, 32);
             label13.TabIndex = 29;
@@ -369,6 +373,38 @@
             txtPrecio.Size = new Size(110, 23);
             txtPrecio.TabIndex = 31;
             // 
+            // LBCambio
+            // 
+            LBCambio.Location = new Point(645, 384);
+            LBCambio.Name = "LBCambio";
+            LBCambio.Size = new Size(89, 23);
+            LBCambio.TabIndex = 32;
+            LBCambio.Text = "label14";
+            // 
+            // LBDescuento
+            // 
+            LBDescuento.Location = new Point(898, 357);
+            LBDescuento.Name = "LBDescuento";
+            LBDescuento.Size = new Size(100, 23);
+            LBDescuento.TabIndex = 33;
+            LBDescuento.Text = "label15";
+            // 
+            // LBIva
+            // 
+            LBIva.Location = new Point(898, 393);
+            LBIva.Name = "LBIva";
+            LBIva.Size = new Size(92, 23);
+            LBIva.TabIndex = 34;
+            LBIva.Text = "label16";
+            // 
+            // LBTotal
+            // 
+            LBTotal.Location = new Point(898, 425);
+            LBTotal.Name = "LBTotal";
+            LBTotal.Size = new Size(100, 23);
+            LBTotal.TabIndex = 35;
+            LBTotal.Text = "label17";
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -376,6 +412,10 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1185, 562);
+            Controls.Add(LBTotal);
+            Controls.Add(LBIva);
+            Controls.Add(LBDescuento);
+            Controls.Add(LBCambio);
             Controls.Add(txtPrecio);
             Controls.Add(labelCambio);
             Controls.Add(label13);
@@ -448,5 +488,9 @@
         private Label labelCambio;
         private TextBox txtPrecio;
         private DataGridViewTextBoxColumn No;
+        private Label LBCambio;
+        private Label LBDescuento;
+        private Label LBIva;
+        private Label LBTotal;
     }
 }
