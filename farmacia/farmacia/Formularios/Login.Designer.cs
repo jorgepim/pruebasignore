@@ -29,152 +29,151 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.LoginFill = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.IniciarSesion = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LoginFill.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            LoginFill = new Panel();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            IniciarSesion = new Button();
+            txtContraseña = new TextBox();
+            panel4 = new Panel();
+            txtUser = new TextBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            LoginFill.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // LoginFill
             // 
-            this.LoginFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(253)))), ((int)(((byte)(237)))));
-            this.LoginFill.Controls.Add(this.panel1);
-            this.LoginFill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoginFill.Location = new System.Drawing.Point(0, 0);
-            this.LoginFill.Name = "LoginFill";
-            this.LoginFill.Size = new System.Drawing.Size(268, 395);
-            this.LoginFill.TabIndex = 0;
+            LoginFill.BackColor = Color.FromArgb(254, 253, 237);
+            LoginFill.Controls.Add(panel1);
+            LoginFill.Dock = DockStyle.Fill;
+            LoginFill.Location = new Point(0, 0);
+            LoginFill.Name = "LoginFill";
+            LoginFill.Size = new Size(268, 395);
+            LoginFill.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.IniciarSesion);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(-6, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(284, 392);
-            this.panel1.TabIndex = 0;
+            panel1.Anchor = AnchorStyles.None;
+            panel1.BackColor = Color.FromArgb(34, 36, 49);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(IniciarSesion);
+            panel1.Controls.Add(txtContraseña);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(txtUser);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(-6, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(284, 392);
+            panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(29, 296);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 1);
-            this.panel2.TabIndex = 6;
+            panel2.BackColor = Color.White;
+            panel2.Location = new Point(29, 296);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 1);
+            panel2.TabIndex = 6;
             // 
             // IniciarSesion
             // 
-            this.IniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.IniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IniciarSesion.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.IniciarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
-            this.IniciarSesion.Location = new System.Drawing.Point(75, 337);
-            this.IniciarSesion.Name = "IniciarSesion";
-            this.IniciarSesion.Size = new System.Drawing.Size(127, 39);
-            this.IniciarSesion.TabIndex = 7;
-            this.IniciarSesion.Text = "Iniciar Sesion";
-            this.IniciarSesion.UseVisualStyleBackColor = true;
-            this.IniciarSesion.Click += new System.EventHandler(this.IniciarSesion_Click);
+            IniciarSesion.Anchor = AnchorStyles.Bottom;
+            IniciarSesion.FlatStyle = FlatStyle.Flat;
+            IniciarSesion.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            IniciarSesion.ForeColor = Color.FromArgb(79, 157, 157);
+            IniciarSesion.Location = new Point(75, 337);
+            IniciarSesion.Name = "IniciarSesion";
+            IniciarSesion.Size = new Size(127, 39);
+            IniciarSesion.TabIndex = 7;
+            IniciarSesion.Text = "Iniciar Sesion";
+            IniciarSesion.UseVisualStyleBackColor = true;
+            IniciarSesion.Click += IniciarSesion_Click;
             // 
-            // textBox2
+            // txtContraseña
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(75, 270);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 20);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "Contraseña";
+            txtContraseña.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            txtContraseña.BackColor = Color.FromArgb(34, 36, 49);
+            txtContraseña.BorderStyle = BorderStyle.None;
+            txtContraseña.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContraseña.ForeColor = Color.White;
+            txtContraseña.Location = new Point(75, 270);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.Size = new Size(152, 20);
+            txtContraseña.TabIndex = 6;
+            txtContraseña.Text = "Contraseña";
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(29, 225);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 1);
-            this.panel4.TabIndex = 5;
+            panel4.BackColor = Color.White;
+            panel4.Location = new Point(29, 225);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(200, 1);
+            panel4.TabIndex = 5;
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(75, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Usuario";
+            txtUser.BackColor = Color.FromArgb(34, 36, 49);
+            txtUser.BorderStyle = BorderStyle.None;
+            txtUser.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUser.ForeColor = Color.White;
+            txtUser.Location = new Point(75, 192);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(152, 20);
+            txtUser.TabIndex = 3;
+            txtUser.Text = "Usuario";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(29, 250);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 56);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(29, 250);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(40, 56);
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 176);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 43);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(27, 176);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(42, 43);
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(102, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(102, 56);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(85, 85);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 395);
-            this.Controls.Add(this.LoginFill);
-            this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
-            this.LoginFill.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(268, 395);
+            Controls.Add(LoginFill);
+            Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+            Load += Login_Load;
+            LoginFill.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -183,9 +182,9 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button IniciarSesion;
-        private TextBox textBox2;
+        private TextBox txtContraseña;
         private Panel panel4;
-        private TextBox textBox1;
+        private TextBox txtUser;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private Panel panel2;
