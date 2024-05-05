@@ -13,12 +13,10 @@ namespace farmacia
         public static Color SecondaryColor { get; set; }
         public static List<string> ColorList = new List<string>()
         {
-            "#DDDDDD",
-            "#EEEEEE",
-            "#EEEEEE",
             "#C7C8CC",
-            "#EFECEC",
-            "#EFECEC"};
+            "#B4B4B8",
+            "#A9A9A9",
+            "#F5F5F5"};
 
         public static Color ChangeColorBrightness(Color color, double correctionFactor) 
             {

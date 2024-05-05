@@ -105,38 +105,10 @@ namespace farmacia.Formularios.multimedia
             
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Formularios.Clientes(), sender);
-        }
 
-        private void btnFactura_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Factura(), sender);
-        }
 
-        private void btnMembresias_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Formularios.Membresia(), sender);
-        }
+       
 
-        private void btnSucursales_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Formularios.Sucursales(), sender);
-        }
-
-        private void btnCitas_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Formularios.Citas(), sender);
-            ActiveButton(sender);
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            if(activeForm != null)
-                activeForm.Close();    
-            reset();
-        }
         public void reset()
         {
             DisableButton();
@@ -147,11 +119,6 @@ namespace farmacia.Formularios.multimedia
             btnCerrar.Visible = false;
         }
 
-        private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012,0);
-        }
 
         private void btnCerrarWindow_Click(object sender, EventArgs e)
         {
@@ -177,6 +144,46 @@ namespace farmacia.Formularios.multimedia
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void btnClientes_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Formularios.Clientes(), sender);
+        }
+
+        private void btnFactura_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Factura(), sender);
+        }
+
+        private void btnMembresias_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Membresia(), sender);
+
+        }
+
+        private void btnSucursales_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Sucursales(), sender);
+        }
+
+        private void btnCitas_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Citas(), sender);
+
+        }
+
+        private void panelTitulo_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            reset();
         }
     }
 }

@@ -105,6 +105,7 @@
             this.btnCitas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCitas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCitas.UseVisualStyleBackColor = true;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click_1);
             // 
             // btnSucursales
             // 
@@ -123,6 +124,7 @@
             this.btnSucursales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSucursales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSucursales.UseVisualStyleBackColor = true;
+            this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click_1);
             // 
             // btnMembresias
             // 
@@ -141,6 +143,7 @@
             this.btnMembresias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMembresias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMembresias.UseVisualStyleBackColor = true;
+            this.btnMembresias.Click += new System.EventHandler(this.btnMembresias_Click_1);
             // 
             // btnFactura
             // 
@@ -159,6 +162,7 @@
             this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click_1);
             // 
             // btnClientes
             // 
@@ -178,6 +182,7 @@
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click_1);
             // 
             // panelLogo
             // 
@@ -211,6 +216,7 @@
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(821, 75);
             this.panelTitulo.TabIndex = 1;
+            this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown_1);
             // 
             // btnMaximizar
             // 
@@ -267,6 +273,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(75, 49);
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // lblTitle
             // 
@@ -282,6 +289,7 @@
             // 
             // panelDesktop
             // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.panelDesktop.Controls.Add(this.pictureBox1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(189, 75);
