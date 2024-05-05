@@ -29,285 +29,284 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnCitas = new System.Windows.Forms.Button();
-            this.btnSucursales = new System.Windows.Forms.Button();
-            this.btnMembresias = new System.Windows.Forms.Button();
-            this.btnFactura = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelTitulo = new System.Windows.Forms.Panel();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnCerrarWindow = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            this.panelTitulo.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            panelMenu = new Panel();
+            btnCitas = new Button();
+            btnSucursales = new Button();
+            btnMembresias = new Button();
+            btnFactura = new Button();
+            btnClientes = new Button();
+            panelLogo = new Panel();
+            label1 = new Label();
+            panelTitulo = new Panel();
+            btnMaximizar = new Button();
+            btnCerrarWindow = new Button();
+            btnMinimizar = new Button();
+            btnCerrar = new Button();
+            lblTitle = new Label();
+            panelDesktop = new Panel();
+            pictureBox1 = new PictureBox();
+            panelMenu.SuspendLayout();
+            panelLogo.SuspendLayout();
+            panelTitulo.SuspendLayout();
+            panelDesktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.panelMenu.Controls.Add(this.btnCitas);
-            this.panelMenu.Controls.Add(this.btnSucursales);
-            this.panelMenu.Controls.Add(this.btnMembresias);
-            this.panelMenu.Controls.Add(this.btnFactura);
-            this.panelMenu.Controls.Add(this.btnClientes);
-            this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(189, 685);
-            this.panelMenu.TabIndex = 0;
+            panelMenu.BackColor = Color.FromArgb(22, 121, 171);
+            panelMenu.Controls.Add(btnCitas);
+            panelMenu.Controls.Add(btnSucursales);
+            panelMenu.Controls.Add(btnMembresias);
+            panelMenu.Controls.Add(btnFactura);
+            panelMenu.Controls.Add(btnClientes);
+            panelMenu.Controls.Add(panelLogo);
+            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Location = new Point(0, 0);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(189, 685);
+            panelMenu.TabIndex = 0;
             // 
             // btnCitas
             // 
-            this.btnCitas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCitas.FlatAppearance.BorderSize = 0;
-            this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCitas.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCitas.Image = ((System.Drawing.Image)(resources.GetObject("btnCitas.Image")));
-            this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.Location = new System.Drawing.Point(0, 299);
-            this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnCitas.Size = new System.Drawing.Size(189, 56);
-            this.btnCitas.TabIndex = 5;
-            this.btnCitas.Text = "   Citas";
-            this.btnCitas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCitas.UseVisualStyleBackColor = true;
-            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
+            btnCitas.Dock = DockStyle.Top;
+            btnCitas.FlatAppearance.BorderSize = 0;
+            btnCitas.FlatStyle = FlatStyle.Flat;
+            btnCitas.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCitas.Image = (Image)resources.GetObject("btnCitas.Image");
+            btnCitas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCitas.Location = new Point(0, 299);
+            btnCitas.Name = "btnCitas";
+            btnCitas.Padding = new Padding(11, 0, 0, 0);
+            btnCitas.Size = new Size(189, 56);
+            btnCitas.TabIndex = 5;
+            btnCitas.Text = "   Citas";
+            btnCitas.TextAlign = ContentAlignment.MiddleLeft;
+            btnCitas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCitas.UseVisualStyleBackColor = true;
+            btnCitas.Click += btnCitas_Click;
             // 
             // btnSucursales
             // 
-            this.btnSucursales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSucursales.FlatAppearance.BorderSize = 0;
-            this.btnSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSucursales.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSucursales.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursales.Image")));
-            this.btnSucursales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSucursales.Location = new System.Drawing.Point(0, 243);
-            this.btnSucursales.Name = "btnSucursales";
-            this.btnSucursales.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnSucursales.Size = new System.Drawing.Size(189, 56);
-            this.btnSucursales.TabIndex = 4;
-            this.btnSucursales.Text = "   Sucursales";
-            this.btnSucursales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSucursales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSucursales.UseVisualStyleBackColor = true;
-            this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click);
+            btnSucursales.Dock = DockStyle.Top;
+            btnSucursales.FlatAppearance.BorderSize = 0;
+            btnSucursales.FlatStyle = FlatStyle.Flat;
+            btnSucursales.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSucursales.Image = (Image)resources.GetObject("btnSucursales.Image");
+            btnSucursales.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSucursales.Location = new Point(0, 243);
+            btnSucursales.Name = "btnSucursales";
+            btnSucursales.Padding = new Padding(11, 0, 0, 0);
+            btnSucursales.Size = new Size(189, 56);
+            btnSucursales.TabIndex = 4;
+            btnSucursales.Text = "   Sucursales";
+            btnSucursales.TextAlign = ContentAlignment.MiddleLeft;
+            btnSucursales.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSucursales.UseVisualStyleBackColor = true;
+            btnSucursales.Click += btnSucursales_Click;
             // 
             // btnMembresias
             // 
-            this.btnMembresias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMembresias.FlatAppearance.BorderSize = 0;
-            this.btnMembresias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMembresias.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMembresias.Image = ((System.Drawing.Image)(resources.GetObject("btnMembresias.Image")));
-            this.btnMembresias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembresias.Location = new System.Drawing.Point(0, 187);
-            this.btnMembresias.Name = "btnMembresias";
-            this.btnMembresias.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnMembresias.Size = new System.Drawing.Size(189, 56);
-            this.btnMembresias.TabIndex = 3;
-            this.btnMembresias.Text = "   Membresias";
-            this.btnMembresias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembresias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMembresias.UseVisualStyleBackColor = true;
-            this.btnMembresias.Click += new System.EventHandler(this.btnMembresias_Click);
+            btnMembresias.Dock = DockStyle.Top;
+            btnMembresias.FlatAppearance.BorderSize = 0;
+            btnMembresias.FlatStyle = FlatStyle.Flat;
+            btnMembresias.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMembresias.Image = (Image)resources.GetObject("btnMembresias.Image");
+            btnMembresias.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMembresias.Location = new Point(0, 187);
+            btnMembresias.Name = "btnMembresias";
+            btnMembresias.Padding = new Padding(11, 0, 0, 0);
+            btnMembresias.Size = new Size(189, 56);
+            btnMembresias.TabIndex = 3;
+            btnMembresias.Text = " Membresias";
+            btnMembresias.TextAlign = ContentAlignment.MiddleLeft;
+            btnMembresias.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnMembresias.UseVisualStyleBackColor = true;
+            btnMembresias.Click += btnMembresias_Click;
             // 
             // btnFactura
             // 
-            this.btnFactura.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFactura.FlatAppearance.BorderSize = 0;
-            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFactura.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnFactura.Image")));
-            this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFactura.Location = new System.Drawing.Point(0, 131);
-            this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnFactura.Size = new System.Drawing.Size(189, 56);
-            this.btnFactura.TabIndex = 2;
-            this.btnFactura.Text = "   Factura";
-            this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFactura.UseVisualStyleBackColor = true;
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
+            btnFactura.Dock = DockStyle.Top;
+            btnFactura.FlatAppearance.BorderSize = 0;
+            btnFactura.FlatStyle = FlatStyle.Flat;
+            btnFactura.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFactura.Image = (Image)resources.GetObject("btnFactura.Image");
+            btnFactura.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFactura.Location = new Point(0, 131);
+            btnFactura.Name = "btnFactura";
+            btnFactura.Padding = new Padding(11, 0, 0, 0);
+            btnFactura.Size = new Size(189, 56);
+            btnFactura.TabIndex = 2;
+            btnFactura.Text = "   Factura";
+            btnFactura.TextAlign = ContentAlignment.MiddleLeft;
+            btnFactura.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFactura.UseVisualStyleBackColor = true;
+            btnFactura.Click += btnFactura_Click;
             // 
             // btnClientes
             // 
-            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClientes.FlatAppearance.BorderSize = 0;
-            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClientes.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClientes.ForeColor = System.Drawing.Color.Black;
-            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(0, 75);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnClientes.Size = new System.Drawing.Size(189, 56);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Text = "   Clientes";
-            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClientes.UseVisualStyleBackColor = true;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            btnClientes.Dock = DockStyle.Top;
+            btnClientes.FlatAppearance.BorderSize = 0;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClientes.ForeColor = Color.Black;
+            btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
+            btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClientes.Location = new Point(0, 75);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Padding = new Padding(11, 0, 0, 0);
+            btnClientes.Size = new Size(189, 56);
+            btnClientes.TabIndex = 1;
+            btnClientes.Text = "   Clientes";
+            btnClientes.TextAlign = ContentAlignment.MiddleLeft;
+            btnClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClientes.UseVisualStyleBackColor = true;
+            btnClientes.Click += btnClientes_Click;
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(105)))), ((int)(((byte)(137)))));
-            this.panelLogo.Controls.Add(this.label1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(189, 75);
-            this.panelLogo.TabIndex = 0;
+            panelLogo.BackColor = Color.FromArgb(73, 105, 137);
+            panelLogo.Controls.Add(label1);
+            panelLogo.Dock = DockStyle.Top;
+            panelLogo.Location = new Point(0, 0);
+            panelLogo.Name = "panelLogo";
+            panelLogo.Size = new Size(189, 75);
+            panelLogo.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(29, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PharmaSync";
+            label1.Font = new Font("Bahnschrift SemiLight", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(29, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(142, 24);
+            label1.TabIndex = 0;
+            label1.Text = "PharmaSync";
             // 
             // panelTitulo
             // 
-            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(65)))), ((int)(((byte)(115)))));
-            this.panelTitulo.Controls.Add(this.btnMaximizar);
-            this.panelTitulo.Controls.Add(this.btnCerrarWindow);
-            this.panelTitulo.Controls.Add(this.btnMinimizar);
-            this.panelTitulo.Controls.Add(this.btnCerrar);
-            this.panelTitulo.Controls.Add(this.lblTitle);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitulo.Location = new System.Drawing.Point(189, 0);
-            this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(821, 75);
-            this.panelTitulo.TabIndex = 1;
-            this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
+            panelTitulo.BackColor = Color.FromArgb(7, 65, 115);
+            panelTitulo.Controls.Add(btnMaximizar);
+            panelTitulo.Controls.Add(btnCerrarWindow);
+            panelTitulo.Controls.Add(btnMinimizar);
+            panelTitulo.Controls.Add(btnCerrar);
+            panelTitulo.Controls.Add(lblTitle);
+            panelTitulo.Dock = DockStyle.Top;
+            panelTitulo.Location = new Point(189, 0);
+            panelTitulo.Name = "panelTitulo";
+            panelTitulo.Size = new Size(821, 75);
+            panelTitulo.TabIndex = 1;
+            panelTitulo.MouseDown += panelTitulo_MouseDown;
             // 
             // btnMaximizar
             // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMaximizar.ForeColor = System.Drawing.Color.Yellow;
-            this.btnMaximizar.Location = new System.Drawing.Point(770, 0);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(27, 36);
-            this.btnMaximizar.TabIndex = 6;
-            this.btnMaximizar.Text = "O";
-            this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            btnMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximizar.FlatAppearance.BorderSize = 0;
+            btnMaximizar.FlatStyle = FlatStyle.Flat;
+            btnMaximizar.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMaximizar.ForeColor = Color.Yellow;
+            btnMaximizar.Location = new Point(770, 0);
+            btnMaximizar.Name = "btnMaximizar";
+            btnMaximizar.Size = new Size(27, 36);
+            btnMaximizar.TabIndex = 6;
+            btnMaximizar.Text = "O";
+            btnMaximizar.UseVisualStyleBackColor = true;
+            btnMaximizar.Click += btnMaximizar_Click;
             // 
             // btnCerrarWindow
             // 
-            this.btnCerrarWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarWindow.FlatAppearance.BorderSize = 0;
-            this.btnCerrarWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarWindow.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCerrarWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCerrarWindow.Location = new System.Drawing.Point(794, 0);
-            this.btnCerrarWindow.Name = "btnCerrarWindow";
-            this.btnCerrarWindow.Size = new System.Drawing.Size(27, 36);
-            this.btnCerrarWindow.TabIndex = 5;
-            this.btnCerrarWindow.Text = "O";
-            this.btnCerrarWindow.UseVisualStyleBackColor = true;
-            this.btnCerrarWindow.Click += new System.EventHandler(this.btnCerrarWindow_Click);
+            btnCerrarWindow.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCerrarWindow.FlatAppearance.BorderSize = 0;
+            btnCerrarWindow.FlatStyle = FlatStyle.Flat;
+            btnCerrarWindow.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCerrarWindow.ForeColor = Color.FromArgb(255, 128, 128);
+            btnCerrarWindow.Location = new Point(794, 0);
+            btnCerrarWindow.Name = "btnCerrarWindow";
+            btnCerrarWindow.Size = new Size(27, 36);
+            btnCerrarWindow.TabIndex = 5;
+            btnCerrarWindow.Text = "O";
+            btnCerrarWindow.UseVisualStyleBackColor = true;
+            btnCerrarWindow.Click += btnCerrarWindow_Click;
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnMinimizar.Location = new System.Drawing.Point(747, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(27, 36);
-            this.btnMinimizar.TabIndex = 4;
-            this.btnMinimizar.Text = "O";
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimizar.FlatAppearance.BorderSize = 0;
+            btnMinimizar.FlatStyle = FlatStyle.Flat;
+            btnMinimizar.Font = new Font("Corbel", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMinimizar.ForeColor = Color.FromArgb(128, 255, 128);
+            btnMinimizar.Location = new Point(747, 0);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new Size(27, 36);
+            btnMinimizar.TabIndex = 4;
+            btnMinimizar.Text = "O";
+            btnMinimizar.UseVisualStyleBackColor = true;
+            btnMinimizar.Click += btnMinimizar_Click;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(3, 12);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 49);
-            this.btnCerrar.TabIndex = 3;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            btnCerrar.FlatAppearance.BorderSize = 0;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
+            btnCerrar.Location = new Point(3, 12);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(75, 49);
+            btnCerrar.TabIndex = 3;
+            btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // lblTitle
             // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Corbel", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(385, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(113, 41);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "HOME";
+            lblTitle.Anchor = AnchorStyles.None;
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Corbel", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(385, 20);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(113, 41);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "HOME";
             // 
             // panelDesktop
             // 
-            this.panelDesktop.Controls.Add(this.pictureBox1);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(189, 75);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(821, 610);
-            this.panelDesktop.TabIndex = 2;
+            panelDesktop.Controls.Add(pictureBox1);
+            panelDesktop.Dock = DockStyle.Fill;
+            panelDesktop.Location = new Point(189, 75);
+            panelDesktop.Name = "panelDesktop";
+            panelDesktop.Size = new Size(821, 610);
+            panelDesktop.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(172, 198);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 214);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(172, 198);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(500, 214);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 685);
-            this.Controls.Add(this.panelDesktop);
-            this.Controls.Add(this.panelTitulo);
-            this.Controls.Add(this.panelMenu);
-            this.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MinimumSize = new System.Drawing.Size(1028, 732);
-            this.Name = "Menu";
-            this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Menu_Load);
-            this.panelMenu.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            this.panelTitulo.ResumeLayout(false);
-            this.panelTitulo.PerformLayout();
-            this.panelDesktop.ResumeLayout(false);
-            this.panelDesktop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 18F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1010, 685);
+            Controls.Add(panelDesktop);
+            Controls.Add(panelTitulo);
+            Controls.Add(panelMenu);
+            Font = new Font("Corbel", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            MinimumSize = new Size(1028, 732);
+            Name = "Menu";
+            Text = "Menu";
+            Load += Menu_Load;
+            panelMenu.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            panelTitulo.ResumeLayout(false);
+            panelTitulo.PerformLayout();
+            panelDesktop.ResumeLayout(false);
+            panelDesktop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
