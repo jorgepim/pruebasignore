@@ -38,6 +38,7 @@ namespace farmacia.Formularios
             comando.Parameters.AddWithValue("@Contraseña", txtContraseña.Text);
             SqlDataReader lector;
             lector = comando.ExecuteReader();
+
             if (lector.HasRows)
             {
                 lector.Read();
@@ -55,8 +56,32 @@ namespace farmacia.Formularios
                     this.Hide();
                 }
             }
+            else
+            {
+                MessageBox.Show("La contraseña o el usuario son incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             lector.Close();
             cadenaConexion.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtContraseña.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+
+        }
+
+        private void Login_Load_1(object sender, EventArgs e)
+        {
+            txtContraseña.UseSystemPasswordChar = !checkBox1.Checked;
+
         }
     }
 }

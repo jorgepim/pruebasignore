@@ -1,4 +1,5 @@
 ﻿using farmacia.Clases.Entidades;
+using PharmaSync.formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -168,6 +169,13 @@ namespace farmacia.Formularios.multimedia
         {
             if (WindowState == FormWindowState.Normal)
                 this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
