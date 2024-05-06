@@ -44,6 +44,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(240, 32);
             label1.Name = "label1";
             label1.Size = new Size(155, 21);
@@ -54,6 +55,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(49, 99);
             label2.Name = "label2";
             label2.Size = new Size(61, 17);
@@ -64,6 +66,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(49, 176);
             label3.Name = "label3";
             label3.Size = new Size(62, 17);
@@ -74,6 +77,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(334, 99);
             label4.Name = "label4";
             label4.Size = new Size(58, 17);
@@ -84,6 +88,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
             label5.Location = new Point(49, 245);
             label5.Name = "label5";
             label5.Size = new Size(49, 17);
@@ -137,7 +142,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
+            BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(670, 383);
             Controls.Add(btnAgregarConve);
             Controls.Add(txtBoxTelefonoConve);

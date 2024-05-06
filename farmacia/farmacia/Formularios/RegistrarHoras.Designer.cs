@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarHoras));
             dataGridViewRegHoras = new DataGridView();
             Dui = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
@@ -73,6 +74,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(422, 145);
             label1.Name = "label1";
             label1.Size = new Size(46, 17);
@@ -83,6 +85,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(465, 47);
             label2.Name = "label2";
             label2.Size = new Size(126, 21);
@@ -101,6 +104,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(392, 228);
             label3.Name = "label3";
             label3.Size = new Size(76, 17);
@@ -142,10 +146,10 @@
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = Color.WhiteSmoke;
-            btnBuscar.Image = Properties.Resources._3;
-            btnBuscar.Location = new Point(312, 20);
+            btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
+            btnBuscar.Location = new Point(278, 37);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(50, 48);
+            btnBuscar.Size = new Size(39, 37);
             btnBuscar.TabIndex = 8;
             btnBuscar.UseVisualStyleBackColor = false;
             // 
@@ -153,6 +157,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(18, 20);
             label4.Name = "label4";
             label4.Size = new Size(141, 21);
@@ -163,7 +168,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
+            BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(670, 383);
             Controls.Add(label4);
             Controls.Add(btnBuscar);

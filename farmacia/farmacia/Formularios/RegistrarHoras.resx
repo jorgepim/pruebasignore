@@ -126,13 +126,22 @@
   <metadata name="Cargo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Dui.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cargo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJnSURBVFhH7ZbNaxNBGMb9W0QRpQiFoiKUXjxZvFr0JtYP
+        YkkQKk1FqYVSPw7SgmIhkCAoKGxLGvGDSgstKRRS6inSQ2xLL5Vq48VCYIVXn9lJzU7e2czugBTZBx5I
+        Zmef/eWdeWdz4OChdtrPjgFtHQPaOga0dQxo6/8f8PKVJDnONJXLq7S9/U0Yn1+9nqKr12/S4SMd7H2m
+        jgx44WIvrW9sUithzrU/oFyGiSMBjo1PyMeb69lEls1q5dCAUeDqyuZesJlBDgWIZeW0tfWVnMmCqNLs
+        3ALVajV5pVmJvn42W+dQgBvKnnPdXzR6/3FTI3R2naXS8ic5yy/8mKPHTvrmB9kYEN2qCnC49vDRuOhe
+        qFhcou5zPdR2/DRVvqyLMVXJ1EBTvs7GgI5TkPGeUAlUDnCqdnaqdOLUGbGcnGZm5thncDYGLH9elfGe
+        sOcwDlBOqC6qyAn3qPk6GwPWl7Cu+rGhU6vrjdlBDgH4XUZ7QrdivLi4JEf8wuHc2dUtvzVLzdc58hLj
+        KEG3oiGq1R9y1NO79x/FPagiJ8xX83U2BsS7VVWptCL2GRoCey6Tee57rZ3vuUQ/d3fl7L+an1/0ZQfZ
+        GBAP5lSprFHiRv/e2YaqPnmaEWP4zkGmB4d92UE2BsSRoh7UQXJddw8yfXtYjnrLi6qr+TobA8K6KuoE
+        yKF7D6jw5oMcIbpzd4TN1jkUIKzb+CbK59+ymUEODQhncy/lI80FuCh/XiMBwom+W9q3SKOw58Iua6Mj
+        A8Lo3GQqLd6tjbCAwlGCbg3TEJytAP+FY0Bbx4C2jgFtHQPaep8DttNv14/Iyz3aobcAAAAASUVORK5C
+        YII=
+</value>
+  </data>
 </root>
