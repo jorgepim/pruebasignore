@@ -75,6 +75,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 355);
@@ -94,6 +95,7 @@
             this.btnCitas.FlatAppearance.BorderSize = 0;
             this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCitas.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCitas.ForeColor = System.Drawing.Color.Black;
             this.btnCitas.Image = ((System.Drawing.Image)(resources.GetObject("btnCitas.Image")));
             this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCitas.Location = new System.Drawing.Point(0, 299);
@@ -113,6 +115,7 @@
             this.btnSucursales.FlatAppearance.BorderSize = 0;
             this.btnSucursales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSucursales.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSucursales.ForeColor = System.Drawing.Color.Black;
             this.btnSucursales.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursales.Image")));
             this.btnSucursales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSucursales.Location = new System.Drawing.Point(0, 243);
@@ -132,6 +135,7 @@
             this.btnMembresias.FlatAppearance.BorderSize = 0;
             this.btnMembresias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMembresias.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMembresias.ForeColor = System.Drawing.Color.Black;
             this.btnMembresias.Image = ((System.Drawing.Image)(resources.GetObject("btnMembresias.Image")));
             this.btnMembresias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMembresias.Location = new System.Drawing.Point(0, 187);
@@ -151,6 +155,7 @@
             this.btnFactura.FlatAppearance.BorderSize = 0;
             this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFactura.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFactura.ForeColor = System.Drawing.Color.Black;
             this.btnFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnFactura.Image")));
             this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFactura.Location = new System.Drawing.Point(0, 131);
