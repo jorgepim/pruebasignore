@@ -49,6 +49,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(253, 33);
             label1.Name = "label1";
             label1.Size = new Size(159, 21);
@@ -58,6 +59,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(64, 113);
             label2.Name = "label2";
             label2.Size = new Size(54, 15);
@@ -67,6 +69,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(361, 113);
             label3.Name = "label3";
             label3.Size = new Size(54, 15);
@@ -83,6 +86,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = Color.White;
             label6.Location = new Point(395, 175);
             label6.Name = "label6";
             label6.Size = new Size(36, 15);
@@ -92,6 +96,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = Color.White;
             label7.Location = new Point(360, 240);
             label7.Name = "label7";
             label7.Size = new Size(42, 15);
@@ -101,6 +106,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = Color.White;
             label5.Location = new Point(64, 235);
             label5.Name = "label5";
             label5.Size = new Size(55, 15);
@@ -159,6 +165,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = Color.White;
             label8.Location = new Point(64, 175);
             label8.Name = "label8";
             label8.Size = new Size(60, 15);
@@ -177,7 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
+            BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(670, 383);
             Controls.Add(comboBoxCargo);
             Controls.Add(label8);

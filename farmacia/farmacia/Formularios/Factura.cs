@@ -8,6 +8,10 @@ namespace farmacia
 {
     public partial class Factura : Form
     {
+        int idFactura;
+        CrudDetalleCompras datos;
+        CrudFactura factura;
+        SqlDataReader llenador;
         public Factura()
         {
             InitializeComponent();
@@ -244,7 +248,7 @@ namespace farmacia
         {
             String categoria = EncontrarSeleccion(CBCategoria);
 
-            CrudDetalleCompras datos = new CrudDetalleCompras();
+            datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorCategoria(categoria);
             CBProductos.Items.Add("Seleccionar");
             while (llenador.Read())
@@ -343,74 +347,16 @@ namespace farmacia
             return dato;
         }
 
-        private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnAgregar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Factura_Load(object sender, EventArgs e)
-        {
-
+            if (idFactura != 0)
+            {
+                Console.WriteLine("hola");
+            }
+            else
+            {
+                factura.CrearFactura("1", "1");
+            }
         }
     }
 }

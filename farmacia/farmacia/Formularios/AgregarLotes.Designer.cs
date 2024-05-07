@@ -52,6 +52,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(265, 22);
             label1.Name = "label1";
             label1.Size = new Size(115, 21);
@@ -61,6 +62,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(65, 85);
             label2.Name = "label2";
             label2.Size = new Size(66, 15);
@@ -70,6 +72,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(439, 85);
             label3.Name = "label3";
             label3.Size = new Size(67, 15);
@@ -79,6 +82,7 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.ForeColor = Color.White;
             label4.Location = new Point(245, 85);
             label4.Name = "label4";
             label4.Size = new Size(77, 15);
@@ -88,6 +92,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = Color.White;
             label5.Location = new Point(65, 157);
             label5.Name = "label5";
             label5.Size = new Size(87, 15);
@@ -97,6 +102,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = Color.White;
             label6.Location = new Point(314, 157);
             label6.Name = "label6";
             label6.Size = new Size(110, 15);
@@ -106,6 +112,7 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.ForeColor = Color.White;
             label7.Location = new Point(65, 235);
             label7.Name = "label7";
             label7.Size = new Size(89, 15);
@@ -115,6 +122,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.ForeColor = Color.White;
             label8.Location = new Point(265, 235);
             label8.Name = "label8";
             label8.Size = new Size(66, 15);
@@ -124,6 +132,7 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.ForeColor = Color.White;
             label9.Location = new Point(439, 235);
             label9.Name = "label9";
             label9.Size = new Size(58, 15);
@@ -203,7 +212,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
+            BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(670, 383);
             Controls.Add(button1);
             Controls.Add(txtBoxCantidad);
