@@ -22,11 +22,6 @@ namespace farmacia.Formularios
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
 
         private void IniciarSesion_Click_1(object sender, EventArgs e)
