@@ -351,7 +351,6 @@ namespace farmacia
         {
             if (idFactura != 0)
             {
-                Console.WriteLine("hola");
             }
             else
             {
