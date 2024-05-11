@@ -1,4 +1,3 @@
-using farmacia.Clases;
 using farmacia.Clases.DataAccess;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
@@ -9,9 +8,8 @@ namespace farmacia
     public partial class Factura : Form
     {
         int idFactura;
-        CrudDetalleCompras datos;
-        CrudFactura factura;
-        SqlDataReader llenador;
+        int idCliente;
+
         public Factura()
         {
             InitializeComponent();
@@ -200,13 +198,13 @@ namespace farmacia
             tablaProductos.DataSource = llenador.ObtenerDetallePorFactura("1");
 
             // Establecer el ancho de las columnas
-            tablaProductos.Columns["No"].Width = 50;
+            tablaProductos.Columns["ID"].Width = 50;
             tablaProductos.Columns["Cantidad"].Width = 85;
             tablaProductos.Columns["Producto"].Width = 200;
             tablaProductos.Columns["p/u"].Width = 100;
             tablaProductos.Columns["Subtotal"].Width = 100;
             tablaProductos.AllowUserToAddRows = false;
-            tablaProductos.Columns["No"].ReadOnly = true;
+            tablaProductos.Columns["ID"].ReadOnly = true;
             tablaProductos.Columns["Cantidad"].ReadOnly = true;
             tablaProductos.Columns["Producto"].ReadOnly = true;
             tablaProductos.Columns["p/u"].ReadOnly = true;
@@ -217,16 +215,6 @@ namespace farmacia
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-            tablaProductos.DataBindingComplete += (sender, e) =>
-            {
-                if (tablaProductos.Columns.Contains("No"))
-                {
-                    for (int i = 0; i < tablaProductos.Rows.Count; i++)
-                    {
-                        tablaProductos.Rows[i].Cells["No"].Value = (i + 1).ToString(); // Establecer el valor del índice (fila autoincrementable)
-                    }
-                }
-            };
         }
         //Filtradores
         public void FiltrarPorMarcas()
@@ -248,7 +236,7 @@ namespace farmacia
         {
             String categoria = EncontrarSeleccion(CBCategoria);
 
-            datos = new CrudDetalleCompras();
+            CrudDetalleCompras datos = new CrudDetalleCompras();
             SqlDataReader llenador = datos.ConsultarPorCategoria(categoria);
             CBProductos.Items.Add("Seleccionar");
             while (llenador.Read())
@@ -349,12 +337,36 @@ namespace farmacia
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            int cantidad = Convert.ToInt32(SPCantidad.Value);
+            if (CBProductos.SelectedIndex == 0 | cantidad <= 0)
+            {
+                MessageBox.Show("No ha marcado el producto o la cantidad");
+                return;
+            }
+            String idProducto = EncontrarSeleccion(CBProductos);
+            CrudFactura factura = new CrudFactura();
+            CrudDetalleCompras detalleCompras = new CrudDetalleCompras();
             if (idFactura != 0)
             {
+                detalleCompras.AgregarADetalleCompra(idFactura.ToString(), idProducto, cantidad.ToString());
             }
             else
             {
-                factura.CrearFactura("1", "1");
+                factura.CrearFactura("1", "3");
+                detalleCompras.AgregarADetalleCompra(idFactura.ToString(), idProducto, cantidad.ToString());
+            }
+        }
+
+        private void BtnEjecutar_Click(object sender, EventArgs e)
+        {
+            CrudFactura factura = new CrudFactura();
+            if (tablaProductos.RowCount == 0)
+            {
+                MessageBox.Show("¿Esta seguro que quiere eliminar la factura?");
+            }
+            else
+            {
+                factura.LlenarFactura(idFactura.ToString());
             }
         }
     }

@@ -43,7 +43,6 @@
             label7 = new Label();
             BtnAgregar = new Button();
             tablaProductos = new DataGridView();
-            No = new DataGridViewTextBoxColumn();
             label8 = new Label();
             CBProductos = new ComboBox();
             BtnEliminar = new Button();
@@ -217,7 +216,6 @@
             tablaProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tablaProductos.BackgroundColor = SystemColors.ButtonHighlight;
             tablaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tablaProductos.Columns.AddRange(new DataGridViewColumn[] { No });
             tablaProductos.Location = new Point(406, 158);
             tablaProductos.Margin = new Padding(3, 2, 3, 2);
             tablaProductos.Name = "tablaProductos";
@@ -225,14 +223,6 @@
             tablaProductos.RowTemplate.Height = 29;
             tablaProductos.Size = new Size(592, 173);
             tablaProductos.TabIndex = 16;
-            // 
-            // No
-            // 
-            No.HeaderText = "No.";
-            No.MinimumWidth = 6;
-            No.Name = "No";
-            No.ReadOnly = true;
-            No.Width = 125;
             // 
             // label8
             // 
@@ -277,6 +267,7 @@
             BtnEjecutar.TabIndex = 20;
             BtnEjecutar.Text = "Ejecutar";
             BtnEjecutar.UseVisualStyleBackColor = true;
+            BtnEjecutar.Click += BtnEjecutar_Click;
             // 
             // label9
             // 
@@ -489,7 +480,6 @@
         private Label label13;
         private Label labelCambio;
         private TextBox txtPrecio;
-        private DataGridViewTextBoxColumn No;
         private Label LBCambio;
         private Label LBDescuento;
         private Label LBIva;

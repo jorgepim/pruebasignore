@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using farmacia.Clases.Entidades;
 
 namespace farmacia.Clases.DataAccess
 {
@@ -26,6 +27,27 @@ namespace farmacia.Clases.DataAccess
             command.Parameters.AddWithValue("@Cliente", cliente);
 
             return conexion.EjecutarComando(command);
+        }
+
+        public void LlenarFactura(String idFactura)
+        {
+            SqlCommand command = new SqlCommand("CalcularTotalesDeDetalle", conexion.ObtenerConexion());
+            command.CommandType = CommandType.StoredProcedure;
+
+            // Agregar los parámetros de entrada
+            command.Parameters.AddWithValue("@IdFactura", idFactura);
+            
+            try
+            {
+                conexion.AbrirConexion();
+                command.ExecuteNonQuery();
+
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
+            }
         }
 
         public DataTable LeerTodasLasFacturas()

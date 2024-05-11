@@ -143,29 +143,53 @@ namespace farmacia.Clases.DataAccess
         }
         public DataTable ObtenerDetallePorFactura(String factura)
         {
-            String consulta = "SELECT DetalleCompras.Cantidad, pr.NombreProducto as 'Producto', pr.PrecioV as 'p/u', DetalleCompras.Total as 'Subtotal'" +
+            String consulta = "SELECT DetalleCompras.id_Producto as 'ID', DetalleCompras.Cantidad, pr.NombreProducto as 'Producto', pr.PrecioV AS 'p/u', SUM(DetalleCompras.Total) AS 'Subtotal' " +
                 "FROM DetalleCompras " +
                 "INNER JOIN Productos pr ON DetalleCompras.id_Producto = pr.id_Producto " +
-                "WHERE id_Factura = " + factura + ";";
+                $"WHERE id_Factura = {factura} " +
+                "GROUP BY DetalleCompras.Cantidad,DetalleCompras.id_Producto, pr.NombreProducto,pr.PrecioV;";
+
+
+                /*"SELECT DetalleCompras.Cantidad, pr.NombreProducto as 'Producto', pr.PrecioV as 'p/u', DetalleCompras.Total as 'Subtotal'" +
+                "FROM DetalleCompras " +
+                "INNER JOIN Productos pr ON DetalleCompras.id_Producto = pr.id_Producto " +
+                "WHERE id_Factura = " + factura + ";";*/
             return conexionBD.EjecutarConsulta(consulta);
         }
 
-        public void InsertarDetalleCompra(int idProducto, int idLote, int idFactura, decimal total, decimal descuento, int cantidad)
+        public String AgregarADetalleCompra(String idFactura, String idProducto, String cantidad)
         {
-            String consulta = "INSERT INTO DetalleCompras (id_Producto, id_Lote, id_Factura, Total, Descuento, Cantidad) " +
-                              "VALUES (@IdProducto, @IdLote, @IdFactura, @Total, @Descuento, @Cantidad)";
+            SqlParameter errorTextParam = new SqlParameter("@ErrorText", SqlDbType.NVarChar, 255);
+            errorTextParam.Direction = ParameterDirection.Output;
+            String errorText = null;
+            SqlCommand command = new SqlCommand("InsertarDetalleCompra", conexionBD.ObtenerConexion());
+            command.CommandType = CommandType.StoredProcedure;
 
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@IdProducto", idProducto);
-            comando.Parameters.AddWithValue("@IdLote", idLote);
-            comando.Parameters.AddWithValue("@IdFactura", idFactura);
-            comando.Parameters.AddWithValue("@Total", total);
-            comando.Parameters.AddWithValue("@Descuento", descuento);
-            comando.Parameters.AddWithValue("@Cantidad", cantidad);
+            // Agregar los parámetros de entrada
+            command.Parameters.AddWithValue("@IdFactura", idFactura);
+            command.Parameters.AddWithValue("@IdProducto", idProducto);
+            command.Parameters.AddWithValue("@Cantidad", cantidad);
 
-            conexionBD.EjecutarComando(comando);
+            // Agregar el parámetro de salida
+            command.Parameters.Add(errorTextParam);
+
+            try
+            {
+                conexionBD.AbrirConexion();
+                command.ExecuteNonQuery();
+
+                // Recuperar el valor del parámetro de salida
+                errorText = errorTextParam.Value.ToString();
+                Console.WriteLine("Mensaje de error: " + errorText);
+                conexionBD.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al ejecutar el procedimiento almacenado: " + ex.Message);
+            }
+
+            return errorText;
         }
-
         public void ActualizarDetalleCompra(int idDetalleCompra, int idProducto, int idLote, int idFactura, decimal total, decimal descuento, int cantidad)
         {
             String consulta = "UPDATE DetalleCompras SET id_Producto = @IdProducto, id_Lote = @IdLote, id_Factura = @IdFactura, " +
