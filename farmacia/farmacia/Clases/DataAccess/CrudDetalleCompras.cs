@@ -143,23 +143,23 @@ namespace farmacia.Clases.DataAccess
         }
         public DataTable ObtenerDetallePorFactura(String factura)
         {
-            String consulta = "SELECT DetalleCompras.id_Producto as 'ID', DetalleCompras.Cantidad, pr.NombreProducto as 'Producto', pr.PrecioV AS 'p/u', SUM(DetalleCompras.Total) AS 'Subtotal' " +
+            String consulta = "SELECT DetalleCompras.id_Producto as 'ID', SUM(DetalleCompras.Cantidad) AS 'Cantidad', pr.NombreProducto as 'Producto', pr.PrecioV AS 'p/u', SUM(DetalleCompras.Total) AS 'Subtotal' " +
                 "FROM DetalleCompras " +
                 "INNER JOIN Productos pr ON DetalleCompras.id_Producto = pr.id_Producto " +
                 $"WHERE id_Factura = {factura} " +
-                "GROUP BY DetalleCompras.Cantidad,DetalleCompras.id_Producto, pr.NombreProducto,pr.PrecioV;";
+                "GROUP BY DetalleCompras.id_Producto, pr.NombreProducto, pr.PrecioV;";
 
 
-                /*"SELECT DetalleCompras.Cantidad, pr.NombreProducto as 'Producto', pr.PrecioV as 'p/u', DetalleCompras.Total as 'Subtotal'" +
-                "FROM DetalleCompras " +
-                "INNER JOIN Productos pr ON DetalleCompras.id_Producto = pr.id_Producto " +
-                "WHERE id_Factura = " + factura + ";";*/
+            /*"SELECT DetalleCompras.Cantidad, pr.NombreProducto as 'Producto', pr.PrecioV as 'p/u', DetalleCompras.Total as 'Subtotal'" +
+            "FROM DetalleCompras " +
+            "INNER JOIN Productos pr ON DetalleCompras.id_Producto = pr.id_Producto " +
+            "WHERE id_Factura = " + factura + ";";*/
             return conexionBD.EjecutarConsulta(consulta);
         }
 
         public String AgregarADetalleCompra(String idFactura, String idProducto, String cantidad)
         {
-            SqlParameter errorTextParam = new SqlParameter("@ErrorText", SqlDbType.NVarChar, 255);
+            SqlParameter errorTextParam = new SqlParameter("@ErrorTexto", SqlDbType.NVarChar, 255);
             errorTextParam.Direction = ParameterDirection.Output;
             String errorText = null;
             SqlCommand command = new SqlCommand("InsertarDetalleCompra", conexionBD.ObtenerConexion());
@@ -180,7 +180,10 @@ namespace farmacia.Clases.DataAccess
 
                 // Recuperar el valor del parámetro de salida
                 errorText = errorTextParam.Value.ToString();
-                Console.WriteLine("Mensaje de error: " + errorText);
+                if (errorText != null)
+                {
+                    MessageBox.Show(errorText);
+                }
                 conexionBD.CerrarConexion();
             }
             catch (Exception ex)
@@ -232,7 +235,20 @@ namespace farmacia.Clases.DataAccess
             comando.Parameters.AddWithValue("@termino", termino);
             return comando.ExecuteReader();
         }
-  
+
+        public String RecuperarPrecio(String idProducto)
+        {
+            String consulta = "SELECT PrecioV " +
+            "FROM Productos " +
+            "WHERE id_Producto = @idProducto;";
+            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
+            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            conexionBD.AbrirConexion();
+            object resultado = comando.ExecuteScalar();
+            conexionBD.CerrarConexion();
+            return resultado != null ? resultado.ToString() : null;
+        }
+
         //Filtros de productos
         public SqlDataReader ConsultarPorMarca(String marca)
         {

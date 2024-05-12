@@ -9,12 +9,14 @@ namespace farmacia
     {
         int idFactura;
         int idCliente;
+        int idEmpleado = 3;
 
         public Factura()
         {
             InitializeComponent();
             LlenarCombos();
             LlenadoDeTablas();
+            BtnEjecutar.Enabled = false;
         }
 
         private void MarcaCambio(object sender, EventArgs e)
@@ -195,7 +197,7 @@ namespace farmacia
         public void LlenadoDeTablas()
         {
             CrudDetalleCompras llenador = new CrudDetalleCompras();
-            tablaProductos.DataSource = llenador.ObtenerDetallePorFactura("1");
+            tablaProductos.DataSource = llenador.ObtenerDetallePorFactura(idFactura.ToString());
 
             // Establecer el ancho de las columnas
             tablaProductos.Columns["ID"].Width = 50;
@@ -349,12 +351,21 @@ namespace farmacia
             if (idFactura != 0)
             {
                 detalleCompras.AgregarADetalleCompra(idFactura.ToString(), idProducto, cantidad.ToString());
+                LlenadoDeTablas();
+                txtPrecio.Text = "";
+                SPCantidad.Value = 0;
             }
             else
             {
-                factura.CrearFactura("1", "3");
+                String sucursal = factura.ObtenerSucusal(idEmpleado.ToString());
+                factura.CrearFactura("1", "3", sucursal);
+                idFactura = factura.ObtenerUltimoIdFactura();
                 detalleCompras.AgregarADetalleCompra(idFactura.ToString(), idProducto, cantidad.ToString());
+                LlenadoDeTablas();
+                txtPrecio.Text = "";
+                SPCantidad.Value = 0;
             }
+            BtnEjecutar.Enabled = true;
         }
 
         private void BtnEjecutar_Click(object sender, EventArgs e)
@@ -362,11 +373,45 @@ namespace farmacia
             CrudFactura factura = new CrudFactura();
             if (tablaProductos.RowCount == 0)
             {
-                MessageBox.Show("¿Esta seguro que quiere eliminar la factura?");
+                DialogResult result = MessageBox.Show(
+                "¿Desea eliminar la factura?", // Texto del mensaje
+                "Confirmación",      // Título del cuadro
+                MessageBoxButtons.YesNo, // Botones de Sí/No
+                MessageBoxIcon.Question // Icono de pregunta
+                );
+
+                // Verificar qué botón fue presionado
+                if (result == DialogResult.Yes)
+                {
+                    factura.EliminarFactura(idFactura);                    // El usuario seleccionó "Sí"
+                    MessageBox.Show("La factura se elimino exitosamente");
+                }
             }
             else
             {
                 factura.LlenarFactura(idFactura.ToString());
+            }
+        }
+
+        private void CambioProducto(object sender, EventArgs e)
+        {
+            if (CBProductos.SelectedIndex != 0)
+            {
+                CrudDetalleCompras detalle = new CrudDetalleCompras();
+                String producto = EncontrarSeleccion(CBProductos);
+                String precio = detalle.RecuperarPrecio(producto);
+                if (precio != null)
+                {
+                    txtPrecio.Text = "$"+precio;
+                }
+                else
+                {
+                    txtPrecio.Text = "";
+                }
+            }
+            else
+            {
+                txtPrecio.Text = "";
             }
         }
     }

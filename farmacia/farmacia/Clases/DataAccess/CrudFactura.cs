@@ -18,13 +18,14 @@ namespace farmacia.Clases.DataAccess
             conexion = new Conexion();
         }
 
-        public int CrearFactura(string empleado, string cliente)
+        public int CrearFactura(String empleado, String cliente , String sucursal)
         {
-            string query = "INSERT INTO Facturas (id_Empleado, id_Cliente) VALUES (@Empleado,@Cliente);";
+            string query = "INSERT INTO Facturas (id_Empleado, id_Cliente, id_Sucursal) VALUES (@Empleado,@Cliente,@Sucursal);";
 
             SqlCommand command = new SqlCommand(query, conexion.ObtenerConexion());
             command.Parameters.AddWithValue("@Empleado", empleado);
             command.Parameters.AddWithValue("@Cliente", cliente);
+            command.Parameters.AddWithValue("@Sucursal", sucursal);
 
             return conexion.EjecutarComando(command);
         }
@@ -83,7 +84,7 @@ namespace farmacia.Clases.DataAccess
         {
             int ultimoId = 0;
             conexion.AbrirConexion();
-            string query = "SELECT TOP 1 IdFactura FROM Facturas ORDER BY IdFactura DESC";
+            string query = "SELECT TOP 1 id_Factura FROM Facturas ORDER BY id_Factura DESC";
 
             SqlCommand command = new SqlCommand(query, conexion.ObtenerConexion());
             object result = command.ExecuteScalar();
@@ -94,6 +95,17 @@ namespace farmacia.Clases.DataAccess
             }
             conexion.CerrarConexion();
             return ultimoId;
+        }
+
+        public String ObtenerSucusal(String idEmpleado)
+        {
+            String consulta = "SELECT id_Sucursal FROM Empleados WHERE id_Empleado = @Empleado;";
+            SqlCommand comando = new SqlCommand(consulta,conexion.ObtenerConexion());
+            comando.Parameters.AddWithValue("@Empleado", idEmpleado);
+            conexion.AbrirConexion();
+            object resultado = comando.ExecuteScalar();
+            conexion.CerrarConexion();
+            return resultado != null ? resultado.ToString() : null;
         }
     }
 }

@@ -247,6 +247,7 @@
             CBProductos.Size = new Size(459, 23);
             CBProductos.TabIndex = 18;
             CBProductos.Text = "Seleccionar";
+            CBProductos.SelectedIndexChanged += CambioProducto;
             // 
             // BtnEliminar
             // 

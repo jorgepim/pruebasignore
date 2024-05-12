@@ -1,5 +1,385 @@
 CREATE DATABASE BDFarmacia;
 
+USE BDFarmacia;
+
+-- Tabla Productos
+CREATE TABLE Productos (
+    id_Producto INT PRIMARY KEY IDENTITY(1,1),
+    NombreProducto VARCHAR(100) NOT NULL,
+    PrecioV DECIMAL(10,2) NOT NULL,
+    Stock INT NOT NULL,
+    Descripcion VARCHAR(500) NOT NULL,
+    Receta BIT NOT NULL,
+    id_Categoria INT NOT NULL,
+    id_Presentacion INT NOT NULL,
+    id_Marca INT NOT NULL
+);
+
+-- Tabla Sucursales
+CREATE TABLE Sucursales (
+    id_Sucursal INT PRIMARY KEY IDENTITY(1,1),
+    NombreSucursal VARCHAR(100) NOT NULL,
+    Id_Departamento INT NOT NULL
+);
+
+-- Tabla Departamentos
+CREATE TABLE Departamentos (
+    id_Departamento INT PRIMARY KEY IDENTITY(1,1),
+    NombreDepartamento VARCHAR(100) NOT NULL
+);
+
+-- Tabla Proveedores
+CREATE TABLE Proveedores (
+    id_Proveedor INT PRIMARY KEY IDENTITY(1,1),
+    NombreProveedor VARCHAR(100) NOT NULL,
+    Dirección VARCHAR(150) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(10) NOT NULL
+);
+
+-- Tabla Clientes
+CREATE TABLE Clientes (
+    id_Cliente INT PRIMARY KEY IDENTITY(1,1),
+    id_Usuario INT NOT NULL,
+    NombreCliente VARCHAR(100) NOT NULL,
+    Dui VARCHAR(10) NOT NULL,
+    Dirección VARCHAR(150) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(10) NOT NULL,
+    id_Membresia INT,
+    NumCitasAsis INT NOT NULL
+);
+
+-- Tabla Presentaciones
+CREATE TABLE Presentaciones (
+    id_Presentacion INT PRIMARY KEY IDENTITY(1,1),
+    TipoDePre VARCHAR(100) NOT NULL
+);
+
+-- Tabla Facturas
+CREATE TABLE Facturas (
+    id_Factura INT PRIMARY KEY IDENTITY(1,1),
+    Fecha DATETIME ,
+    id_Empleado INT NOT NULL,
+    id_Cliente INT NOT NULL,
+    Subtotal DECIMAL(10,2) ,
+    Descuento DECIMAL(10,2),
+    Total DECIMAL(10,2) ,
+    id_TipoPago INT ,
+    id_Sucursal INT
+);
+
+-- Tabla DetalleCompras
+CREATE TABLE DetalleCompras (
+    id_DetalleCompra INT PRIMARY KEY IDENTITY(1,1),
+    id_Producto INT NOT NULL,
+    id_Lote INT NOT NULL,
+    id_Factura INT NOT NULL,
+    Total DECIMAL(10,2) NOT NULL,
+    Descuento DECIMAL(10,2) NOT NULL,
+    Cantidad INT NOT NULL
+);
+
+-- Tabla Empleados
+CREATE TABLE Empleados (
+    id_Empleado INT PRIMARY KEY IDENTITY(1,1),
+    id_Usuario INT NOT NULL,
+    Nombre VARCHAR(100) NOT NULL,
+    Direccion VARCHAR(150) NOT NULL,
+    Id_Cargo INT NOT NULL,
+    Edad INT NOT NULL,
+    Telefono VARCHAR(10) NOT NULL,
+    FechaIngreso DATETIME NOT NULL,
+	id_Sucursal INT
+);
+
+-- Tabla Usuarios
+CREATE TABLE Usuarios (
+    id_Usuarios INT PRIMARY KEY IDENTITY(1,1),
+    id_tipoUsuario INT NOT NULL,
+    nombreUsuario VARCHAR(100) NOT NULL,
+    Contraseña VARCHAR(100) NOT NULL
+);
+
+-- Tabla TipoDePagos
+CREATE TABLE TipoDePagos (
+    id_TipoDePago INT PRIMARY KEY IDENTITY(1,1),
+    Pago VARCHAR(100) NOT NULL
+);
+
+-- Tabla Categorias
+CREATE TABLE Categorias (
+    id_Categoria INT PRIMARY KEY IDENTITY(1,1),
+    NombreCategoria VARCHAR(100) NOT NULL
+);
+
+-- Tabla Lotes
+CREATE TABLE Lotes (
+    id_Lotes INT PRIMARY KEY IDENTITY(1,1),
+    id_Producto INT NOT NULL,
+    id_Proveedor INT NOT NULL,
+    id_Sucursal INT NOT NULL,
+    FechaCompra DATETIME NOT NULL,
+    FechaVencimiento DATETIME NOT NULL,
+    PrecioCompra DECIMAL(10,2) NOT NULL,
+    PDescuento DECIMAL(3,2) NOT NULL,
+    Cantidad INT NOT NULL
+);
+
+-- Tabla Marcas
+CREATE TABLE Marcas (
+    id_Marca INT PRIMARY KEY IDENTITY(1,1),
+    NombreMarca VARCHAR(100) NOT NULL
+);
+
+-- Tabla InventarioSucursales
+CREATE TABLE InventarioSucursales (
+    id_InventarioSucursal INT PRIMARY KEY IDENTITY(1,1),
+    id_Producto INT NOT NULL,
+    id_Sucursal INT NOT NULL,
+    Cantidad INT NOT NULL
+);
+
+-- Tabla tipoUsuarios
+CREATE TABLE tipoUsuarios (
+    id_tipoUsuario INT PRIMARY KEY IDENTITY(1,1),
+    tipoUsuario VARCHAR(100) NOT NULL
+);
+
+-- Tabla Devoluciones
+CREATE TABLE Devoluciones (
+    id_Devolucion INT PRIMARY KEY IDENTITY(1,1),
+    id_estadoDevolucion INT NOT NULL,
+    id_Producto INT NOT NULL,
+    id_Factura INT NOT NULL,
+    id_Empleado INT NOT NULL,
+    FechaDevolucion DATETIME NOT NULL,
+    Id_MotivoDevolucion INT NOT NULL,
+    Cantidad INT NOT NULL,
+    MontoReembolsado DECIMAL(10,2) NOT NULL
+);
+
+-- Tabla Pedidos
+CREATE TABLE Pedidos (
+    id_pedido INT PRIMARY KEY IDENTITY(1,1),
+    id_facturas INT NOT NULL,
+    id_estado_pedido INT NOT NULL,
+    id_Empleado INT NOT NULL,
+    Fecha_pedidos DATETIME NOT NULL,
+    direccion VARCHAR(50) NOT NULL
+);
+
+-- Tabla estadoDevolucion
+CREATE TABLE estadoDevolucion (
+    id_estadoDevolucion INT PRIMARY KEY IDENTITY(1,1),
+    estadoDevolucion VARCHAR(100) NOT NULL
+);
+
+-- Tabla estadoPedido
+CREATE TABLE estadoPedido (
+    id_estadoPedido INT PRIMARY KEY IDENTITY(1,1),
+    estadoPedido VARCHAR(100) NOT NULL
+);
+
+-- Tabla MotivoDevolucion
+CREATE TABLE MotivoDevolucion (
+    id_motivoDevolucion INT PRIMARY KEY IDENTITY(1,1),
+    Motivo VARCHAR(100) NOT NULL
+);
+
+-- Tabla HorasTrabajadas
+CREATE TABLE HorasTrabajadas (
+    id_HoraTrabajada INT PRIMARY KEY IDENTITY(1,1),
+    id_Empleado INT NOT NULL,
+    Fecha DATETIME NOT NULL,
+    HorasTrabajadas INT NOT NULL,
+    TipoHora INT NOT NULL
+);
+
+-- Tabla TipoHoras
+CREATE TABLE TipoHoras (
+    id_TipoHora INT PRIMARY KEY IDENTITY(1,1),
+    DescripHoras VARCHAR(100) NOT NULL
+);
+
+-- Tabla PagosRealizados
+CREATE TABLE PagosRealizados (
+    id_PagoRealizado INT PRIMARY KEY IDENTITY(1,1),
+    id_Empleado INT NOT NULL,
+    FechaDePago DATETIME NOT NULL,
+    MontoTotal DECIMAL(10,2) NOT NULL,
+    id_DetallePago INT NOT NULL
+);
+
+-- Tabla Deducciones
+CREATE TABLE Deducciones (
+    id_Deduccion INT PRIMARY KEY IDENTITY(1,1),
+    id_Empleado INT NOT NULL,
+    TipoDeduccion INT NOT NULL,
+    MontoDeduccion DECIMAL(10,2) NOT NULL,
+    FechaDeduccion DATETIME NOT NULL
+);
+
+-- Tabla TipoDeduccion
+CREATE TABLE TipoDeduccion (
+    id_TipoDeduccion INT PRIMARY KEY IDENTITY(1,1),
+    DescripDeduc VARCHAR(100) NOT NULL
+);
+
+-- Tabla Membresias
+CREATE TABLE Membresias (
+    id_Membresia INT PRIMARY KEY IDENTITY(1,1),
+    TipoMembresia VARCHAR(10) NOT NULL,
+    Costo DECIMAL(5,2) NOT NULL,
+    Beneficios VARCHAR(500) NOT NULL
+);
+
+-- Tabla PagoMembresias
+CREATE TABLE PagoMembresias (
+    id_PagoMembresia INT PRIMARY KEY IDENTITY(1,1),
+    Id_Cliente INT NOT NULL,
+    FechaPago DATETIME NOT NULL,
+    MontoPagado DECIMAL(5,2) NOT NULL,
+    id_PeriodoMembresias INT NOT NULL,
+    id_Membresias INT NOT NULL
+);
+
+-- Tabla DescuentosMembresia
+CREATE TABLE DescuentosMembresia (
+    id_DescuentoMembresia INT PRIMARY KEY IDENTITY(1,1),
+    Id_Membresia INT NOT NULL,
+    id_Categoria INT NOT NULL,
+    PorcentajeDesct DECIMAL(2,2) NOT NULL
+);
+
+-- Tabla DetallePago
+CREATE TABLE DetallePago (
+    id_DetallePago INT PRIMARY KEY IDENTITY(1,1),
+    TotXHoras DECIMAL(10,2) NOT NULL,
+    TotDescuentos DECIMAL(10,2) NOT NULL,
+    Aguinaldo DECIMAL(10,2) NOT NULL
+);
+
+-- Tabla ConveniosHC
+CREATE TABLE ConveniosHC (
+    id_ConveniosHC INT PRIMARY KEY IDENTITY(1,1),
+    NombreHC VARCHAR(50) NOT NULL,
+    Direccion VARCHAR(150) NOT NULL,
+    Telefono VARCHAR(10) NOT NULL,
+    Correo VARCHAR(50) NOT NULL
+);
+
+-- Tabla DrEspecialidades
+CREATE TABLE DrEspecialidades (
+    id_DrEspecialidades INT PRIMARY KEY IDENTITY(1,1),
+    Id_ConveniosHC INT NOT NULL,
+    NombreDr VARCHAR(100) NOT NULL,
+    Especialidad VARCHAR(100) NOT NULL,
+    Tel VARCHAR(10) NOT NULL
+);
+
+-- Tabla DatosConvenios
+CREATE TABLE DatosConvenios (
+    id_DatConvenios INT PRIMARY KEY IDENTITY(1,1),
+    Id_ConveniosHC INT NOT NULL,
+    Id_Membresia INT NOT NULL,
+    FechaInicio DATETIME NOT NULL,
+    FechaVencimiento DATETIME NOT NULL
+);
+
+-- Tabla ConsultasME
+CREATE TABLE ConsultasME (
+    id_ConsultasME INT PRIMARY KEY IDENTITY(1,1),
+    Id_DatConvenios INT NOT NULL,
+    Id_Cliente INT NOT NULL,
+    Id_DrEspecialidades INT NOT NULL,
+    Fecha DATETIME NOT NULL,
+    DetallesAdicionales VARCHAR(250) NOT NULL
+);
+
+-- Tabla PeriodoMembresias
+CREATE TABLE PeriodoMembresias (
+    id_PeriodoMembresias INT PRIMARY KEY IDENTITY(1,1),
+    periodoMembresia INT NOT NULL
+);
+
+-- Tabla Cargo
+CREATE TABLE Cargo (
+    id_cargo INT PRIMARY KEY IDENTITY(1,1),
+    nombreCargo VARCHAR(100) NOT NULL,
+    pagoXHora DECIMAL(6,2) NOT NULL
+);
+
+-- Restricciones de Clave Foránea
+ALTER TABLE Productos ADD CONSTRAINT FK_Productos_Categorias FOREIGN KEY (id_Categoria) REFERENCES Categorias(id_Categoria) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Productos ADD CONSTRAINT FK_Productos_Presentaciones FOREIGN KEY (id_Presentacion) REFERENCES Presentaciones(id_Presentacion) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Productos ADD CONSTRAINT FK_Productos_Marcas FOREIGN KEY (id_Marca) REFERENCES Marcas(id_Marca) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Sucursales ADD CONSTRAINT FK_Sucursales_Departamentos FOREIGN KEY (Id_Departamento) REFERENCES Departamentos(id_Departamento) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Clientes ADD CONSTRAINT FK_Clientes_Usuarios FOREIGN KEY (id_Usuario) REFERENCES Usuarios(id_Usuarios) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Clientes ADD CONSTRAINT FK_Clientes_Membresias FOREIGN KEY (id_Membresia) REFERENCES Membresias(id_Membresia) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Facturas ADD CONSTRAINT FK_Facturas_Empleados FOREIGN KEY (id_Empleado) REFERENCES Empleados(id_Empleado) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Facturas ADD CONSTRAINT FK_Facturas_Clientes FOREIGN KEY (id_Cliente) REFERENCES Clientes(id_Cliente) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Facturas ADD CONSTRAINT FK_Facturas_TipoDePagos FOREIGN KEY (id_TipoPago) REFERENCES TipoDePagos(id_TipoDePago) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE DetalleCompras ADD CONSTRAINT FK_DetalleCompras_Productos FOREIGN KEY (id_Producto) REFERENCES Productos(id_Producto) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE DetalleCompras ADD CONSTRAINT FK_DetalleCompras_Lotes FOREIGN KEY (id_Lote) REFERENCES Lotes(id_Lotes) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE DetalleCompras ADD CONSTRAINT FK_DetalleCompras_Facturas FOREIGN KEY (id_Factura) REFERENCES Facturas(id_Factura) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Empleados ADD CONSTRAINT FK_Empleados_Usuarios FOREIGN KEY (id_Usuario) REFERENCES Usuarios(id_Usuarios) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE Empleados ADD CONSTRAINT FK_Empleados_Cargo FOREIGN KEY (Id_Cargo) REFERENCES Cargo(id_cargo) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Usuarios ADD CONSTRAINT FK_Usuarios_tipoUsuarios FOREIGN KEY (id_tipoUsuario) REFERENCES tipoUsuarios(id_tipoUsuario) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Lotes ADD CONSTRAINT FK_Lotes_Productos FOREIGN KEY (id_Producto) REFERENCES Productos(id_Producto) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE Lotes ADD CONSTRAINT FK_Lotes_Proveedores FOREIGN KEY (id_Proveedor) REFERENCES Proveedores(id_Proveedor) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Lotes ADD CONSTRAINT FK_Lotes_Sucursales FOREIGN KEY (id_Sucursal) REFERENCES Sucursales(id_Sucursal) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE InventarioSucursales ADD CONSTRAINT FK_InventarioSucursales_Productos FOREIGN KEY (id_Producto) REFERENCES Productos(id_Producto) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE InventarioSucursales ADD CONSTRAINT FK_InventarioSucursales_Sucursales FOREIGN KEY (id_Sucursal) REFERENCES Sucursales(id_Sucursal) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Devoluciones ADD CONSTRAINT FK_Devoluciones_estadoDevolucion FOREIGN KEY (id_estadoDevolucion) REFERENCES estadoDevolucion(id_estadoDevolucion) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Devoluciones ADD CONSTRAINT FK_Devoluciones_Productos FOREIGN KEY (id_Producto) REFERENCES Productos(id_Producto) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Devoluciones ADD CONSTRAINT FK_Devoluciones_Facturas FOREIGN KEY (id_Factura) REFERENCES Facturas(id_Factura) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Devoluciones ADD CONSTRAINT FK_Devoluciones_Empleados FOREIGN KEY (id_Empleado) REFERENCES Empleados(id_Empleado) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE Devoluciones ADD CONSTRAINT FK_Devoluciones_MotivoDevolucion FOREIGN KEY (Id_MotivoDevolucion) REFERENCES MotivoDevolucion(id_motivoDevolucion) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Pedidos ADD CONSTRAINT FK_Pedidos_Facturas FOREIGN KEY (id_facturas) REFERENCES Facturas(id_Factura) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Pedidos ADD CONSTRAINT FK_Pedidos_estadoPedido FOREIGN KEY (id_estado_pedido) REFERENCES estadoPedido(id_estadoPedido) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Pedidos ADD CONSTRAINT FK_Pedidos_Empleados FOREIGN KEY (id_Empleado) REFERENCES Empleados(id_Empleado) ON DELETE No action ON UPDATE no action;
+
+ALTER TABLE HorasTrabajadas ADD CONSTRAINT FK_HorasTrabajadas_Empleados FOREIGN KEY (id_Empleado) REFERENCES Empleados(id_Empleado) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE HorasTrabajadas ADD CONSTRAINT FK_HorasTrabajadas_TipoHoras FOREIGN KEY (TipoHora) REFERENCES TipoHoras(id_TipoHora) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE PagosRealizados ADD CONSTRAINT FK_PagosRealizados_Empleados FOREIGN KEY (id_Empleado) REFERENCES Empleados(id_Empleado) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE PagosRealizados ADD CONSTRAINT FK_PagosRealizados_DetallePago FOREIGN KEY (id_DetallePago) REFERENCES DetallePago(id_DetallePago) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Deducciones ADD CONSTRAINT FK_Deducciones_Empleados FOREIGN KEY (id_Empleado) REFERENCES Empleados(id_Empleado) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE Deducciones ADD CONSTRAINT FK_Deducciones_TipoDeduccion FOREIGN KEY (TipoDeduccion) REFERENCES TipoDeduccion(id_TipoDeduccion) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE PagoMembresias ADD CONSTRAINT FK_PagoMembresias_Clientes FOREIGN KEY (Id_Cliente) REFERENCES Clientes(id_Cliente) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE PagoMembresias ADD CONSTRAINT FK_PagoMembresias_PeriodoMembresias FOREIGN KEY (id_PeriodoMembresias) REFERENCES PeriodoMembresias(id_PeriodoMembresias) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE PagoMembresias ADD CONSTRAINT FK_PagoMembresias_Membresias FOREIGN KEY (id_Membresias) REFERENCES Membresias(id_Membresia) ON DELETE No action ON UPDATE no action;
+
+ALTER TABLE DescuentosMembresia ADD CONSTRAINT FK_DescuentosMembresia_Membresias FOREIGN KEY (Id_Membresia) REFERENCES Membresias(id_Membresia) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE DescuentosMembresia ADD CONSTRAINT FK_DescuentosMembresia_Categorias FOREIGN KEY (id_Categoria) REFERENCES Categorias(id_Categoria) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE DrEspecialidades ADD CONSTRAINT FK_DrEspecialidades_ConveniosHC FOREIGN KEY (Id_ConveniosHC) REFERENCES ConveniosHC(id_ConveniosHC) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE DatosConvenios ADD CONSTRAINT FK_DatosConvenios_ConveniosHC FOREIGN KEY (Id_ConveniosHC) REFERENCES ConveniosHC(id_ConveniosHC) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE DatosConvenios ADD CONSTRAINT FK_DatosConvenios_Membresias FOREIGN KEY (Id_Membresia) REFERENCES Membresias(id_Membresia) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE ConsultasME ADD CONSTRAINT FK_ConsultasME_DatosConvenios FOREIGN KEY (Id_DatConvenios) REFERENCES DatosConvenios(id_DatConvenios) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE ConsultasME ADD CONSTRAINT FK_ConsultasME_Clientes FOREIGN KEY (Id_Cliente) REFERENCES Clientes(id_Cliente) ON DELETE No action ON UPDATE no action;
+ALTER TABLE ConsultasME ADD CONSTRAINT FK_ConsultasME_DrEspecialidades FOREIGN KEY (Id_DrEspecialidades) REFERENCES DrEspecialidades(id_DrEspecialidades) ON DELETE no action ON UPDATE no action;
+ALTER TABLE Facturas ADD CONSTRAINT FK_Factura_Sucursal FOREIGN KEY (id_Sucursal) REFERENCES Sucursales(id_Sucursal);
+ALTER TABLE Empleados ADD CONSTRAINT FK_Empleado_Sucursal FOREIGN KEY (id_Sucursal) REFERENCES Sucursales(id_Sucursal);
+
+
 use BDFarmacia;
 
 -- Tabla tipoUsuarios
@@ -127,12 +507,12 @@ INSERT INTO InventarioSucursales (id_Producto, id_Sucursal, Cantidad) VALUES
 (5, 5, 110);
 
 
-INSERT INTO Empleados (id_Usuario, Nombre, Direccion, Id_Cargo, Edad, Telefono, FechaIngreso) VALUES 
-(1, 'Juan Pérez', 'Av. Central 123', 1, 35, '7777-8888', '2018-01-10'),
-(2, 'María López', 'Calle Norte 456', 2, 28, '8888-9999', '2019-02-15'),
-(3, 'Carlos García', 'Av. Sur 789', 3, 40, '9999-0000', '2017-03-20'),
-(4, 'Ana Martínez', 'Calle Este 123', 4, 32, '1111-2222', '2020-04-25'),
-(5, 'Laura Rodríguez', 'Av. Oeste 456', 5, 25, '2222-3333', '2016-05-30');
+INSERT INTO Empleados (id_Usuario, Nombre, Direccion, Id_Cargo, Edad, Telefono, FechaIngreso, id_Sucursal) VALUES 
+(1, 'Juan Pérez', 'Av. Central 123', 1, 35, '7777-8888', '2018-01-10', 1),
+(2, 'María López', 'Calle Norte 456', 2, 28, '8888-9999', '2019-02-15', 2),
+(3, 'Carlos García', 'Av. Sur 789', 3, 40, '9999-0000', '2017-03-20', 3),
+(4, 'Ana Martínez', 'Calle Este 123', 4, 32, '1111-2222', '2020-04-25', 4),
+(5, 'Laura Rodríguez', 'Av. Oeste 456', 5, 25, '2222-3333', '2016-05-30', 5);
 
 INSERT INTO Membresias (TipoMembresia, Costo, Beneficios) VALUES 
 ('Básica', 50.00, 'Descuento del 10% en medicamentos'),
@@ -150,12 +530,12 @@ INSERT INTO PeriodoMembresias (periodoMembresia) VALUES
 (180);
 
 
-INSERT INTO Clientes (id_Usuario, NombreCliente, Dui, Dirección, Email, Telefono, FechaConMem, FechaVenMem, id_Membresia, NumCitasAsis) VALUES 
-(4, 'Roberto García', '001234567', 'Colonia 1, San Salvador', 'roberto@example.com', '7777-8888', '2023-01-01', '2024-01-01', 1, 3),
-(5, 'María Rodríguez', '001234568', 'Colonia 2, San Salvador', 'maria@example.com', '9999-0000', '2023-02-01', '2024-02-01', 2, 5),
-(6, 'José Martínez', '001234569', 'Colonia 3, San Salvador', 'jose@example.com', '1111-2222', '2023-03-01', '2024-03-01', 3, 2),
-(7, 'Sofía López', '001234570', 'Colonia 4, San Salvador', 'sofia@example.com', '3333-4444', '2023-04-01', '2024-04-01', 4, 4),
-(8, 'Daniel Hernández', '001234571', 'Colonia 5, San Salvador', 'daniel@example.com', '5555-6666', '2023-05-01', '2024-05-01', 5, 1);
+INSERT INTO Clientes (id_Usuario, NombreCliente, Dui, Dirección, Email, Telefono, id_Membresia, NumCitasAsis) VALUES 
+(4, 'Roberto García', '001234567', 'Colonia 1, San Salvador', 'roberto@example.com', '7777-8888', 1, 3),
+(5, 'María Rodríguez', '001234568', 'Colonia 2, San Salvador', 'maria@example.com', '9999-0000', 2, 5),
+(6, 'José Martínez', '001234569', 'Colonia 3, San Salvador', 'jose@example.com', '1111-2222, 3, 2),
+(7, 'Sofía López', '001234570', 'Colonia 4, San Salvador', 'sofia@example.com', '3333-4444, 4, 4),
+(8, 'Daniel Hernández', '001234571', 'Colonia 5, San Salvador', 'daniel@example.com', '5555-6666', 5, 1);
 
 
 INSERT INTO PagoMembresias (Id_Cliente, FechaPago, MontoPagado, id_PeriodoMembresias, id_Membresias) VALUES 
