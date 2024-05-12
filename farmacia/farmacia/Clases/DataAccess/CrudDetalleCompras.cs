@@ -157,6 +157,14 @@ namespace farmacia.Clases.DataAccess
             return conexionBD.EjecutarConsulta(consulta);
         }
 
+        public SqlDataReader ObtenerSUMTotalesDescuento(String factura)
+        {
+            String consulta = "SELECT SUM(Total), SUM(Descuento) " +
+                "FROM DetalleCompras " +
+                $"WHERE id_Factura = {factura};";
+            return conexionBD.EjecutarPeticion(consulta);
+        }
+
         public String AgregarADetalleCompra(String idFactura, String idProducto, String cantidad)
         {
             SqlParameter errorTextParam = new SqlParameter("@ErrorTexto", SqlDbType.NVarChar, 255);
@@ -180,7 +188,7 @@ namespace farmacia.Clases.DataAccess
 
                 // Recuperar el valor del parámetro de salida
                 errorText = errorTextParam.Value.ToString();
-                if (errorText != null)
+                if (errorText != "")
                 {
                     MessageBox.Show(errorText);
                 }
@@ -210,12 +218,13 @@ namespace farmacia.Clases.DataAccess
             conexionBD.EjecutarComando(comando);
         }
 
-        public void EliminarDetalleCompra(int idDetalleCompra)
+        public void EliminarDetalleCompra(String idFactura, String idProducto)
         {
-            String consulta = "DELETE FROM DetalleCompras WHERE id_DetalleCompra = @IdDetalleCompra";
+            String consulta = "DELETE FROM DetalleCompras WHERE id_Factura = @idFactura AND id_Producto = @idProducto;";
 
             SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@IdDetalleCompra", idDetalleCompra);
+            comando.Parameters.AddWithValue("@idFactura", idFactura);
+            comando.Parameters.AddWithValue("@idProducto", idProducto);
 
             conexionBD.EjecutarComando(comando);
         }
@@ -247,6 +256,13 @@ namespace farmacia.Clases.DataAccess
             object resultado = comando.ExecuteScalar();
             conexionBD.CerrarConexion();
             return resultado != null ? resultado.ToString() : null;
+        }
+
+        //TipoPago
+        public SqlDataReader ObtenerTodosLosTiposDePago()
+        {
+            String consulta = "SELECT * FROM TipoDePagos";
+            return conexionBD.EjecutarPeticion(consulta);
         }
 
         //Filtros de productos

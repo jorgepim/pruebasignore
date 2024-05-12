@@ -48,7 +48,6 @@
             BtnEliminar = new Button();
             BtnEjecutar = new Button();
             label9 = new Label();
-            label10 = new Label();
             label11 = new Label();
             labelDescuento = new Label();
             LabelIva = new Label();
@@ -59,8 +58,9 @@
             txtPrecio = new TextBox();
             LBCambio = new Label();
             LBDescuento = new Label();
-            LBIva = new Label();
             LBTotal = new Label();
+            labtipopago = new Label();
+            CBTipoPago = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)SPCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).BeginInit();
             SuspendLayout();
@@ -105,6 +105,7 @@
             CBMarca.Name = "CBMarca";
             CBMarca.Size = new Size(181, 23);
             CBMarca.TabIndex = 4;
+            CBMarca.SelectedIndexChanged += MarcaCambio;
             // 
             // CBPresentacion
             // 
@@ -116,6 +117,7 @@
             CBPresentacion.Name = "CBPresentacion";
             CBPresentacion.Size = new Size(181, 23);
             CBPresentacion.TabIndex = 5;
+            CBPresentacion.SelectedIndexChanged += PresentacionCambio;
             // 
             // CBCategoria
             // 
@@ -127,6 +129,7 @@
             CBCategoria.Name = "CBCategoria";
             CBCategoria.Size = new Size(181, 23);
             CBCategoria.TabIndex = 6;
+            CBCategoria.SelectedIndexChanged += CategoriaCambio;
             // 
             // label5
             // 
@@ -160,6 +163,7 @@
             BtnBuscar.TabIndex = 9;
             BtnBuscar.Text = "Buscar";
             BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
             // 
             // label6
             // 
@@ -223,6 +227,7 @@
             tablaProductos.RowTemplate.Height = 29;
             tablaProductos.Size = new Size(592, 173);
             tablaProductos.TabIndex = 16;
+            tablaProductos.SelectionChanged += SeleccionTabla;
             // 
             // label8
             // 
@@ -258,6 +263,7 @@
             BtnEliminar.TabIndex = 19;
             BtnEliminar.Text = "Eliminar";
             BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // BtnEjecutar
             // 
@@ -280,17 +286,6 @@
             label9.Size = new Size(117, 32);
             label9.TabIndex = 21;
             label9.Text = "Descuento:";
-            // 
-            // label10
-            // 
-            label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(778, 384);
-            label10.Name = "label10";
-            label10.Size = new Size(117, 32);
-            label10.TabIndex = 22;
-            label10.Text = "IVA:";
             // 
             // label11
             // 
@@ -386,14 +381,6 @@
             LBDescuento.TabIndex = 33;
             LBDescuento.Text = "label15";
             // 
-            // LBIva
-            // 
-            LBIva.Location = new Point(898, 393);
-            LBIva.Name = "LBIva";
-            LBIva.Size = new Size(92, 23);
-            LBIva.TabIndex = 34;
-            LBIva.Text = "label16";
-            // 
             // LBTotal
             // 
             LBTotal.Location = new Point(898, 425);
@@ -402,6 +389,28 @@
             LBTotal.TabIndex = 35;
             LBTotal.Text = "label17";
             // 
+            // labtipopago
+            // 
+            labtipopago.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            labtipopago.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labtipopago.ForeColor = Color.White;
+            labtipopago.Location = new Point(525, 468);
+            labtipopago.Name = "labtipopago";
+            labtipopago.Size = new Size(152, 32);
+            labtipopago.TabIndex = 36;
+            labtipopago.Text = "Tipo de pago:";
+            // 
+            // CBTipoPago
+            // 
+            CBTipoPago.BackColor = Color.FromArgb(79, 80, 95);
+            CBTipoPago.ForeColor = Color.White;
+            CBTipoPago.FormattingEnabled = true;
+            CBTipoPago.Location = new Point(666, 470);
+            CBTipoPago.Margin = new Padding(3, 2, 3, 2);
+            CBTipoPago.Name = "CBTipoPago";
+            CBTipoPago.Size = new Size(181, 23);
+            CBTipoPago.TabIndex = 37;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -409,8 +418,9 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(1185, 562);
+            Controls.Add(CBTipoPago);
+            Controls.Add(labtipopago);
             Controls.Add(LBTotal);
-            Controls.Add(LBIva);
             Controls.Add(LBDescuento);
             Controls.Add(LBCambio);
             Controls.Add(txtPrecio);
@@ -421,7 +431,6 @@
             Controls.Add(LabelIva);
             Controls.Add(labelDescuento);
             Controls.Add(label11);
-            Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(BtnEjecutar);
             Controls.Add(BtnEliminar);
@@ -472,7 +481,6 @@
         private Button BtnEliminar;
         private Button BtnEjecutar;
         private Label label9;
-        private Label label10;
         private Label label11;
         private Label labelDescuento;
         private Label LabelIva;
@@ -483,7 +491,8 @@
         private TextBox txtPrecio;
         private Label LBCambio;
         private Label LBDescuento;
-        private Label LBIva;
         private Label LBTotal;
+        private Label labtipopago;
+        private ComboBox CBTipoPago;
     }
 }

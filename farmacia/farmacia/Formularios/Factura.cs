@@ -15,8 +15,8 @@ namespace farmacia
         {
             InitializeComponent();
             LlenarCombos();
-            LlenadoDeTablas();
             BtnEjecutar.Enabled = false;
+            BtnEliminar.Enabled = false;
         }
 
         private void MarcaCambio(object sender, EventArgs e)
@@ -175,6 +175,15 @@ namespace farmacia
                 CBPresentacion.Items.Add(llenador.GetInt32(0).ToString() + "| " + llenador.GetString(1));
             }
             CBPresentacion.SelectedIndex = 0;
+            llenador.Close();
+
+            llenador = datos.ObtenerTodosLosTiposDePago();
+            CBTipoPago.Items.Add("Seleccionar");
+            while (llenador.Read())
+            {
+                CBTipoPago.Items.Add(llenador.GetInt32(0).ToString() + "| " + llenador.GetString(1));
+            }
+            CBTipoPago.SelectedIndex = 0;
             llenador.Close();
 
             LlenarDeProductos();
@@ -354,6 +363,7 @@ namespace farmacia
                 LlenadoDeTablas();
                 txtPrecio.Text = "";
                 SPCantidad.Value = 0;
+                LlenadorDeTotales();
             }
             else
             {
@@ -364,6 +374,7 @@ namespace farmacia
                 LlenadoDeTablas();
                 txtPrecio.Text = "";
                 SPCantidad.Value = 0;
+                LlenadorDeTotales() ;
             }
             BtnEjecutar.Enabled = true;
         }
@@ -389,7 +400,16 @@ namespace farmacia
             }
             else
             {
-                factura.LlenarFactura(idFactura.ToString());
+                if (CBTipoPago.SelectedIndex !=0)
+                {
+                    String tipoPago = EncontrarSeleccion(CBTipoPago);
+                    factura.LlenarFactura(idFactura.ToString(), tipoPago);
+                    MessageBox.Show("La factura se almaceno exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("No ha seleccionado el tipo de pago");
+                }
             }
         }
 
@@ -402,7 +422,7 @@ namespace farmacia
                 String precio = detalle.RecuperarPrecio(producto);
                 if (precio != null)
                 {
-                    txtPrecio.Text = "$"+precio;
+                    txtPrecio.Text = "$" + precio;
                 }
                 else
                 {
@@ -413,6 +433,53 @@ namespace farmacia
             {
                 txtPrecio.Text = "";
             }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            if (tablaProductos.SelectedRows.Count > 0)
+            {
+                CrudDetalleCompras detalle = new CrudDetalleCompras();
+                DataGridViewRow selectedRow = tablaProductos.SelectedRows[0];
+                string valor = selectedRow.Cells["ID"].Value.ToString();
+                detalle.EliminarDetalleCompra(idFactura.ToString(), valor);
+                LlenadoDeTablas();
+                LlenadorDeTotales();
+                BtnEliminar.Enabled = false;
+            }
+        }
+
+        private void SeleccionTabla(object sender, EventArgs e)
+        {
+            if (tablaProductos.SelectedRows.Count > 0)
+            {
+                // Activar el botón
+                BtnEliminar.Enabled = true;
+            }
+            else
+            {
+                // Desactivar el botón
+                BtnEliminar.Enabled = false;
+            }
+        }
+
+        public void LlenadorDeTotales()
+        {
+            decimal subtotal = 0, descuento = 0, total = 0;
+            CrudDetalleCompras llenador = new CrudDetalleCompras();
+            SqlDataReader reader = llenador.ObtenerSUMTotalesDescuento(idFactura.ToString());
+
+            if (reader.Read())
+            {
+                subtotal = reader.IsDBNull(0) ? 0 : reader.GetDecimal(0);
+                descuento = reader.IsDBNull(1) ? 0 : reader.GetDecimal(1);
+
+                total = subtotal - descuento;
+            }
+
+            reader.Close();
+            LBDescuento.Text = "$" + descuento.ToString();
+            LBTotal.Text = "$" + total.ToString();
         }
     }
 }

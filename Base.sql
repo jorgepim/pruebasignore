@@ -821,31 +821,42 @@ END;
 --SELECT @Resultado AS Respuesta;
 
 CREATE PROCEDURE CalcularTotalesDeDetalle
-	@idFactura INT
+    @idFactura INT,
+    @tipoDePago INT 
 AS
 BEGIN
-	DECLARE @Subtotal DECIMAL(12,2);
-	DECLARE @TotalDescuento DECIMAL(12,2);
-	DECLARE @TotalFinal DECIMAL(12,2);
+    -- Declarar las variables para los cálculos
+    DECLARE @Subtotal DECIMAL(12, 2);
+    DECLARE @TotalDescuento DECIMAL(12, 2);
+    DECLARE @TotalFinal DECIMAL(12, 2);
+    DECLARE @fechaActual DATETIME = GETDATE(); 
 
-	SELECT @Subtotal = SUM(Total), @TotalDescuento = SUM(Descuento)
-	FROM DetalleCompras
-	WHERE id_Factura = @idFactura;
+    -- Calcular Subtotal y TotalDescuento a partir de DetalleCompras
+    SELECT @Subtotal = SUM(Total), @TotalDescuento = SUM(Descuento)
+    FROM DetalleCompras
+    WHERE id_Factura = @idFactura;
 
-	SET @TotalFinal = @Subtotal - @TotalDescuento;
+    -- Calcular el TotalFinal restando el descuento al subtotal
+    SET @TotalFinal = @Subtotal - @TotalDescuento;
 
-	UPDATE Facturas 
-	SET Subtotal = @Subtotal, Descuento = @TotalDescuento, Total = @TotalFinal
-	WHERE id_Factura = @idFactura;
+    -- Actualizar la tabla Facturas con los nuevos valores, incluyendo fecha y tipo de pago
+    UPDATE Facturas
+    SET 
+        Subtotal = @Subtotal,
+        Descuento = @TotalDescuento,
+        Total = @TotalFinal,
+        Fecha = @fechaActual,            
+        id_TipoPago = @tipoDePago         
+    WHERE 
+        id_Factura = @idFactura;
 
 END;
 
-
---EXEC CalcularTotalesDeDetalle 3;
+--EXEC CalcularTotalesDeDetalle 3,1;
 
 --TRIGGERS
 
-CREATE TRIGGER RestarStockPorCompra
+CREATE TRIGGER trg_RestarStockPorCompra
 ON DetalleCompras
 AFTER INSERT
 AS
@@ -878,3 +889,29 @@ BEGIN
 	AND id_Producto = @IdProducto;
 
 END;
+
+
+CREATE TRIGGER trg_AfterDeleteDetalleCompra ON DetalleCompras
+AFTER DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @idProducto int, @totalCantidad int;
+
+    SELECT @idProducto = d.id_Producto, @totalCantidad = SUM(d.Cantidad)
+    FROM deleted d
+    WHERE d.id_Producto = d.id_Producto
+    GROUP BY d.id_Producto;
+
+    -- Actualizar la tabla Productos
+    UPDATE Productos
+    SET Stock = Stock + @totalCantidad
+    WHERE id_Producto = @idProducto;
+
+    -- Actualizar la tabla InventarioSucursales
+    UPDATE InventarioSucursales
+    SET Cantidad = Cantidad + @totalCantidad
+    WHERE id_Producto = @idProducto;
+END;
+

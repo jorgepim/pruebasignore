@@ -30,13 +30,14 @@ namespace farmacia.Clases.DataAccess
             return conexion.EjecutarComando(command);
         }
 
-        public void LlenarFactura(String idFactura)
+        public void LlenarFactura(String idFactura, String TipoPago)
         {
             SqlCommand command = new SqlCommand("CalcularTotalesDeDetalle", conexion.ObtenerConexion());
             command.CommandType = CommandType.StoredProcedure;
 
             // Agregar los parámetros de entrada
             command.Parameters.AddWithValue("@IdFactura", idFactura);
+            command.Parameters.AddWithValue("@TipoPago", TipoPago);
             
             try
             {
