@@ -19,9 +19,11 @@ namespace farmacia.Formularios.multimedia
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        public Menu()
+        public static String idEmpleado;
+        public Menu(String id)
         {
             InitializeComponent();
+            idEmpleado = id;
             random = new Random();
             btnCerrar.Visible = false;
             this.Text = String.Empty;
@@ -100,15 +102,6 @@ namespace farmacia.Formularios.multimedia
         }
 
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-
-
-       
-
         public void reset()
         {
             DisableButton();
@@ -153,7 +146,7 @@ namespace farmacia.Formularios.multimedia
 
         private void btnFactura_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Factura(), sender);
+            OpenChildForm(new Factura("1"), sender);
         }
 
         private void btnMembresias_Click_1(object sender, EventArgs e)
