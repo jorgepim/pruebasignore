@@ -78,6 +78,7 @@ namespace farmacia.Formularios
             tablaClientes.Columns["DIRECCIÓN"].Width = 100;
             tablaClientes.Columns["E-MAIL"].Width = 100;
             tablaClientes.Columns["NÚMERO DE CITAS"].Width = 100;
+            tablaClientes.Columns["MEMBRESIA"].Width = 100;
             tablaClientes.AllowUserToAddRows = false;
             tablaClientes.Columns["ID"].ReadOnly = true;
             tablaClientes.Columns["NOMBRE"].ReadOnly = true;
@@ -85,6 +86,7 @@ namespace farmacia.Formularios
             tablaClientes.Columns["DIRECCIÓN"].ReadOnly = true;
             tablaClientes.Columns["E-MAIL"].ReadOnly = true;
             tablaClientes.Columns["NÚMERO DE CITAS"].ReadOnly = true;
+            tablaClientes.Columns["MEMBRESIA"].ReadOnly = true;
             foreach (DataGridViewColumn column in tablaClientes.Columns)
             {
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -159,6 +161,7 @@ namespace farmacia.Formularios
                 TxtDirec.Enabled = false;
                 txtEmail.Enabled = false;
                 txtTel.Enabled = false;
+                btnAgregar.Enabled = false;
             }
 
         }
