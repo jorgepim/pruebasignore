@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -141,19 +142,9 @@ namespace farmacia.Formularios.multimedia
 
         private void btnClientes_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Formularios.Clientes(), sender);
+            OpenChildForm(new Formularios.Clientes(this), sender);
         }
 
-        private void btnFactura_Click_1(object sender, EventArgs e)
-        {
-            OpenChildForm(new Factura("1"), sender);
-        }
-
-        private void btnMembresias_Click_1(object sender, EventArgs e)
-        {
-            OpenChildForm(new Membresia(), sender);
-
-        }
 
         private void btnSucursales_Click_1(object sender, EventArgs e)
         {

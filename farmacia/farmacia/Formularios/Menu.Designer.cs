@@ -33,8 +33,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
             this.btnSucursales = new System.Windows.Forms.Button();
-            this.btnMembresias = new System.Windows.Forms.Button();
-            this.btnFactura = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,8 +57,6 @@
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btnCitas);
             this.panelMenu.Controls.Add(this.btnSucursales);
-            this.panelMenu.Controls.Add(this.btnMembresias);
-            this.panelMenu.Controls.Add(this.btnFactura);
             this.panelMenu.Controls.Add(this.btnClientes);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -78,7 +74,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 355);
+            this.button1.Location = new System.Drawing.Point(0, 243);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(189, 71);
@@ -98,7 +94,7 @@
             this.btnCitas.ForeColor = System.Drawing.Color.Black;
             this.btnCitas.Image = ((System.Drawing.Image)(resources.GetObject("btnCitas.Image")));
             this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.Location = new System.Drawing.Point(0, 299);
+            this.btnCitas.Location = new System.Drawing.Point(0, 187);
             this.btnCitas.Name = "btnCitas";
             this.btnCitas.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnCitas.Size = new System.Drawing.Size(189, 56);
@@ -118,7 +114,7 @@
             this.btnSucursales.ForeColor = System.Drawing.Color.Black;
             this.btnSucursales.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursales.Image")));
             this.btnSucursales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSucursales.Location = new System.Drawing.Point(0, 243);
+            this.btnSucursales.Location = new System.Drawing.Point(0, 131);
             this.btnSucursales.Name = "btnSucursales";
             this.btnSucursales.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnSucursales.Size = new System.Drawing.Size(189, 56);
@@ -128,46 +124,6 @@
             this.btnSucursales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSucursales.UseVisualStyleBackColor = true;
             this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click_1);
-            // 
-            // btnMembresias
-            // 
-            this.btnMembresias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMembresias.FlatAppearance.BorderSize = 0;
-            this.btnMembresias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMembresias.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMembresias.ForeColor = System.Drawing.Color.Black;
-            this.btnMembresias.Image = ((System.Drawing.Image)(resources.GetObject("btnMembresias.Image")));
-            this.btnMembresias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembresias.Location = new System.Drawing.Point(0, 187);
-            this.btnMembresias.Name = "btnMembresias";
-            this.btnMembresias.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnMembresias.Size = new System.Drawing.Size(189, 56);
-            this.btnMembresias.TabIndex = 3;
-            this.btnMembresias.Text = " Membresias";
-            this.btnMembresias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMembresias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMembresias.UseVisualStyleBackColor = true;
-            this.btnMembresias.Click += new System.EventHandler(this.btnMembresias_Click_1);
-            // 
-            // btnFactura
-            // 
-            this.btnFactura.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFactura.FlatAppearance.BorderSize = 0;
-            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFactura.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFactura.ForeColor = System.Drawing.Color.Black;
-            this.btnFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnFactura.Image")));
-            this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFactura.Location = new System.Drawing.Point(0, 131);
-            this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnFactura.Size = new System.Drawing.Size(189, 56);
-            this.btnFactura.TabIndex = 2;
-            this.btnFactura.Text = "   Factura";
-            this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFactura.UseVisualStyleBackColor = true;
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click_1);
             // 
             // btnClientes
             // 
@@ -342,8 +298,6 @@
         private Panel panelMenu;
         private Button btnCitas;
         private Button btnSucursales;
-        private Button btnMembresias;
-        private Button btnFactura;
         private Button btnClientes;
         private Panel panelLogo;
         private Panel panelTitulo;

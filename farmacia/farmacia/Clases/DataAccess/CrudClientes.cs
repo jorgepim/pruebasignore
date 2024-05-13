@@ -23,7 +23,18 @@ namespace farmacia.Clases.DataAccess
         public DataTable VerRegistros()
         {
             DataTable table = new DataTable();
-            string query = "SELECT id_Cliente AS 'ID', NombreCliente AS 'NOMBRE', Dui AS 'DUI', Dirección AS 'DIRECCIÓN', Email AS 'E-MAIL' ,Telefono AS 'TELÉFONO', NumCitasAsis AS 'NÚMERO DE CITAS' FROM Clientes";
+            string query = @"SELECT 
+                        C.id_Cliente AS 'ID',
+                        C.NombreCliente AS 'NOMBRE', 
+                        C.Dui AS 'DUI', 
+                        C.Dirección AS 'DIRECCIÓN', 
+                        C.Email AS 'E-MAIL', 
+                        C.Telefono AS 'TELÉFONO',
+                        C.NumCitasAsis AS 'NÚMERO DE CITAS', 
+                        M.TipoMembresia AS 'Membresia'
+                    FROM 
+                        Clientes C
+                        INNER JOIN Membresias M ON C.id_Membresia = M.id_Membresia;";
             SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
             comando.CommandType = CommandType.Text;
             conexion.AbrirConexion();
@@ -40,9 +51,9 @@ namespace farmacia.Clases.DataAccess
             {
                 conexion.AbrirConexion();
 
-                 string query = "INSERT INTO Clientes (id_Usuario, NombreCliente, Dui, Dirección, Email, Telefono, NumCitasAsis)" +
-                   "VALUES (3, @NombreCliente, @Dui, @Dirección, @Email, @Teléfono, 0)";
-            SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
+                 string query = "INSERT INTO Clientes (id_Usuario, NombreCliente, Dui, Dirección, Email, Telefono, id_Membresia, NumCitasAsis)" +
+                                 "VALUES (3, @NombreCliente, @Dui, @Dirección, @Email, @Teléfono, 6, 0)";
+                SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
                 comando.Parameters.AddWithValue("@NombreCliente", PnombreCliente);
                 comando.Parameters.AddWithValue("@Dui", Pdui);
                 comando.Parameters.AddWithValue("@Dirección", Pdireccion);

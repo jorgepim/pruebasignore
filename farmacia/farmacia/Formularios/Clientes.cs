@@ -16,12 +16,14 @@ namespace farmacia.Formularios
     public partial class Clientes : Form
     {
         CrudClientes cliente;
-        public Clientes()
+        Form menu;
+        public Clientes(Form menu)
         {
             InitializeComponent();
             LoadTheme();
             LlenadoDeTablas();
             cliente = new CrudClientes();
+            this.menu = menu;
         }
 
         private void LoadTheme()
@@ -78,6 +80,7 @@ namespace farmacia.Formularios
             tablaClientes.Columns["DIRECCIÓN"].Width = 100;
             tablaClientes.Columns["E-MAIL"].Width = 100;
             tablaClientes.Columns["NÚMERO DE CITAS"].Width = 100;
+            tablaClientes.Columns["MEMBRESIA"].Width = 100;
             tablaClientes.AllowUserToAddRows = false;
             tablaClientes.Columns["ID"].ReadOnly = true;
             tablaClientes.Columns["NOMBRE"].ReadOnly = true;
@@ -85,6 +88,7 @@ namespace farmacia.Formularios
             tablaClientes.Columns["DIRECCIÓN"].ReadOnly = true;
             tablaClientes.Columns["E-MAIL"].ReadOnly = true;
             tablaClientes.Columns["NÚMERO DE CITAS"].ReadOnly = true;
+            tablaClientes.Columns["MEMBRESIA"].ReadOnly = true;
             foreach (DataGridViewColumn column in tablaClientes.Columns)
             {
                 column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -122,23 +126,7 @@ namespace farmacia.Formularios
 
 
 
-        private void btnMembresia_Click(object sender, EventArgs e)
-        {
-            if (tablaClientes.SelectedRows.Count > 0)
-            {
-                string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
-                Membresia membresia = new Membresia(nombre, dui);
-                membresia.Show();
-                this.Hide();
 
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un cliente.");
-            }
-
-        }
         public void ObtenerDatosData()
         {
             if (tablaClientes.SelectedRows.Count > 0)
@@ -159,6 +147,7 @@ namespace farmacia.Formularios
                 TxtDirec.Enabled = false;
                 txtEmail.Enabled = false;
                 txtTel.Enabled = false;
+                btnAgregar.Enabled = false;
             }
 
         }
@@ -173,11 +162,31 @@ namespace farmacia.Formularios
             if (tablaClientes.SelectedRows.Count > 0)
             {
                 string id = tablaClientes.SelectedRows[0].Cells["ID"].Value.ToString();
-                
-                Factura factura = new Factura(id);
+                Factura factura = new Factura(id, menu);
+                menu.Hide();
                 factura.Show();
                 this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un cliente.");
+            }
+        }
 
+        private void btnMembresia_Click_1(object sender, EventArgs e)
+        {
+            if (tablaClientes.SelectedRows.Count > 0)
+            {
+                string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
+                string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
+                Membresia membresia = new Membresia(nombre, dui, menu);
+                membresia.Show();
+                menu.Hide();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un cliente.");
             }
         }
     }
