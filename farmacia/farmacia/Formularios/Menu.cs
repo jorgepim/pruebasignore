@@ -145,16 +145,6 @@ namespace farmacia.Formularios.multimedia
             OpenChildForm(new Formularios.Clientes(this), sender);
         }
 
-        private void btnFactura_Click_1(object sender, EventArgs e)
-        {
-            OpenChildForm(new Factura("1",  this), sender);
-        }
-
-        private void btnMembresias_Click_1(object sender, EventArgs e)
-        {
-            OpenChildForm(new Membresia(), sender);
-
-        }
 
         private void btnSucursales_Click_1(object sender, EventArgs e)
         {

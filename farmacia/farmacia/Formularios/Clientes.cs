@@ -162,12 +162,14 @@ namespace farmacia.Formularios
             if (tablaClientes.SelectedRows.Count > 0)
             {
                 string id = tablaClientes.SelectedRows[0].Cells["ID"].Value.ToString();
-                
                 Factura factura = new Factura(id, menu);
                 menu.Hide();
                 factura.Show();
                 this.Hide();
-
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un cliente.");
             }
         }
 
