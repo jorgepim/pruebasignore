@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,14 @@ namespace farmacia.Formularios
 {
     public partial class Membresia : Form
     {
-        public Membresia(string nombre, string dui)
+        Form menu;
+        public Membresia(string nombre, string dui, Form menu)
         {
             InitializeComponent();
             lblNombre.Text = nombre;
             lblDUI.Text = dui;
             LlenadoCombos();
+            this.menu = menu;
         }
         public Membresia()
         {
@@ -76,6 +79,8 @@ namespace farmacia.Formularios
          private void btnRegresar_Click(object sender, EventArgs e)
          {
             this.Close();
+            menu.Show();
+          
          }
 
         private void btnAgregar_Click(object sender, EventArgs e)

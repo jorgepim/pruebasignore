@@ -16,12 +16,14 @@ namespace farmacia.Formularios
     public partial class Clientes : Form
     {
         CrudClientes cliente;
-        public Clientes()
+        Form menu;
+        public Clientes(Form menu)
         {
             InitializeComponent();
             LoadTheme();
             LlenadoDeTablas();
             cliente = new CrudClientes();
+            this.menu = menu;
         }
 
         private void LoadTheme()
@@ -124,23 +126,7 @@ namespace farmacia.Formularios
 
 
 
-        private void btnMembresia_Click(object sender, EventArgs e)
-        {
-            if (tablaClientes.SelectedRows.Count > 0)
-            {
-                string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
-                Membresia membresia = new Membresia(nombre, dui);
-                membresia.Show();
-                this.Hide();
 
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un cliente.");
-            }
-
-        }
         public void ObtenerDatosData()
         {
             if (tablaClientes.SelectedRows.Count > 0)
@@ -177,10 +163,28 @@ namespace farmacia.Formularios
             {
                 string id = tablaClientes.SelectedRows[0].Cells["ID"].Value.ToString();
                 
-                Factura factura = new Factura(id);
+                Factura factura = new Factura(id, menu);
+                menu.Hide();
                 factura.Show();
                 this.Hide();
 
+            }
+        }
+
+        private void btnMembresia_Click_1(object sender, EventArgs e)
+        {
+            if (tablaClientes.SelectedRows.Count > 0)
+            {
+                string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
+                string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
+                Membresia membresia = new Membresia(nombre, dui, menu);
+                membresia.Show();
+                menu.Hide();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un cliente.");
             }
         }
     }

@@ -23,7 +23,7 @@ namespace farmacia.Formularios
             InitializeComponent();
         }
 
-        private String DevolverEmpleado(String idUsuario)
+        /*private String DevolverEmpleado(String idUsuario)
         {
             String empleado = "";
             cadenaConexion.Open();
@@ -35,9 +35,13 @@ namespace farmacia.Formularios
             if (lector != null)
             {
                 empleado = lector.GetInt32(0).ToString();
+                lector.Close();
+                cadenaConexion.Close();
             }
-            return empleado;    
-        }
+            return empleado;
+
+            
+        }*/
 
         private void IniciarSesion_Click_1(object sender, EventArgs e)
         {
@@ -53,7 +57,8 @@ namespace farmacia.Formularios
             {
                 lector.Read();
                 string id_tipoUsuario = lector["id_tipoUsuario"].ToString();
-                idEmpleado = DevolverEmpleado(id_tipoUsuario);
+              
+                /*idEmpleado = DevolverEmpleado(id_tipoUsuario);*/
                 if (id_tipoUsuario == "2")
                 {
                     Menu menu = new Menu(idEmpleado);
@@ -71,7 +76,6 @@ namespace farmacia.Formularios
             {
                 MessageBox.Show("La contraseña o el usuario son incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             lector.Close();
             cadenaConexion.Close();
         }

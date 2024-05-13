@@ -12,7 +12,7 @@ namespace farmacia
         String idCliente = "";
         String idEmpleado = "1";
 
-        public Factura(String cliente)
+        public Factura(String cliente, Form menu)
         {
             InitializeComponent();
             LlenarCombos();
