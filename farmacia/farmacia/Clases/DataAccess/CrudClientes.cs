@@ -40,8 +40,8 @@ namespace farmacia.Clases.DataAccess
             {
                 conexion.AbrirConexion();
 
-                 string query = "INSERT INTO Clientes (id_Usuario, NombreCliente, Dui, Dirección, Email, Telefono, fechaConMem, id_Membresia, NumCitasAsis)" +
-                   "VALUES (3, @NombreCliente, @Dui, @Dirección, @Email, @Teléfono, GETDATE(), 1, @NumCitasAsis)";
+                 string query = "INSERT INTO Clientes (id_Usuario, NombreCliente, Dui, Dirección, Email, Telefono, NumCitasAsis)" +
+                   "VALUES (3, @NombreCliente, @Dui, @Dirección, @Email, @Teléfono, 0)";
             SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
                 comando.Parameters.AddWithValue("@NombreCliente", PnombreCliente);
                 comando.Parameters.AddWithValue("@Dui", Pdui);

@@ -1,5 +1,6 @@
 ﻿using farmacia.Clases.DataAccess;
 using farmacia.Clases.Entidades;
+using farmacia.Formularios.multimedia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,20 +29,42 @@ namespace farmacia.Formularios
             lblClientes.ForeColor = ThemeColor.SecondaryColor;
         }
 
+        public bool Validacion()
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text) || 
+                string.IsNullOrEmpty(txtDui.Text) || 
+                string.IsNullOrEmpty(txtEmail.Text) || 
+                string.IsNullOrEmpty(txtTel.Text) || 
+                string.IsNullOrEmpty(TxtDirec.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
+            if (Validacion())
             {
-                bool estado = cliente.InsertarReg(txtNombre.Text, txtDui.Text, TxtDirec.Text, txtEmail.Text, txtTel.Text);
-                if (estado)
-                    MessageBox.Show("El cliente se ha registrado éxitosamente");
+                try
+                {
+                    bool estado = cliente.InsertarReg(txtNombre.Text, txtDui.Text, TxtDirec.Text, txtEmail.Text, txtTel.Text);
+                    if (estado)
+                        MessageBox.Show("El cliente se ha registrado éxitosamente");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                LlenadoDeTablas();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ocurrió un error" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Llena todos los campos" , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LlenadoDeTablas();
-
         }
         public void LlenadoDeTablas()
         {
@@ -71,15 +94,10 @@ namespace farmacia.Formularios
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             if (txtBuscar.Text != "")
             {
                 tablaClientes.CurrentCell = null;
-                
+
                 foreach (DataGridViewRow r in tablaClientes.Rows)
                 {
                     foreach (DataGridViewCell c in r.Cells)
@@ -98,8 +116,56 @@ namespace farmacia.Formularios
             }
             else
             {
-                MessageBox.Show("Broder, ponga un nombre primero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LlenadoDeTablas();
             }
+        }
+
+        
+
+        private void btnMembresia_Click(object sender, EventArgs e)
+        {
+            if (tablaClientes.SelectedRows.Count > 0)
+            {
+                string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
+                string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
+                Membresia membresia = new Membresia(nombre, dui);
+                membresia.Show();
+                this.Hide();
+        
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un cliente.");
+            }
+
+        }
+        public void ObtenerDatosData()
+        {
+            if (tablaClientes.SelectedRows.Count > 0)
+            {
+                string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value?.ToString();
+                string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value?.ToString();
+                string direccion = tablaClientes.SelectedRows[0].Cells["DIRECCIÓN"].Value?.ToString();
+                string email = tablaClientes.SelectedRows[0].Cells["E-MAIL"].Value?.ToString();
+                string telefono = tablaClientes.SelectedRows[0].Cells["TELÉFONO"].Value?.ToString();
+
+                txtNombre.Text = nombre;
+                txtDui.Text = dui;
+                TxtDirec.Text = direccion;
+                txtEmail.Text = email;
+                txtTel.Text = telefono;
+                txtNombre.Enabled = false;
+                txtDui.Enabled = false;
+                TxtDirec.Enabled = false;
+                txtEmail.Enabled = false;
+                txtTel.Enabled = false;
+            }
+
+        }
+
+        private void tablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ObtenerDatosData();
         }
     }
 }

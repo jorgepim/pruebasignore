@@ -33,19 +33,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMembresia = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.TxtDirec = new System.Windows.Forms.TextBox();
             this.txtDui = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblClientes = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnMembresia = new System.Windows.Forms.Button();
+            this.btnFactura = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,9 +56,9 @@
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(29, 364);
+            this.btnAgregar.Location = new System.Drawing.Point(70, 330);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(307, 67);
+            this.btnAgregar.Size = new System.Drawing.Size(210, 67);
             this.btnAgregar.TabIndex = 12;
             this.btnAgregar.Text = "   Agregar Cliente";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -94,16 +94,6 @@
             this.label4.Size = new System.Drawing.Size(98, 29);
             this.label4.TabIndex = 3;
             this.label4.Text = "DUI:";
-            // 
-            // txtMembresia
-            // 
-            this.txtMembresia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.txtMembresia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMembresia.ForeColor = System.Drawing.Color.White;
-            this.txtMembresia.Location = new System.Drawing.Point(165, 296);
-            this.txtMembresia.Name = "txtMembresia";
-            this.txtMembresia.Size = new System.Drawing.Size(171, 20);
-            this.txtMembresia.TabIndex = 11;
             // 
             // txtTel
             // 
@@ -154,16 +144,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(171, 20);
             this.txtNombre.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(29, 299);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 29);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "No Membresía:";
             // 
             // label2
             // 
@@ -223,6 +203,7 @@
             this.tablaClientes.RowTemplate.Height = 29;
             this.tablaClientes.Size = new System.Drawing.Size(647, 339);
             this.tablaClientes.TabIndex = 19;
+            this.tablaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellClick);
             // 
             // button1
             // 
@@ -237,7 +218,38 @@
             this.button1.TabIndex = 22;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            
+            // 
+            // btnMembresia
+            // 
+            this.btnMembresia.FlatAppearance.BorderSize = 0;
+            this.btnMembresia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMembresia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMembresia.ForeColor = System.Drawing.Color.White;
+            this.btnMembresia.Image = ((System.Drawing.Image)(resources.GetObject("btnMembresia.Image")));
+            this.btnMembresia.Location = new System.Drawing.Point(29, 448);
+            this.btnMembresia.Name = "btnMembresia";
+            this.btnMembresia.Size = new System.Drawing.Size(176, 67);
+            this.btnMembresia.TabIndex = 23;
+            this.btnMembresia.Text = " Membresias";
+            this.btnMembresia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMembresia.UseVisualStyleBackColor = true;
+            this.btnMembresia.Click += new System.EventHandler(this.btnMembresia_Click);
+            // 
+            // btnFactura
+            // 
+            this.btnFactura.FlatAppearance.BorderSize = 0;
+            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFactura.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFactura.ForeColor = System.Drawing.Color.White;
+            this.btnFactura.Image = ((System.Drawing.Image)(resources.GetObject("btnFactura.Image")));
+            this.btnFactura.Location = new System.Drawing.Point(29, 521);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Size = new System.Drawing.Size(130, 67);
+            this.btnFactura.TabIndex = 24;
+            this.btnFactura.Text = "Factura";
+            this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFactura.UseVisualStyleBackColor = true;
             // 
             // Clientes
             // 
@@ -245,6 +257,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1023, 629);
+            this.Controls.Add(this.btnFactura);
+            this.Controls.Add(this.btnMembresia);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label5);
@@ -252,7 +266,6 @@
             this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tablaClientes);
-            this.Controls.Add(this.txtMembresia);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.txtEmail);
@@ -261,7 +274,6 @@
             this.Controls.Add(this.txtDui);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label6);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Clientes";
             this.Text = "Clientes";
@@ -277,8 +289,6 @@
         private Label label3;
         private Label label2;
         private Label Nombre;
-        private Label label6;
-        private TextBox txtMembresia;
         private TextBox txtTel;
         private TextBox txtEmail;
         private TextBox TxtDirec;
@@ -289,5 +299,7 @@
         private Label lblClientes;
         private DataGridView tablaClientes;
         private Button button1;
+        private Button btnMembresia;
+        private Button btnFactura;
     }
 }
