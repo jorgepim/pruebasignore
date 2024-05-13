@@ -31,10 +31,10 @@ namespace farmacia.Formularios
 
         public bool Validacion()
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) || 
-                string.IsNullOrEmpty(txtDui.Text) || 
-                string.IsNullOrEmpty(txtEmail.Text) || 
-                string.IsNullOrEmpty(txtTel.Text) || 
+            if (string.IsNullOrEmpty(txtNombre.Text) ||
+                string.IsNullOrEmpty(txtDui.Text) ||
+                string.IsNullOrEmpty(txtEmail.Text) ||
+                string.IsNullOrEmpty(txtTel.Text) ||
                 string.IsNullOrEmpty(TxtDirec.Text))
             {
                 return false;
@@ -63,7 +63,7 @@ namespace farmacia.Formularios
             }
             else
             {
-                MessageBox.Show("Llena todos los campos" , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Llena todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void LlenadoDeTablas()
@@ -120,7 +120,7 @@ namespace farmacia.Formularios
             }
         }
 
-        
+
 
         private void btnMembresia_Click(object sender, EventArgs e)
         {
@@ -131,7 +131,7 @@ namespace farmacia.Formularios
                 Membresia membresia = new Membresia(nombre, dui);
                 membresia.Show();
                 this.Hide();
-        
+
             }
             else
             {
@@ -166,6 +166,19 @@ namespace farmacia.Formularios
         private void tablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ObtenerDatosData();
+        }
+
+        private void AbrirFactura(object sender, EventArgs e)
+        {
+            if (tablaClientes.SelectedRows.Count > 0)
+            {
+                string id = tablaClientes.SelectedRows[0].Cells["ID"].Value.ToString();
+                
+                Factura factura = new Factura(id);
+                factura.Show();
+                this.Hide();
+
+            }
         }
     }
 }

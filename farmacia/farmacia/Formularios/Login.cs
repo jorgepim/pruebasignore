@@ -16,13 +16,28 @@ namespace farmacia.Formularios
 {
     public partial class Login : Form
     {
+        String idEmpleado = "";
         SqlConnection cadenaConexion = new SqlConnection("server=localhost;database=BDFarmacia ; integrated security = true");
         public Login()
         {
             InitializeComponent();
         }
 
-
+        private String DevolverEmpleado(String idUsuario)
+        {
+            String empleado = "";
+            cadenaConexion.Open();
+            string consulta = "SELECT id_Empleado FROM Empleados WHERE id_Usuario = @IdUsuario";
+            SqlCommand comando = new SqlCommand(consulta, cadenaConexion);
+            comando.Parameters.AddWithValue("@IdUsuario", idUsuario);
+            SqlDataReader lector;
+            lector = comando.ExecuteReader();
+            if (lector != null)
+            {
+                empleado = lector.GetInt32(0).ToString();
+            }
+            return empleado;    
+        }
 
         private void IniciarSesion_Click_1(object sender, EventArgs e)
         {
@@ -38,9 +53,10 @@ namespace farmacia.Formularios
             {
                 lector.Read();
                 string id_tipoUsuario = lector["id_tipoUsuario"].ToString();
+                idEmpleado = DevolverEmpleado(id_tipoUsuario);
                 if (id_tipoUsuario == "2")
                 {
-                    Menu menu = new Menu();
+                    Menu menu = new Menu(idEmpleado);
                     menu.Show();
                     this.Hide();
                 }

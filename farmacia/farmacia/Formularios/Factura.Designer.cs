@@ -335,6 +335,7 @@
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(92, 23);
             txtTotal.TabIndex = 28;
+            txtTotal.TextChanged += IngresadoACambio;
             // 
             // label13
             // 

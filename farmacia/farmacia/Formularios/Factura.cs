@@ -1,4 +1,5 @@
 using farmacia.Clases.DataAccess;
+using farmacia.Formularios.multimedia;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -8,15 +9,16 @@ namespace farmacia
     public partial class Factura : Form
     {
         int idFactura;
-        int idCliente;
-        int idEmpleado = 3;
+        String idCliente = "";
+        String idEmpleado = "1";
 
-        public Factura()
+        public Factura(String cliente)
         {
             InitializeComponent();
             LlenarCombos();
             BtnEjecutar.Enabled = false;
             BtnEliminar.Enabled = false;
+            idCliente = cliente;
         }
 
         private void MarcaCambio(object sender, EventArgs e)
@@ -374,7 +376,7 @@ namespace farmacia
                 LlenadoDeTablas();
                 txtPrecio.Text = "";
                 SPCantidad.Value = 0;
-                LlenadorDeTotales() ;
+                LlenadorDeTotales();
             }
             BtnEjecutar.Enabled = true;
         }
@@ -400,7 +402,7 @@ namespace farmacia
             }
             else
             {
-                if (CBTipoPago.SelectedIndex !=0)
+                if (CBTipoPago.SelectedIndex != 0)
                 {
                     String tipoPago = EncontrarSeleccion(CBTipoPago);
                     factura.LlenarFactura(idFactura.ToString(), tipoPago);
@@ -480,6 +482,36 @@ namespace farmacia
             reader.Close();
             LBDescuento.Text = "$" + descuento.ToString();
             LBTotal.Text = "$" + total.ToString();
+        }
+
+        private void IngresadoACambio(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox == null) return;
+
+            // Elimina cualquier caracter no numérico que no sea punto o coma decimal
+            string input = System.Text.RegularExpressions.Regex.Replace(textBox.Text, @"[^\d.,]", "");
+
+            // Convierte a decimal y formatea la cadena a formato monetario
+            if (decimal.TryParse(input, out decimal value))
+            {
+                textBox.TextChanged -= IngresadoACambio;
+                textBox.Text = value.ToString("N2"); // N2 formatea el número con dos decimales
+                textBox.TextChanged += IngresadoACambio;
+                textBox.SelectionStart = textBox.Text.Length; // Mantiene el cursor al final del texto
+            }
+
+            decimal valor = decimal.Parse(txtTotal.Text.ToString());
+            decimal total = decimal.Parse(LBTotal.Text.ToString()) - valor;
+            if (decimal.Parse(LBTotal.Text.ToString()) > valor | CBTipoPago.SelectedIndex != 1)
+            {
+                LBCambio.Text = "Falta";
+            }
+            else
+            {
+                LBCambio.Text = "$"+total.ToString();
+            }
+           
         }
     }
 }
