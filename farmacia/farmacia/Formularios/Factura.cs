@@ -11,6 +11,7 @@ namespace farmacia
         int idFactura;
         String idCliente = "";
         String idEmpleado = "1";
+        decimal total = 0;
 
         public Factura(String cliente)
         {
@@ -467,7 +468,7 @@ namespace farmacia
 
         public void LlenadorDeTotales()
         {
-            decimal subtotal = 0, descuento = 0, total = 0;
+            decimal subtotal = 0, descuento = 0;
             CrudDetalleCompras llenador = new CrudDetalleCompras();
             SqlDataReader reader = llenador.ObtenerSUMTotalesDescuento(idFactura.ToString());
 
@@ -484,34 +485,10 @@ namespace farmacia
             LBTotal.Text = "$" + total.ToString();
         }
 
-        private void IngresadoACambio(object sender, EventArgs e)
+        private void AgregarACambio(object sender, EventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-            if (textBox == null) return;
+            decimal totalIngresado = 0;
 
-            // Elimina cualquier caracter no numérico que no sea punto o coma decimal
-            string input = System.Text.RegularExpressions.Regex.Replace(textBox.Text, @"[^\d.,]", "");
-
-            // Convierte a decimal y formatea la cadena a formato monetario
-            if (decimal.TryParse(input, out decimal value))
-            {
-                textBox.TextChanged -= IngresadoACambio;
-                textBox.Text = value.ToString("N2"); // N2 formatea el número con dos decimales
-                textBox.TextChanged += IngresadoACambio;
-                textBox.SelectionStart = textBox.Text.Length; // Mantiene el cursor al final del texto
-            }
-
-            decimal valor = decimal.Parse(txtTotal.Text.ToString());
-            decimal total = decimal.Parse(LBTotal.Text.ToString()) - valor;
-            if (decimal.Parse(LBTotal.Text.ToString()) > valor | CBTipoPago.SelectedIndex != 1)
-            {
-                LBCambio.Text = "Falta";
-            }
-            else
-            {
-                LBCambio.Text = "$"+total.ToString();
-            }
-           
         }
     }
 }

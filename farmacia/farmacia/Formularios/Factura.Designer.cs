@@ -52,7 +52,6 @@
             labelDescuento = new Label();
             LabelIva = new Label();
             label12 = new Label();
-            txtTotal = new TextBox();
             label13 = new Label();
             labelCambio = new Label();
             txtPrecio = new TextBox();
@@ -61,8 +60,10 @@
             LBTotal = new Label();
             labtipopago = new Label();
             CBTipoPago = new ComboBox();
+            SPTotalIngresado = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)SPCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SPTotalIngresado).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -325,18 +326,6 @@
             label12.TabIndex = 27;
             label12.Text = "total ingresado:";
             // 
-            // txtTotal
-            // 
-            txtTotal.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            txtTotal.BackColor = Color.FromArgb(79, 80, 95);
-            txtTotal.ForeColor = Color.White;
-            txtTotal.Location = new Point(406, 381);
-            txtTotal.Margin = new Padding(3, 2, 3, 2);
-            txtTotal.Name = "txtTotal";
-            txtTotal.Size = new Size(92, 23);
-            txtTotal.TabIndex = 28;
-            txtTotal.TextChanged += IngresadoACambio;
-            // 
             // label13
             // 
             label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -368,6 +357,7 @@
             // 
             // LBCambio
             // 
+            LBCambio.ForeColor = Color.White;
             LBCambio.Location = new Point(645, 384);
             LBCambio.Name = "LBCambio";
             LBCambio.Size = new Size(89, 23);
@@ -376,6 +366,7 @@
             // 
             // LBDescuento
             // 
+            LBDescuento.ForeColor = Color.White;
             LBDescuento.Location = new Point(898, 357);
             LBDescuento.Name = "LBDescuento";
             LBDescuento.Size = new Size(100, 23);
@@ -384,6 +375,7 @@
             // 
             // LBTotal
             // 
+            LBTotal.ForeColor = Color.White;
             LBTotal.Location = new Point(898, 425);
             LBTotal.Name = "LBTotal";
             LBTotal.Size = new Size(100, 23);
@@ -412,6 +404,20 @@
             CBTipoPago.Size = new Size(181, 23);
             CBTipoPago.TabIndex = 37;
             // 
+            // SPTotalIngresado
+            // 
+            SPTotalIngresado.BackColor = Color.FromArgb(79, 80, 95);
+            SPTotalIngresado.DecimalPlaces = 2;
+            SPTotalIngresado.ForeColor = Color.White;
+            SPTotalIngresado.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
+            SPTotalIngresado.Location = new Point(415, 381);
+            SPTotalIngresado.Margin = new Padding(3, 2, 3, 2);
+            SPTotalIngresado.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            SPTotalIngresado.Name = "SPTotalIngresado";
+            SPTotalIngresado.Size = new Size(66, 23);
+            SPTotalIngresado.TabIndex = 38;
+            SPTotalIngresado.ValueChanged += AgregarACambio;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -419,6 +425,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(1185, 562);
+            Controls.Add(SPTotalIngresado);
             Controls.Add(CBTipoPago);
             Controls.Add(labtipopago);
             Controls.Add(LBTotal);
@@ -427,7 +434,6 @@
             Controls.Add(txtPrecio);
             Controls.Add(labelCambio);
             Controls.Add(label13);
-            Controls.Add(txtTotal);
             Controls.Add(label12);
             Controls.Add(LabelIva);
             Controls.Add(labelDescuento);
@@ -457,6 +463,7 @@
             Text = "Factura";
             ((System.ComponentModel.ISupportInitialize)SPCantidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SPTotalIngresado).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -486,7 +493,6 @@
         private Label labelDescuento;
         private Label LabelIva;
         private Label label12;
-        private TextBox txtTotal;
         private Label label13;
         private Label labelCambio;
         private TextBox txtPrecio;
@@ -495,5 +501,6 @@
         private Label LBTotal;
         private Label labtipopago;
         private ComboBox CBTipoPago;
+        private NumericUpDown SPTotalIngresado;
     }
 }
