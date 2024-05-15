@@ -61,6 +61,7 @@
             labtipopago = new Label();
             CBTipoPago = new ComboBox();
             SPTotalIngresado = new NumericUpDown();
+            BtnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)SPCantidad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tablaProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)SPTotalIngresado).BeginInit();
@@ -418,6 +419,17 @@
             SPTotalIngresado.TabIndex = 38;
             SPTotalIngresado.ValueChanged += AgregarACambio;
             // 
+            // BtnVolver
+            // 
+            BtnVolver.Location = new Point(29, 21);
+            BtnVolver.Margin = new Padding(3, 2, 3, 2);
+            BtnVolver.Name = "BtnVolver";
+            BtnVolver.Size = new Size(116, 33);
+            BtnVolver.TabIndex = 39;
+            BtnVolver.Text = "Volver";
+            BtnVolver.UseVisualStyleBackColor = true;
+            BtnVolver.Click += BtnVolver_Click;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -425,6 +437,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(1185, 562);
+            Controls.Add(BtnVolver);
             Controls.Add(SPTotalIngresado);
             Controls.Add(CBTipoPago);
             Controls.Add(labtipopago);
@@ -502,5 +515,6 @@
         private Label labtipopago;
         private ComboBox CBTipoPago;
         private NumericUpDown SPTotalIngresado;
+        private Button BtnVolver;
     }
 }

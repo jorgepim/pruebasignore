@@ -164,8 +164,9 @@ namespace farmacia.Formularios
                 string id = tablaClientes.SelectedRows[0].Cells["ID"].Value.ToString();
                 Factura factura = new Factura(id, menu);
                 menu.Hide();
-                factura.Show();
                 this.Hide();
+                factura.Show();
+                
             }
             else
             {

@@ -9,17 +9,22 @@ namespace farmacia
     public partial class Factura : Form
     {
         int idFactura;
-        String idCliente = "";
-        String idEmpleado = "1";
+        String idCliente;
+        String idEmpleado = Menu.idEmpleado;
         decimal total = 0;
+        Form menu;
 
         public Factura(String cliente, Form menu)
         {
             InitializeComponent();
             LlenarCombos();
+            this.menu = menu;
             BtnEjecutar.Enabled = false;
             BtnEliminar.Enabled = false;
             idCliente = cliente;
+            LBDescuento.Text = "";
+            LBTotal.Text = "";
+            LBCambio.Text = "";
         }
 
         private void MarcaCambio(object sender, EventArgs e)
@@ -367,17 +372,19 @@ namespace farmacia
                 txtPrecio.Text = "";
                 SPCantidad.Value = 0;
                 LlenadorDeTotales();
+                BtnVolver.Enabled = false;
             }
             else
             {
                 String sucursal = factura.ObtenerSucusal(idEmpleado.ToString());
-                factura.CrearFactura("1", "3", sucursal);
+                factura.CrearFactura(idEmpleado,idCliente,sucursal);
                 idFactura = factura.ObtenerUltimoIdFactura();
                 detalleCompras.AgregarADetalleCompra(idFactura.ToString(), idProducto, cantidad.ToString());
                 LlenadoDeTablas();
                 txtPrecio.Text = "";
                 SPCantidad.Value = 0;
                 LlenadorDeTotales();
+                BtnVolver.Enabled = false;
             }
             BtnEjecutar.Enabled = true;
         }
@@ -399,15 +406,21 @@ namespace farmacia
                 {
                     factura.EliminarFactura(idFactura);                    // El usuario seleccionó "Sí"
                     MessageBox.Show("La factura se elimino exitosamente");
+                    menu.Show();
+                    this.Close();
                 }
             }
             else
             {
-                if (CBTipoPago.SelectedIndex != 0)
+                decimal cambio = SPTotalIngresado.Value;
+                if (CBTipoPago.SelectedIndex != 0 && cambio >= total)
                 {
                     String tipoPago = EncontrarSeleccion(CBTipoPago);
                     factura.LlenarFactura(idFactura.ToString(), tipoPago);
                     MessageBox.Show("La factura se almaceno exitosamente");
+                    menu.Show();
+                    this.Close();
+                    
                 }
                 else
                 {
@@ -487,8 +500,22 @@ namespace farmacia
 
         private void AgregarACambio(object sender, EventArgs e)
         {
-            decimal totalIngresado = 0;
+            decimal totalIngresado = SPTotalIngresado.Value;
+            if (totalIngresado >= total)
+            {
+                LBCambio.Text = "$" + (totalIngresado - total);
+            }
+            else
+            {
+                LBCambio.Text = "Falta";
+            }
 
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            menu.Show();
+            this.Close();
         }
     }
 }

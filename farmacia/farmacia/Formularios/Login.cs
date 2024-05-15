@@ -23,25 +23,25 @@ namespace farmacia.Formularios
             InitializeComponent();
         }
 
-        /*private String DevolverEmpleado(String idUsuario)
+        private String DevolverEmpleado(String idUsuario)
         {
             String empleado = "";
             cadenaConexion.Open();
             string consulta = "SELECT id_Empleado FROM Empleados WHERE id_Usuario = @IdUsuario";
             SqlCommand comando = new SqlCommand(consulta, cadenaConexion);
             comando.Parameters.AddWithValue("@IdUsuario", idUsuario);
-            SqlDataReader lector;
-            lector = comando.ExecuteReader();
-            if (lector != null)
+            SqlDataReader lectors;
+            lectors = comando.ExecuteReader();
+            if (lectors.Read())
             {
-                empleado = lector.GetInt32(0).ToString();
-                lector.Close();
-                cadenaConexion.Close();
+                empleado = lectors.GetInt32(0).ToString();
             }
+            lectors.Close();
+            cadenaConexion.Close();
             return empleado;
 
             
-        }*/
+        }
 
         private void IniciarSesion_Click_1(object sender, EventArgs e)
         {
@@ -57,8 +57,11 @@ namespace farmacia.Formularios
             {
                 lector.Read();
                 string id_tipoUsuario = lector["id_tipoUsuario"].ToString();
-              
-                /*idEmpleado = DevolverEmpleado(id_tipoUsuario);*/
+                string idUsuario = lector["id_Usuarios"].ToString();
+                lector.Close();
+                cadenaConexion.Close();
+                idEmpleado = DevolverEmpleado(idUsuario);
+
                 if (id_tipoUsuario == "2")
                 {
                     Menu menu = new Menu(idEmpleado);
@@ -74,10 +77,11 @@ namespace farmacia.Formularios
             }
             else
             {
+                lector.Close();
+                cadenaConexion.Close();
                 MessageBox.Show("La contraseña o el usuario son incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            lector.Close();
-            cadenaConexion.Close();
+            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

@@ -36,9 +36,8 @@ namespace farmacia.Clases.DataAccess
             command.CommandType = CommandType.StoredProcedure;
 
             // Agregar los parámetros de entrada
-            command.Parameters.AddWithValue("@IdFactura", idFactura);
-            command.Parameters.AddWithValue("@TipoPago", TipoPago);
-            
+            command.Parameters.Add(new SqlParameter("@idFactura", idFactura));
+            command.Parameters.Add(new SqlParameter("@tipoDePago", TipoPago));
             try
             {
                 conexion.AbrirConexion();
