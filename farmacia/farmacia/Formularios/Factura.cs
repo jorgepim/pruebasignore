@@ -1,4 +1,5 @@
 using farmacia.Clases.DataAccess;
+using farmacia.Formularios;
 using farmacia.Formularios.multimedia;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
@@ -13,8 +14,8 @@ namespace farmacia
         String idEmpleado = Menu.idEmpleado;
         decimal total = 0;
         Form menu;
-
-        public Factura(String cliente, Form menu)
+        Form Clientes;
+        public Factura(String cliente, Form menu, Form Clientes)
         {
             InitializeComponent();
             LlenarCombos();
@@ -25,6 +26,7 @@ namespace farmacia
             LBDescuento.Text = "";
             LBTotal.Text = "";
             LBCambio.Text = "";
+            this.Clientes = Clientes;
         }
 
         private void MarcaCambio(object sender, EventArgs e)
@@ -514,8 +516,9 @@ namespace farmacia
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            menu.Show();
             this.Close();
+            menu.Show();
+            Clientes.Show();
         }
     }
 }

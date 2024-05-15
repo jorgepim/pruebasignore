@@ -180,7 +180,7 @@ namespace farmacia.Formularios
             {
                 string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
                 string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
-                Membresia membresia = new Membresia(nombre, dui, menu);
+                Membresia membresia = new Membresia(nombre, dui, menu, this);
                 membresia.Show();
                 menu.Hide();
                 this.Hide();

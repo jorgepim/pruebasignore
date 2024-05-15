@@ -21,6 +21,7 @@ namespace farmacia.Formularios.multimedia
         private int tempIndex;
         private Form activeForm;
         public static String idEmpleado;
+        Form Membresia;
         public Menu(String id)
         {
             InitializeComponent();

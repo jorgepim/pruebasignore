@@ -18,13 +18,15 @@ namespace farmacia.Formularios
     public partial class Membresia : Form
     {
         Form menu;
-        public Membresia(string nombre, string dui, Form menu)
+        Form Clientes;
+        public Membresia(string nombre, string dui, Form menu, Form Clientes)
         {
             InitializeComponent();
             lblNombre.Text = nombre;
             lblDUI.Text = dui;
             LlenadoCombos();
             this.menu = menu;
+            this.Clientes= Clientes;
         }
         public Membresia()
         {
@@ -80,7 +82,7 @@ namespace farmacia.Formularios
          {
             this.Close();
             menu.Show();
-          
+            Clientes.Show();
          }
 
         private void btnAgregar_Click(object sender, EventArgs e)
