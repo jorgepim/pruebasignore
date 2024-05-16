@@ -28,126 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sucursal,
-            this.Departamento,
-            this.Producto,
-            this.Cantidad});
-            this.dataGridView1.Location = new System.Drawing.Point(232, 247);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(506, 315);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Sucursal
-            // 
-            this.Sucursal.HeaderText = "Sucursal";
-            this.Sucursal.MinimumWidth = 6;
-            this.Sucursal.Name = "Sucursal";
-            this.Sucursal.Width = 125;
-            // 
-            // Departamento
-            // 
-            this.Departamento.HeaderText = "Departamento";
-            this.Departamento.MinimumWidth = 6;
-            this.Departamento.Name = "Departamento";
-            this.Departamento.Width = 125;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.MinimumWidth = 6;
-            this.Producto.Name = "Producto";
-            this.Producto.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            label2 = new Label();
+            TXTProducto = new TextBox();
+            label1 = new Label();
+            CBDepartamento = new ComboBox();
+            TablaSucursales = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)TablaSucursales).BeginInit();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(80, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Producto";
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(70, 86);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 19);
+            label2.TabIndex = 4;
+            label2.Text = "Producto";
             // 
-            // textBox1
+            // TXTProducto
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(80, 168);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(543, 27);
-            this.textBox1.TabIndex = 5;
+            TXTProducto.BackColor = Color.FromArgb(79, 80, 95);
+            TXTProducto.ForeColor = Color.White;
+            TXTProducto.Location = new Point(70, 126);
+            TXTProducto.Name = "TXTProducto";
+            TXTProducto.Size = new Size(476, 23);
+            TXTProducto.TabIndex = 5;
+            TXTProducto.TextChanged += TXTProducto_TextChanged;
             // 
-            // button1
+            // label1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(727, 156);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(603, 200);
+            label1.Name = "label1";
+            label1.Size = new Size(115, 19);
+            label1.TabIndex = 7;
+            label1.Text = "Departamento:";
+            // 
+            // CBDepartamento
+            // 
+            CBDepartamento.BackColor = Color.FromArgb(79, 80, 95);
+            CBDepartamento.FormattingEnabled = true;
+            CBDepartamento.Location = new Point(603, 240);
+            CBDepartamento.Name = "CBDepartamento";
+            CBDepartamento.Size = new Size(172, 23);
+            CBDepartamento.TabIndex = 8;
+            CBDepartamento.SelectedIndexChanged += CBDepartamento_SelectedIndexChanged;
+            // 
+            // TablaSucursales
+            // 
+            TablaSucursales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            TablaSucursales.DefaultCellStyle = dataGridViewCellStyle1;
+            TablaSucursales.Location = new Point(70, 173);
+            TablaSucursales.Name = "TablaSucursales";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            TablaSucursales.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            TablaSucursales.RowTemplate.Height = 25;
+            TablaSucursales.Size = new Size(476, 247);
+            TablaSucursales.TabIndex = 9;
             // 
             // Sucursales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1023, 629);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Sucursales";
-            this.Text = "Sucursales";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(34, 36, 49);
+            ClientSize = new Size(895, 472);
+            Controls.Add(TablaSucursales);
+            Controls.Add(CBDepartamento);
+            Controls.Add(label1);
+            Controls.Add(TXTProducto);
+            Controls.Add(label2);
+            ForeColor = Color.White;
+            Name = "Sucursales";
+            Text = "Sucursales";
+            ((System.ComponentModel.ISupportInitialize)TablaSucursales).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Sucursal;
-        private DataGridViewTextBoxColumn Departamento;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Cantidad;
         private Label label2;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox TXTProducto;
+        private Label label1;
+        private ComboBox CBDepartamento;
+        private DataGridView TablaSucursales;
     }
 }

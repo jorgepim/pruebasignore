@@ -29,444 +29,459 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.CBMarca = new System.Windows.Forms.ComboBox();
-            this.CBPresentacion = new System.Windows.Forms.ComboBox();
-            this.CBCategoria = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.BtnBuscar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.SPCantidad = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.BtnAgregar = new System.Windows.Forms.Button();
-            this.tablaProductos = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CBProductos = new System.Windows.Forms.ComboBox();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnEjecutar = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.labelDescuento = new System.Windows.Forms.Label();
-            this.LabelIva = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.labelCambio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.LBCambio = new System.Windows.Forms.Label();
-            this.LBDescuento = new System.Windows.Forms.Label();
-            this.LBTotal = new System.Windows.Forms.Label();
-            this.labtipopago = new System.Windows.Forms.Label();
-            this.CBTipoPago = new System.Windows.Forms.ComboBox();
-            this.SPTotalIngresado = new System.Windows.Forms.NumericUpDown();
-            this.BtnVolver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.SPCantidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SPTotalIngresado)).BeginInit();
-            this.SuspendLayout();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            CBMarca = new ComboBox();
+            CBPresentacion = new ComboBox();
+            CBCategoria = new ComboBox();
+            label5 = new Label();
+            txtBuscar = new TextBox();
+            BtnBuscar = new Button();
+            label6 = new Label();
+            splitter1 = new Splitter();
+            SPCantidad = new NumericUpDown();
+            label7 = new Label();
+            BtnAgregar = new Button();
+            tablaProductos = new DataGridView();
+            label8 = new Label();
+            CBProductos = new ComboBox();
+            BtnEliminar = new Button();
+            BtnEjecutar = new Button();
+            label9 = new Label();
+            label11 = new Label();
+            labelDescuento = new Label();
+            LabelIva = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            labelCambio = new Label();
+            txtPrecio = new TextBox();
+            LBCambio = new Label();
+            LBDescuento = new Label();
+            LBTotal = new Label();
+            labtipopago = new Label();
+            CBTipoPago = new ComboBox();
+            SPTotalIngresado = new NumericUpDown();
+            BtnVolver = new Button();
+            ((System.ComponentModel.ISupportInitialize)SPCantidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tablaProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SPTotalIngresado).BeginInit();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(11, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 43);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Marca:";
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(10, 88);
+            label2.Name = "label2";
+            label2.Size = new Size(101, 32);
+            label2.TabIndex = 1;
+            label2.Text = "Marca:";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(11, 161);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 43);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Categoria:";
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(10, 121);
+            label3.Name = "label3";
+            label3.Size = new Size(117, 32);
+            label3.TabIndex = 2;
+            label3.Text = "Categoria:";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(11, 211);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 43);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Presentación:";
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(10, 158);
+            label4.Name = "label4";
+            label4.Size = new Size(147, 32);
+            label4.TabIndex = 3;
+            label4.Text = "Presentación:";
             // 
             // CBMarca
             // 
-            this.CBMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.CBMarca.ForeColor = System.Drawing.Color.White;
-            this.CBMarca.FormattingEnabled = true;
-            this.CBMarca.Location = new System.Drawing.Point(200, 117);
-            this.CBMarca.Name = "CBMarca";
-            this.CBMarca.Size = new System.Drawing.Size(206, 28);
-            this.CBMarca.TabIndex = 4;
+            CBMarca.BackColor = Color.FromArgb(79, 80, 95);
+            CBMarca.ForeColor = Color.White;
+            CBMarca.FormattingEnabled = true;
+            CBMarca.Location = new Point(175, 88);
+            CBMarca.Margin = new Padding(3, 2, 3, 2);
+            CBMarca.Name = "CBMarca";
+            CBMarca.Size = new Size(181, 23);
+            CBMarca.TabIndex = 4;
+            CBMarca.SelectedIndexChanged += MarcaCambio;
             // 
             // CBPresentacion
             // 
-            this.CBPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.CBPresentacion.ForeColor = System.Drawing.Color.White;
-            this.CBPresentacion.FormattingEnabled = true;
-            this.CBPresentacion.Location = new System.Drawing.Point(200, 216);
-            this.CBPresentacion.Name = "CBPresentacion";
-            this.CBPresentacion.Size = new System.Drawing.Size(206, 28);
-            this.CBPresentacion.TabIndex = 5;
+            CBPresentacion.BackColor = Color.FromArgb(79, 80, 95);
+            CBPresentacion.ForeColor = Color.White;
+            CBPresentacion.FormattingEnabled = true;
+            CBPresentacion.Location = new Point(175, 162);
+            CBPresentacion.Margin = new Padding(3, 2, 3, 2);
+            CBPresentacion.Name = "CBPresentacion";
+            CBPresentacion.Size = new Size(181, 23);
+            CBPresentacion.TabIndex = 5;
+            CBPresentacion.SelectedIndexChanged += PresentacionCambio;
             // 
             // CBCategoria
             // 
-            this.CBCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.CBCategoria.ForeColor = System.Drawing.Color.White;
-            this.CBCategoria.FormattingEnabled = true;
-            this.CBCategoria.Location = new System.Drawing.Point(200, 167);
-            this.CBCategoria.Name = "CBCategoria";
-            this.CBCategoria.Size = new System.Drawing.Size(206, 28);
-            this.CBCategoria.TabIndex = 6;
+            CBCategoria.BackColor = Color.FromArgb(79, 80, 95);
+            CBCategoria.ForeColor = Color.White;
+            CBCategoria.FormattingEnabled = true;
+            CBCategoria.Location = new Point(175, 125);
+            CBCategoria.Margin = new Padding(3, 2, 3, 2);
+            CBCategoria.Name = "CBCategoria";
+            CBCategoria.Size = new Size(181, 23);
+            CBCategoria.TabIndex = 6;
+            CBCategoria.SelectedIndexChanged += CategoriaCambio;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(543, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 43);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Buscar:";
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(475, 49);
+            label5.Name = "label5";
+            label5.Size = new Size(101, 32);
+            label5.TabIndex = 7;
+            label5.Text = "Buscar:";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.txtBuscar.ForeColor = System.Drawing.Color.White;
-            this.txtBuscar.Location = new System.Drawing.Point(664, 65);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(273, 27);
-            this.txtBuscar.TabIndex = 8;
+            txtBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtBuscar.BackColor = Color.FromArgb(79, 80, 95);
+            txtBuscar.ForeColor = Color.White;
+            txtBuscar.Location = new Point(581, 49);
+            txtBuscar.Margin = new Padding(3, 2, 3, 2);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(239, 23);
+            txtBuscar.TabIndex = 8;
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnBuscar.Location = new System.Drawing.Point(1017, 63);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(123, 45);
-            this.BtnBuscar.TabIndex = 9;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnBuscar.Location = new Point(890, 47);
+            BtnBuscar.Margin = new Padding(3, 2, 3, 2);
+            BtnBuscar.Name = "BtnBuscar";
+            BtnBuscar.Size = new Size(108, 34);
+            BtnBuscar.TabIndex = 9;
+            BtnBuscar.Text = "Buscar";
+            BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
             // 
             // label6
             // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(10, 323);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 43);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Cantidad:";
+            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(9, 242);
+            label6.Name = "label6";
+            label6.Size = new Size(117, 32);
+            label6.TabIndex = 10;
+            label6.Text = "Cantidad:";
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(5, 749);
-            this.splitter1.TabIndex = 11;
-            this.splitter1.TabStop = false;
+            splitter1.Location = new Point(0, 0);
+            splitter1.Margin = new Padding(3, 2, 3, 2);
+            splitter1.Name = "splitter1";
+            splitter1.Size = new Size(4, 562);
+            splitter1.TabIndex = 11;
+            splitter1.TabStop = false;
             // 
             // SPCantidad
             // 
-            this.SPCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.SPCantidad.ForeColor = System.Drawing.Color.White;
-            this.SPCantidad.Location = new System.Drawing.Point(150, 323);
-            this.SPCantidad.Name = "SPCantidad";
-            this.SPCantidad.Size = new System.Drawing.Size(75, 27);
-            this.SPCantidad.TabIndex = 12;
+            SPCantidad.BackColor = Color.FromArgb(79, 80, 95);
+            SPCantidad.ForeColor = Color.White;
+            SPCantidad.Location = new Point(131, 242);
+            SPCantidad.Margin = new Padding(3, 2, 3, 2);
+            SPCantidad.Name = "SPCantidad";
+            SPCantidad.Size = new Size(66, 23);
+            SPCantidad.TabIndex = 12;
             // 
             // label7
             // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(11, 365);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 43);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Precio:";
+            label7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(10, 274);
+            label7.Name = "label7";
+            label7.Size = new Size(117, 32);
+            label7.TabIndex = 13;
+            label7.Text = "Precio:";
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(33, 444);
-            this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(133, 44);
-            this.BtnAgregar.TabIndex = 15;
-            this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
+            BtnAgregar.Location = new Point(29, 333);
+            BtnAgregar.Margin = new Padding(3, 2, 3, 2);
+            BtnAgregar.Name = "BtnAgregar";
+            BtnAgregar.Size = new Size(116, 33);
+            BtnAgregar.TabIndex = 15;
+            BtnAgregar.Text = "Agregar";
+            BtnAgregar.UseVisualStyleBackColor = true;
+            BtnAgregar.Click += BtnAgregar_Click;
             // 
             // tablaProductos
             // 
-            this.tablaProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tablaProductos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tablaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaProductos.Location = new System.Drawing.Point(464, 211);
-            this.tablaProductos.Name = "tablaProductos";
-            this.tablaProductos.RowHeadersWidth = 51;
-            this.tablaProductos.RowTemplate.Height = 29;
-            this.tablaProductos.Size = new System.Drawing.Size(677, 231);
-            this.tablaProductos.TabIndex = 16;
+            tablaProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tablaProductos.BackgroundColor = SystemColors.ButtonHighlight;
+            tablaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tablaProductos.Location = new Point(406, 158);
+            tablaProductos.Margin = new Padding(3, 2, 3, 2);
+            tablaProductos.Name = "tablaProductos";
+            tablaProductos.RowHeadersWidth = 51;
+            tablaProductos.RowTemplate.Height = 29;
+            tablaProductos.Size = new Size(592, 173);
+            tablaProductos.TabIndex = 16;
+            tablaProductos.Click += SeleccionTabla;
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(464, 144);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 43);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Productos:";
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label8.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(406, 108);
+            label8.Name = "label8";
+            label8.Size = new Size(113, 32);
+            label8.TabIndex = 17;
+            label8.Text = "Productos:";
             // 
             // CBProductos
             // 
-            this.CBProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CBProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.CBProductos.ForeColor = System.Drawing.Color.White;
-            this.CBProductos.FormattingEnabled = true;
-            this.CBProductos.Location = new System.Drawing.Point(616, 149);
-            this.CBProductos.Name = "CBProductos";
-            this.CBProductos.Size = new System.Drawing.Size(524, 28);
-            this.CBProductos.TabIndex = 18;
-            this.CBProductos.Text = "Seleccionar";
+            CBProductos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CBProductos.BackColor = Color.FromArgb(79, 80, 95);
+            CBProductos.ForeColor = Color.White;
+            CBProductos.FormattingEnabled = true;
+            CBProductos.Location = new Point(539, 112);
+            CBProductos.Margin = new Padding(3, 2, 3, 2);
+            CBProductos.Name = "CBProductos";
+            CBProductos.Size = new Size(459, 23);
+            CBProductos.TabIndex = 18;
+            CBProductos.Text = "Seleccionar";
+            CBProductos.SelectedIndexChanged += CambioProducto;
             // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(33, 524);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(133, 44);
-            this.BtnEliminar.TabIndex = 19;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Location = new Point(29, 393);
+            BtnEliminar.Margin = new Padding(3, 2, 3, 2);
+            BtnEliminar.Name = "BtnEliminar";
+            BtnEliminar.Size = new Size(116, 33);
+            BtnEliminar.TabIndex = 19;
+            BtnEliminar.Text = "Eliminar";
+            BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // BtnEjecutar
             // 
-            this.BtnEjecutar.Location = new System.Drawing.Point(33, 603);
-            this.BtnEjecutar.Name = "BtnEjecutar";
-            this.BtnEjecutar.Size = new System.Drawing.Size(133, 44);
-            this.BtnEjecutar.TabIndex = 20;
-            this.BtnEjecutar.Text = "Ejecutar";
-            this.BtnEjecutar.UseVisualStyleBackColor = true;
+            BtnEjecutar.Location = new Point(29, 452);
+            BtnEjecutar.Margin = new Padding(3, 2, 3, 2);
+            BtnEjecutar.Name = "BtnEjecutar";
+            BtnEjecutar.Size = new Size(116, 33);
+            BtnEjecutar.TabIndex = 20;
+            BtnEjecutar.Text = "Ejecutar";
+            BtnEjecutar.UseVisualStyleBackColor = true;
+            BtnEjecutar.Click += BtnEjecutar_Click;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(889, 476);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 43);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Descuento:";
+            label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(778, 357);
+            label9.Name = "label9";
+            label9.Size = new Size(117, 32);
+            label9.TabIndex = 21;
+            label9.Text = "Descuento:";
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(889, 555);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(134, 43);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Total:";
+            label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label11.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(778, 416);
+            label11.Name = "label11";
+            label11.Size = new Size(117, 32);
+            label11.TabIndex = 23;
+            label11.Text = "Total:";
             // 
             // labelDescuento
             // 
-            this.labelDescuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDescuento.Location = new System.Drawing.Point(1195, 587);
-            this.labelDescuento.Name = "labelDescuento";
-            this.labelDescuento.Size = new System.Drawing.Size(72, 25);
-            this.labelDescuento.TabIndex = 24;
+            labelDescuento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            labelDescuento.Location = new Point(1046, 440);
+            labelDescuento.Name = "labelDescuento";
+            labelDescuento.Size = new Size(63, 19);
+            labelDescuento.TabIndex = 24;
             // 
             // LabelIva
             // 
-            this.LabelIva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LabelIva.Location = new System.Drawing.Point(1195, 627);
-            this.LabelIva.Name = "LabelIva";
-            this.LabelIva.Size = new System.Drawing.Size(58, 20);
-            this.LabelIva.TabIndex = 25;
+            LabelIva.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            LabelIva.Location = new Point(1046, 470);
+            LabelIva.Name = "LabelIva";
+            LabelIva.Size = new Size(51, 15);
+            LabelIva.TabIndex = 25;
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(285, 501);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(183, 43);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "total ingresado:";
+            label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label12.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(249, 376);
+            label12.Name = "label12";
+            label12.Size = new Size(160, 32);
+            label12.TabIndex = 27;
+            label12.Text = "total ingresado:";
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(640, 508);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(105, 43);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Cambio:";
+            label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label13.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(560, 381);
+            label13.Name = "label13";
+            label13.Size = new Size(92, 32);
+            label13.TabIndex = 29;
+            label13.Text = "Cambio:";
             // 
             // labelCambio
             // 
-            this.labelCambio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelCambio.Location = new System.Drawing.Point(781, 647);
-            this.labelCambio.Name = "labelCambio";
-            this.labelCambio.Size = new System.Drawing.Size(58, 20);
-            this.labelCambio.TabIndex = 30;
+            labelCambio.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            labelCambio.Location = new Point(683, 485);
+            labelCambio.Name = "labelCambio";
+            labelCambio.Size = new Size(51, 15);
+            labelCambio.TabIndex = 30;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.txtPrecio.ForeColor = System.Drawing.Color.White;
-            this.txtPrecio.Location = new System.Drawing.Point(133, 372);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(125, 27);
-            this.txtPrecio.TabIndex = 31;
+            txtPrecio.BackColor = Color.FromArgb(79, 80, 95);
+            txtPrecio.ForeColor = Color.White;
+            txtPrecio.Location = new Point(116, 279);
+            txtPrecio.Margin = new Padding(3, 2, 3, 2);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(110, 23);
+            txtPrecio.TabIndex = 31;
             // 
             // LBCambio
             // 
-            this.LBCambio.ForeColor = System.Drawing.Color.White;
-            this.LBCambio.Location = new System.Drawing.Point(737, 512);
-            this.LBCambio.Name = "LBCambio";
-            this.LBCambio.Size = new System.Drawing.Size(102, 31);
-            this.LBCambio.TabIndex = 32;
-            this.LBCambio.Text = "label14";
+            LBCambio.ForeColor = Color.White;
+            LBCambio.Location = new Point(645, 384);
+            LBCambio.Name = "LBCambio";
+            LBCambio.Size = new Size(89, 23);
+            LBCambio.TabIndex = 32;
+            LBCambio.Text = "label14";
             // 
             // LBDescuento
             // 
-            this.LBDescuento.ForeColor = System.Drawing.Color.White;
-            this.LBDescuento.Location = new System.Drawing.Point(1026, 476);
-            this.LBDescuento.Name = "LBDescuento";
-            this.LBDescuento.Size = new System.Drawing.Size(114, 31);
-            this.LBDescuento.TabIndex = 33;
-            this.LBDescuento.Text = "label15";
+            LBDescuento.ForeColor = Color.White;
+            LBDescuento.Location = new Point(898, 357);
+            LBDescuento.Name = "LBDescuento";
+            LBDescuento.Size = new Size(100, 23);
+            LBDescuento.TabIndex = 33;
+            LBDescuento.Text = "label15";
             // 
             // LBTotal
             // 
-            this.LBTotal.ForeColor = System.Drawing.Color.White;
-            this.LBTotal.Location = new System.Drawing.Point(1026, 567);
-            this.LBTotal.Name = "LBTotal";
-            this.LBTotal.Size = new System.Drawing.Size(114, 31);
-            this.LBTotal.TabIndex = 35;
-            this.LBTotal.Text = "label17";
+            LBTotal.ForeColor = Color.White;
+            LBTotal.Location = new Point(898, 425);
+            LBTotal.Name = "LBTotal";
+            LBTotal.Size = new Size(100, 23);
+            LBTotal.TabIndex = 35;
+            LBTotal.Text = "label17";
             // 
             // labtipopago
             // 
-            this.labtipopago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labtipopago.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labtipopago.ForeColor = System.Drawing.Color.White;
-            this.labtipopago.Location = new System.Drawing.Point(600, 624);
-            this.labtipopago.Name = "labtipopago";
-            this.labtipopago.Size = new System.Drawing.Size(174, 43);
-            this.labtipopago.TabIndex = 36;
-            this.labtipopago.Text = "Tipo de pago:";
+            labtipopago.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            labtipopago.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labtipopago.ForeColor = Color.White;
+            labtipopago.Location = new Point(525, 468);
+            labtipopago.Name = "labtipopago";
+            labtipopago.Size = new Size(152, 32);
+            labtipopago.TabIndex = 36;
+            labtipopago.Text = "Tipo de pago:";
             // 
             // CBTipoPago
             // 
-            this.CBTipoPago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.CBTipoPago.ForeColor = System.Drawing.Color.White;
-            this.CBTipoPago.FormattingEnabled = true;
-            this.CBTipoPago.Location = new System.Drawing.Point(761, 627);
-            this.CBTipoPago.Name = "CBTipoPago";
-            this.CBTipoPago.Size = new System.Drawing.Size(206, 28);
-            this.CBTipoPago.TabIndex = 37;
+            CBTipoPago.BackColor = Color.FromArgb(79, 80, 95);
+            CBTipoPago.ForeColor = Color.White;
+            CBTipoPago.FormattingEnabled = true;
+            CBTipoPago.Location = new Point(666, 470);
+            CBTipoPago.Margin = new Padding(3, 2, 3, 2);
+            CBTipoPago.Name = "CBTipoPago";
+            CBTipoPago.Size = new Size(181, 23);
+            CBTipoPago.TabIndex = 37;
             // 
             // SPTotalIngresado
             // 
-            this.SPTotalIngresado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.SPTotalIngresado.DecimalPlaces = 2;
-            this.SPTotalIngresado.ForeColor = System.Drawing.Color.White;
-            this.SPTotalIngresado.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.SPTotalIngresado.Location = new System.Drawing.Point(474, 508);
-            this.SPTotalIngresado.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.SPTotalIngresado.Name = "SPTotalIngresado";
-            this.SPTotalIngresado.Size = new System.Drawing.Size(75, 27);
-            this.SPTotalIngresado.TabIndex = 38;
+            SPTotalIngresado.BackColor = Color.FromArgb(79, 80, 95);
+            SPTotalIngresado.DecimalPlaces = 2;
+            SPTotalIngresado.ForeColor = Color.White;
+            SPTotalIngresado.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
+            SPTotalIngresado.Location = new Point(415, 381);
+            SPTotalIngresado.Margin = new Padding(3, 2, 3, 2);
+            SPTotalIngresado.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            SPTotalIngresado.Name = "SPTotalIngresado";
+            SPTotalIngresado.Size = new Size(66, 23);
+            SPTotalIngresado.TabIndex = 38;
+            SPTotalIngresado.ValueChanged += AgregarACambio;
             // 
             // BtnVolver
             // 
-            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = ((System.Drawing.Image)(resources.GetObject("BtnVolver.Image")));
-            this.BtnVolver.Location = new System.Drawing.Point(33, 28);
-            this.BtnVolver.Name = "BtnVolver";
-            this.BtnVolver.Size = new System.Drawing.Size(56, 64);
-            this.BtnVolver.TabIndex = 39;
-            this.BtnVolver.UseVisualStyleBackColor = true;
+            BtnVolver.FlatStyle = FlatStyle.Flat;
+            BtnVolver.Image = (Image)resources.GetObject("BtnVolver.Image");
+            BtnVolver.Location = new Point(29, 21);
+            BtnVolver.Margin = new Padding(3, 2, 3, 2);
+            BtnVolver.Name = "BtnVolver";
+            BtnVolver.Size = new Size(49, 48);
+            BtnVolver.TabIndex = 39;
+            BtnVolver.UseVisualStyleBackColor = true;
+            BtnVolver.Click += BtnVolver_Click;
             // 
             // Factura
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1354, 749);
-            this.Controls.Add(this.BtnVolver);
-            this.Controls.Add(this.SPTotalIngresado);
-            this.Controls.Add(this.CBTipoPago);
-            this.Controls.Add(this.labtipopago);
-            this.Controls.Add(this.LBTotal);
-            this.Controls.Add(this.LBDescuento);
-            this.Controls.Add(this.LBCambio);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.labelCambio);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.LabelIva);
-            this.Controls.Add(this.labelDescuento);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.BtnEjecutar);
-            this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.CBProductos);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.tablaProductos);
-            this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.SPCantidad);
-            this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.BtnBuscar);
-            this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.CBCategoria);
-            this.Controls.Add(this.CBPresentacion);
-            this.Controls.Add(this.CBMarca);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Name = "Factura";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Factura";
-            ((System.ComponentModel.ISupportInitialize)(this.SPCantidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SPTotalIngresado)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = Color.FromArgb(34, 36, 49);
+            ClientSize = new Size(1185, 562);
+            Controls.Add(BtnVolver);
+            Controls.Add(SPTotalIngresado);
+            Controls.Add(CBTipoPago);
+            Controls.Add(labtipopago);
+            Controls.Add(LBTotal);
+            Controls.Add(LBDescuento);
+            Controls.Add(LBCambio);
+            Controls.Add(txtPrecio);
+            Controls.Add(labelCambio);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(LabelIva);
+            Controls.Add(labelDescuento);
+            Controls.Add(label11);
+            Controls.Add(label9);
+            Controls.Add(BtnEjecutar);
+            Controls.Add(BtnEliminar);
+            Controls.Add(CBProductos);
+            Controls.Add(label8);
+            Controls.Add(tablaProductos);
+            Controls.Add(BtnAgregar);
+            Controls.Add(label7);
+            Controls.Add(SPCantidad);
+            Controls.Add(splitter1);
+            Controls.Add(label6);
+            Controls.Add(BtnBuscar);
+            Controls.Add(txtBuscar);
+            Controls.Add(label5);
+            Controls.Add(CBCategoria);
+            Controls.Add(CBPresentacion);
+            Controls.Add(CBMarca);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "Factura";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Factura";
+            ((System.ComponentModel.ISupportInitialize)SPCantidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tablaProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SPTotalIngresado).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
