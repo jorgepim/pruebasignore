@@ -37,15 +37,16 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            txtBoxIdSucursal = new TextBox();
-            txtBoxIdProveedor = new TextBox();
-            txtBoxIdProducto = new TextBox();
-            txtBoxFechaCompra = new TextBox();
-            txtBoxFechaVencimiento = new TextBox();
-            txtBoxPrecioCompra = new TextBox();
-            txtBoxDescuento = new TextBox();
-            txtBoxCantidad = new TextBox();
             button1 = new Button();
+            MaskFechaV = new MaskedTextBox();
+            CBProducto = new ComboBox();
+            CBProveedor = new ComboBox();
+            CBSucursal = new ComboBox();
+            MaskFechaC = new MaskedTextBox();
+            MaskCanti = new MaskedTextBox();
+            MaskDesc = new MaskedTextBox();
+            MaskPrecioC = new MaskedTextBox();
+            label10 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -63,7 +64,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(65, 85);
+            label2.Location = new Point(23, 85);
             label2.Name = "label2";
             label2.Size = new Size(66, 15);
             label2.TabIndex = 1;
@@ -83,7 +84,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(245, 85);
+            label4.Location = new Point(231, 85);
             label4.Name = "label4";
             label4.Size = new Size(77, 15);
             label4.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(65, 157);
+            label5.Location = new Point(23, 157);
             label5.Name = "label5";
             label5.Size = new Size(87, 15);
             label5.TabIndex = 4;
@@ -139,62 +140,6 @@
             label9.TabIndex = 8;
             label9.Text = "Cantidad:";
             // 
-            // txtBoxIdSucursal
-            // 
-            txtBoxIdSucursal.Location = new Point(512, 77);
-            txtBoxIdSucursal.Name = "txtBoxIdSucursal";
-            txtBoxIdSucursal.Size = new Size(83, 23);
-            txtBoxIdSucursal.TabIndex = 11;
-            // 
-            // txtBoxIdProveedor
-            // 
-            txtBoxIdProveedor.Location = new Point(328, 77);
-            txtBoxIdProveedor.Name = "txtBoxIdProveedor";
-            txtBoxIdProveedor.Size = new Size(83, 23);
-            txtBoxIdProveedor.TabIndex = 12;
-            // 
-            // txtBoxIdProducto
-            // 
-            txtBoxIdProducto.Location = new Point(137, 77);
-            txtBoxIdProducto.Name = "txtBoxIdProducto";
-            txtBoxIdProducto.Size = new Size(83, 23);
-            txtBoxIdProducto.TabIndex = 13;
-            // 
-            // txtBoxFechaCompra
-            // 
-            txtBoxFechaCompra.Location = new Point(158, 149);
-            txtBoxFechaCompra.Name = "txtBoxFechaCompra";
-            txtBoxFechaCompra.Size = new Size(141, 23);
-            txtBoxFechaCompra.TabIndex = 14;
-            // 
-            // txtBoxFechaVencimiento
-            // 
-            txtBoxFechaVencimiento.Location = new Point(430, 149);
-            txtBoxFechaVencimiento.Name = "txtBoxFechaVencimiento";
-            txtBoxFechaVencimiento.Size = new Size(165, 23);
-            txtBoxFechaVencimiento.TabIndex = 15;
-            // 
-            // txtBoxPrecioCompra
-            // 
-            txtBoxPrecioCompra.Location = new Point(160, 227);
-            txtBoxPrecioCompra.Name = "txtBoxPrecioCompra";
-            txtBoxPrecioCompra.Size = new Size(83, 23);
-            txtBoxPrecioCompra.TabIndex = 16;
-            // 
-            // txtBoxDescuento
-            // 
-            txtBoxDescuento.Location = new Point(337, 227);
-            txtBoxDescuento.Name = "txtBoxDescuento";
-            txtBoxDescuento.Size = new Size(83, 23);
-            txtBoxDescuento.TabIndex = 17;
-            // 
-            // txtBoxCantidad
-            // 
-            txtBoxCantidad.Location = new Point(503, 227);
-            txtBoxCantidad.Name = "txtBoxCantidad";
-            txtBoxCantidad.Size = new Size(92, 23);
-            txtBoxCantidad.TabIndex = 18;
-            // 
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaption;
@@ -207,6 +152,89 @@
             button1.TabIndex = 19;
             button1.Text = "Agregar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // MaskFechaV
+            // 
+            MaskFechaV.Location = new Point(439, 154);
+            MaskFechaV.Mask = "00/00/0000";
+            MaskFechaV.Name = "MaskFechaV";
+            MaskFechaV.Size = new Size(156, 23);
+            MaskFechaV.TabIndex = 20;
+            MaskFechaV.TextAlign = HorizontalAlignment.Center;
+            MaskFechaV.ValidatingType = typeof(DateTime);
+            // 
+            // CBProducto
+            // 
+            CBProducto.FormattingEnabled = true;
+            CBProducto.Location = new Point(95, 82);
+            CBProducto.Name = "CBProducto";
+            CBProducto.Size = new Size(121, 23);
+            CBProducto.TabIndex = 21;
+            // 
+            // CBProveedor
+            // 
+            CBProveedor.FormattingEnabled = true;
+            CBProveedor.Location = new Point(312, 82);
+            CBProveedor.Name = "CBProveedor";
+            CBProveedor.Size = new Size(121, 23);
+            CBProveedor.TabIndex = 22;
+            // 
+            // CBSucursal
+            // 
+            CBSucursal.FormattingEnabled = true;
+            CBSucursal.Location = new Point(512, 82);
+            CBSucursal.Name = "CBSucursal";
+            CBSucursal.Size = new Size(121, 23);
+            CBSucursal.TabIndex = 23;
+            // 
+            // MaskFechaC
+            // 
+            MaskFechaC.Location = new Point(125, 154);
+            MaskFechaC.Mask = "00/00/0000";
+            MaskFechaC.Name = "MaskFechaC";
+            MaskFechaC.Size = new Size(156, 23);
+            MaskFechaC.TabIndex = 24;
+            MaskFechaC.TextAlign = HorizontalAlignment.Center;
+            MaskFechaC.ValidatingType = typeof(DateTime);
+            // 
+            // MaskCanti
+            // 
+            MaskCanti.Location = new Point(503, 232);
+            MaskCanti.Mask = "99999";
+            MaskCanti.Name = "MaskCanti";
+            MaskCanti.Size = new Size(94, 23);
+            MaskCanti.TabIndex = 25;
+            MaskCanti.TextAlign = HorizontalAlignment.Center;
+            MaskCanti.ValidatingType = typeof(int);
+            // 
+            // MaskDesc
+            // 
+            MaskDesc.Location = new Point(337, 232);
+            MaskDesc.Mask = "999";
+            MaskDesc.Name = "MaskDesc";
+            MaskDesc.Size = new Size(43, 23);
+            MaskDesc.TabIndex = 26;
+            MaskDesc.TextAlign = HorizontalAlignment.Center;
+            // 
+            // MaskPrecioC
+            // 
+            MaskPrecioC.Location = new Point(160, 232);
+            MaskPrecioC.Mask = "9999.99";
+            MaskPrecioC.Name = "MaskPrecioC";
+            MaskPrecioC.Size = new Size(94, 23);
+            MaskPrecioC.TabIndex = 27;
+            MaskPrecioC.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(386, 235);
+            label10.Name = "label10";
+            label10.Size = new Size(17, 15);
+            label10.TabIndex = 28;
+            label10.Text = "%";
             // 
             // AgregarLotes
             // 
@@ -214,15 +242,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(670, 383);
+            Controls.Add(label10);
+            Controls.Add(MaskPrecioC);
+            Controls.Add(MaskDesc);
+            Controls.Add(MaskCanti);
+            Controls.Add(MaskFechaC);
+            Controls.Add(CBSucursal);
+            Controls.Add(CBProveedor);
+            Controls.Add(CBProducto);
+            Controls.Add(MaskFechaV);
             Controls.Add(button1);
-            Controls.Add(txtBoxCantidad);
-            Controls.Add(txtBoxDescuento);
-            Controls.Add(txtBoxPrecioCompra);
-            Controls.Add(txtBoxFechaVencimiento);
-            Controls.Add(txtBoxFechaCompra);
-            Controls.Add(txtBoxIdProducto);
-            Controls.Add(txtBoxIdProveedor);
-            Controls.Add(txtBoxIdSucursal);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -249,14 +278,15 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private TextBox txtBoxIdSucursal;
-        private TextBox txtBoxIdProveedor;
-        private TextBox txtBoxIdProducto;
-        private TextBox txtBoxFechaCompra;
-        private TextBox txtBoxFechaVencimiento;
-        private TextBox txtBoxPrecioCompra;
-        private TextBox txtBoxDescuento;
-        private TextBox txtBoxCantidad;
         private Button button1;
+        private MaskedTextBox MaskFechaV;
+        private ComboBox CBProducto;
+        private ComboBox CBProveedor;
+        private ComboBox CBSucursal;
+        private MaskedTextBox MaskFechaC;
+        private MaskedTextBox MaskCanti;
+        private MaskedTextBox MaskDesc;
+        private MaskedTextBox MaskPrecioC;
+        private Label label10;
     }
 }

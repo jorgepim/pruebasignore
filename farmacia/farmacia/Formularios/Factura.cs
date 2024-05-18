@@ -195,7 +195,6 @@ namespace farmacia
             }
             CBTipoPago.SelectedIndex = 0;
             llenador.Close();
-
             LlenarDeProductos();
         }
 
@@ -273,7 +272,7 @@ namespace farmacia
             String presentacion = EncontrarSeleccion(CBPresentacion);
 
             CrudDetalleCompras datos = new CrudDetalleCompras();
-            SqlDataReader llenador = datos.ConsultarPorCategoria(presentacion);
+            SqlDataReader llenador = datos.ConsultarPorPresentacion(presentacion);
             CBProductos.Items.Add("Seleccionar");
             while (llenador.Read())
             {
@@ -379,7 +378,7 @@ namespace farmacia
             else
             {
                 String sucursal = factura.ObtenerSucusal(idEmpleado.ToString());
-                factura.CrearFactura(idEmpleado,idCliente,sucursal);
+                factura.CrearFactura(idEmpleado, idCliente, sucursal);
                 idFactura = factura.ObtenerUltimoIdFactura();
                 detalleCompras.AgregarADetalleCompra(idFactura.ToString(), idProducto, cantidad.ToString());
                 LlenadoDeTablas();
@@ -422,7 +421,7 @@ namespace farmacia
                     MessageBox.Show("La factura se almaceno exitosamente");
                     menu.Show();
                     this.Close();
-                    
+
                 }
                 else
                 {
@@ -520,5 +519,6 @@ namespace farmacia
             menu.Show();
             Clientes.Show();
         }
+
     }
 }

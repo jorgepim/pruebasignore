@@ -22,7 +22,7 @@ namespace farmacia.Clases.DataAccess
             string consulta = "SELECT * FROM Lotes";
             return conexionBD.EjecutarConsulta(consulta);
         }
-
+        
         public void InsertarLote(int idProducto, int idProveedor, int idSucursal, DateTime fechaCompra, DateTime fechaVencimiento, decimal precioCompra, decimal pDescuento, int cantidad)
         {
             string consulta = "INSERT INTO Lotes (id_Producto, id_Proveedor, id_Sucursal, FechaCompra, FechaVencimiento, PrecioCompra, PDescuento, Cantidad) " +
@@ -61,14 +61,6 @@ namespace farmacia.Clases.DataAccess
             conexionBD.EjecutarComando(comando);
         }
 
-        public void EliminarLote(int idLote)
-        {
-            string consulta = "DELETE FROM Lotes WHERE id_Lotes = @IdLote";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@IdLote", idLote);
-
-            conexionBD.EjecutarComando(comando);
-        }
+        
     }
 }

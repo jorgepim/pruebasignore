@@ -31,7 +31,11 @@ namespace farmacia.Clases.DataAccess
             String consulta = "SELECT *FROM Departamentos;";
             return conexion.EjecutarPeticion(consulta);
         }
-
+        public SqlDataReader LlenadorDeCombo()
+        {
+            String consulta = "SELECT *FROM Sucursales";
+            return conexion.EjecutarPeticion(consulta);
+        }
         public DataTable FiltrarPorBusqueda(String termino)
         {
             String consulta = "SELECT su.NombreSucursal AS 'Sucursal', de.NombreDepartamento AS 'Departamento', pr.NombreProducto AS 'Producto', inv.Cantidad AS 'Cantidad' " +
