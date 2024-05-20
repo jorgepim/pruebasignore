@@ -36,8 +36,12 @@
             txtBoxNombreConve = new TextBox();
             txtBoxDireccionConve = new TextBox();
             txtBoxCorreoConve = new TextBox();
-            txtBoxTelefonoConve = new TextBox();
             btnAgregarConve = new Button();
+            TablaDeDatos = new DataGridView();
+            BtnModificar = new Button();
+            BtnMedico = new Button();
+            MaskTel = new MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)TablaDeDatos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -58,9 +62,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(49, 99);
             label2.Name = "label2";
-            label2.Size = new Size(61, 17);
+            label2.Size = new Size(56, 17);
             label2.TabIndex = 1;
-            label2.Text = "Nombre ";
+            label2.Text = "Hospital";
             // 
             // label3
             // 
@@ -116,13 +120,6 @@
             txtBoxCorreoConve.Size = new Size(431, 23);
             txtBoxCorreoConve.TabIndex = 7;
             // 
-            // txtBoxTelefonoConve
-            // 
-            txtBoxTelefonoConve.Location = new Point(398, 93);
-            txtBoxTelefonoConve.Name = "txtBoxTelefonoConve";
-            txtBoxTelefonoConve.Size = new Size(150, 23);
-            txtBoxTelefonoConve.TabIndex = 8;
-            // 
             // btnAgregarConve
             // 
             btnAgregarConve.BackColor = SystemColors.ActiveCaption;
@@ -131,21 +128,64 @@
             btnAgregarConve.FlatStyle = FlatStyle.Flat;
             btnAgregarConve.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnAgregarConve.ForeColor = Color.White;
-            btnAgregarConve.Location = new Point(0, 328);
+            btnAgregarConve.Location = new Point(0, 610);
             btnAgregarConve.Name = "btnAgregarConve";
-            btnAgregarConve.Size = new Size(670, 55);
+            btnAgregarConve.Size = new Size(799, 55);
             btnAgregarConve.TabIndex = 9;
             btnAgregarConve.Text = "Agregar";
             btnAgregarConve.UseVisualStyleBackColor = false;
+            btnAgregarConve.Click += btnAgregarConve_Click;
+            // 
+            // TablaDeDatos
+            // 
+            TablaDeDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaDeDatos.Location = new Point(49, 299);
+            TablaDeDatos.Name = "TablaDeDatos";
+            TablaDeDatos.RowTemplate.Height = 25;
+            TablaDeDatos.Size = new Size(676, 268);
+            TablaDeDatos.TabIndex = 10;
+            TablaDeDatos.Click += TablaDeDatos_Click;
+            // 
+            // BtnModificar
+            // 
+            BtnModificar.Location = new Point(650, 88);
+            BtnModificar.Name = "BtnModificar";
+            BtnModificar.Size = new Size(75, 23);
+            BtnModificar.TabIndex = 11;
+            BtnModificar.Text = "Modificar";
+            BtnModificar.UseVisualStyleBackColor = true;
+            BtnModificar.Click += BtnModificar_Click;
+            // 
+            // BtnMedico
+            // 
+            BtnMedico.Location = new Point(650, 169);
+            BtnMedico.Name = "BtnMedico";
+            BtnMedico.Size = new Size(75, 23);
+            BtnMedico.TabIndex = 13;
+            BtnMedico.Text = "Medicos";
+            BtnMedico.UseVisualStyleBackColor = true;
+            BtnMedico.Click += BtnMedico_Click;
+            // 
+            // MaskTel
+            // 
+            MaskTel.Location = new Point(398, 99);
+            MaskTel.Mask = "9999-9999";
+            MaskTel.Name = "MaskTel";
+            MaskTel.Size = new Size(64, 23);
+            MaskTel.TabIndex = 14;
+            MaskTel.TextAlign = HorizontalAlignment.Center;
             // 
             // AgregarConvenios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
-            ClientSize = new Size(670, 383);
+            ClientSize = new Size(799, 665);
+            Controls.Add(MaskTel);
+            Controls.Add(BtnMedico);
+            Controls.Add(BtnModificar);
+            Controls.Add(TablaDeDatos);
             Controls.Add(btnAgregarConve);
-            Controls.Add(txtBoxTelefonoConve);
             Controls.Add(txtBoxCorreoConve);
             Controls.Add(txtBoxDireccionConve);
             Controls.Add(txtBoxNombreConve);
@@ -156,6 +196,7 @@
             Controls.Add(label1);
             Name = "AgregarConvenios";
             Text = "agregar convenios";
+            ((System.ComponentModel.ISupportInitialize)TablaDeDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,7 +211,10 @@
         private TextBox txtBoxNombreConve;
         private TextBox txtBoxDireccionConve;
         private TextBox txtBoxCorreoConve;
-        private TextBox txtBoxTelefonoConve;
         private Button btnAgregarConve;
+        private DataGridView TablaDeDatos;
+        private Button BtnModificar;
+        private Button BtnMedico;
+        private MaskedTextBox MaskTel;
     }
 }
