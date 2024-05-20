@@ -29,157 +29,130 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagarEmpleados));
-            label1 = new Label();
-            btnPagar = new Button();
-            label2 = new Label();
-            txtBoxBuscar = new TextBox();
-            dataGridViewPagarEmp = new DataGridView();
-            Dui = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Cargo = new DataGridViewTextBoxColumn();
-            btnBuscarPagar = new Button();
-            label3 = new Label();
-            label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPagarEmp).BeginInit();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPagar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblPago = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(282, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Pagar Empleados";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(322, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Pagar Empleados";
             // 
             // btnPagar
             // 
-            btnPagar.BackColor = SystemColors.ActiveCaption;
-            btnPagar.Dock = DockStyle.Bottom;
-            btnPagar.FlatAppearance.BorderColor = Color.White;
-            btnPagar.FlatStyle = FlatStyle.Flat;
-            btnPagar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPagar.ForeColor = Color.White;
-            btnPagar.Location = new Point(0, 324);
-            btnPagar.Name = "btnPagar";
-            btnPagar.Size = new Size(670, 59);
-            btnPagar.TabIndex = 1;
-            btnPagar.Text = "Pagar";
-            btnPagar.UseVisualStyleBackColor = false;
-            btnPagar.Click += btnPagar_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(68, 69);
-            label2.Name = "label2";
-            label2.Size = new Size(141, 21);
-            label2.TabIndex = 2;
-            label2.Text = "Buscar Empleado";
-            // 
-            // txtBoxBuscar
-            // 
-            txtBoxBuscar.Location = new Point(224, 71);
-            txtBoxBuscar.Name = "txtBoxBuscar";
-            txtBoxBuscar.Size = new Size(189, 23);
-            txtBoxBuscar.TabIndex = 4;
-            // 
-            // dataGridViewPagarEmp
-            // 
-            dataGridViewPagarEmp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPagarEmp.Columns.AddRange(new DataGridViewColumn[] { Dui, Nombre, Cargo });
-            dataGridViewPagarEmp.Location = new Point(68, 122);
-            dataGridViewPagarEmp.Name = "dataGridViewPagarEmp";
-            dataGridViewPagarEmp.RowTemplate.Height = 25;
-            dataGridViewPagarEmp.Size = new Size(345, 164);
-            dataGridViewPagarEmp.TabIndex = 5;
-            // 
-            // Dui
-            // 
-            Dui.HeaderText = "Dui";
-            Dui.Name = "Dui";
-            // 
-            // Nombre
-            // 
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Cargo
-            // 
-            Cargo.HeaderText = "Cargo";
-            Cargo.Name = "Cargo";
-            // 
-            // btnBuscarPagar
-            // 
-            btnBuscarPagar.FlatAppearance.BorderSize = 0;
-            btnBuscarPagar.FlatStyle = FlatStyle.Flat;
-            btnBuscarPagar.Image = (Image)resources.GetObject("btnBuscarPagar.Image");
-            btnBuscarPagar.Location = new Point(431, 63);
-            btnBuscarPagar.Name = "btnBuscarPagar";
-            btnBuscarPagar.Size = new Size(35, 37);
-            btnBuscarPagar.TabIndex = 6;
-            btnBuscarPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPagar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnPagar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPagar.ForeColor = System.Drawing.Color.White;
+            this.btnPagar.Location = new System.Drawing.Point(0, 432);
+            this.btnPagar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(766, 79);
+            this.btnPagar.TabIndex = 1;
+            this.btnPagar.Text = "Pagar";
+            this.btnPagar.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(447, 223);
-            label3.Name = "label3";
-            label3.Size = new Size(113, 21);
-            label3.TabIndex = 7;
-            label3.Text = "Total a Pagar: $";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(102, 353);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(143, 28);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Total a Pagar: $";
             // 
-            // label4
+            // lblPago
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(447, 265);
-            label4.Name = "label4";
-            label4.Size = new Size(19, 21);
-            label4.TabIndex = 8;
-            label4.Text = "$";
+            this.lblPago.AutoSize = true;
+            this.lblPago.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPago.ForeColor = System.Drawing.Color.White;
+            this.lblPago.Location = new System.Drawing.Point(265, 353);
+            this.lblPago.Name = "lblPago";
+            this.lblPago.Size = new System.Drawing.Size(0, 28);
+            this.lblPago.TabIndex = 8;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.AccessibleName = "btnAgregar";
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.Location = new System.Drawing.Point(12, 12);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(69, 67);
+            this.btnRegresar.TabIndex = 37;
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(322, 159);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(0, 28);
+            this.lblNombre.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(102, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 28);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Nombre:";
             // 
             // PagarEmpleados
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(34, 36, 49);
-            ClientSize = new Size(670, 383);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(btnBuscarPagar);
-            Controls.Add(dataGridViewPagarEmp);
-            Controls.Add(txtBoxBuscar);
-            Controls.Add(label2);
-            Controls.Add(btnPagar);
-            Controls.Add(label1);
-            Name = "PagarEmpleados";
-            Text = "Pagar Empleados";
-            ((System.ComponentModel.ISupportInitialize)dataGridViewPagarEmp).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.ClientSize = new System.Drawing.Size(766, 511);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.lblPago);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnPagar);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "PagarEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pagar Empleados";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Label label1;
         private Button btnPagar;
-        private Label label2;
-        private TextBox txtBoxBuscar;
-        private DataGridView dataGridViewPagarEmp;
-        private DataGridViewTextBoxColumn Dui;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn Cargo;
-        private Button btnBuscarPagar;
         private Label label3;
-        private Label label4;
+        private Label lblPago;
         private TextBox textBox2;
+        private Button btnRegresar;
+        private Label lblNombre;
+        private Label label2;
     }
 }
