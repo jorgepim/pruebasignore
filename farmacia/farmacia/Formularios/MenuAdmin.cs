@@ -56,10 +56,7 @@ namespace PharmaSync.formularios
             this.Hide();
         }
 
-        private void btnConvenio_Click_1(object sender, EventArgs e)
-        {
-            openChildForm(new AgregarConvenios());
-        }
+        
 
         private void btnLotes_Click(object sender, EventArgs e)
         {
@@ -69,21 +66,11 @@ namespace PharmaSync.formularios
 
         private void btnAgregarEmp_Click(object sender, EventArgs e)
         {
-            openChildForm(new AgregarEmpleados());
+            openChildForm(new AgregarEmpleados(this));
 
         }
 
-        private void btnPagarEmp_Click(object sender, EventArgs e)
-        {
-            openChildForm(new PagarEmpleados());
-
-        }
-
-        private void btnRegisHora_Click(object sender, EventArgs e)
-        {
-            openChildForm(new RegistrarHoras());
-
-        }
+        
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -109,6 +96,11 @@ namespace PharmaSync.formularios
         private void btnCerrarTodo_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnConvenio_Click(object sender, EventArgs e)
+        {
+            openChildForm(new AgregarConvenios());
         }
     }
 }

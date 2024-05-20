@@ -1,4 +1,5 @@
-﻿using farmacia.Clases.DataAccess;
+﻿using farmacia;
+using farmacia.Clases.DataAccess;
 using farmacia.Clases.Entidades;
 using farmacia.Formularios;
 using System;
@@ -19,11 +20,13 @@ namespace DB
         List<int> idsCargo = new List<int>();
         List<int> idsSucursal = new List<int>();
         crudEmpleados empleados = new crudEmpleados();
-        public AgregarEmpleados()
+        Form menu;
+        public AgregarEmpleados(Form menu)
         {
             InitializeComponent();
             LlenadoDeTablas();
             LlenadoCombos();
+            this.menu = menu;
         }
 
         
@@ -33,7 +36,7 @@ namespace DB
             tablaEmpleados.DataSource = llenador.VerRegistros();
 
             // Establecer el ancho de las columnas
-            tablaEmpleados.Columns["NOMBRE"].Width = 85;
+            tablaEmpleados.Columns["NOMBRE"].Width = 80;
             tablaEmpleados.Columns["DIRECCION"].Width = 200;
             tablaEmpleados.Columns["CARGO"].Width = 100;
             tablaEmpleados.Columns["SUCURSAL"].Width = 100;
@@ -187,6 +190,21 @@ namespace DB
             catch (Exception ex)
             {
                 MessageBox.Show("Error al llenar : " + ex.Message);
+            }
+        }
+
+        private void btnPagarEmp_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados.SelectedRows.Count > 0)
+            {
+                PagarEmpleados pago = new PagarEmpleados();
+                menu.Hide();
+                this.Hide();
+                pago.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un cliente.");
             }
         }
     }

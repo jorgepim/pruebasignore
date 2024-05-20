@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarEmpleados));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnPagarEmp = new System.Windows.Forms.Button();
+            this.btnRegisHora = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,12 +236,51 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Buscar";
             // 
+            // btnPagarEmp
+            // 
+            this.btnPagarEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(218)))));
+            this.btnPagarEmp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(65)))), ((int)(((byte)(115)))));
+            this.btnPagarEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagarEmp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPagarEmp.ForeColor = System.Drawing.Color.White;
+            this.btnPagarEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnPagarEmp.Image")));
+            this.btnPagarEmp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPagarEmp.Location = new System.Drawing.Point(490, 124);
+            this.btnPagarEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPagarEmp.Name = "btnPagarEmp";
+            this.btnPagarEmp.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnPagarEmp.Size = new System.Drawing.Size(209, 75);
+            this.btnPagarEmp.TabIndex = 25;
+            this.btnPagarEmp.Text = "Pagar\r\nEmpleados";
+            this.btnPagarEmp.UseVisualStyleBackColor = false;
+            this.btnPagarEmp.Click += new System.EventHandler(this.btnPagarEmp_Click);
+            // 
+            // btnRegisHora
+            // 
+            this.btnRegisHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(218)))));
+            this.btnRegisHora.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(65)))), ((int)(((byte)(115)))));
+            this.btnRegisHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegisHora.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegisHora.ForeColor = System.Drawing.Color.White;
+            this.btnRegisHora.Image = ((System.Drawing.Image)(resources.GetObject("btnRegisHora.Image")));
+            this.btnRegisHora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegisHora.Location = new System.Drawing.Point(490, 43);
+            this.btnRegisHora.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRegisHora.Name = "btnRegisHora";
+            this.btnRegisHora.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnRegisHora.Size = new System.Drawing.Size(209, 73);
+            this.btnRegisHora.TabIndex = 26;
+            this.btnRegisHora.Text = "Registrar\r\nHora";
+            this.btnRegisHora.UseVisualStyleBackColor = false;
+            // 
             // AgregarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1489, 511);
+            this.Controls.Add(this.btnRegisHora);
+            this.Controls.Add(this.btnPagarEmp);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.comboBoxSucursal);
@@ -286,5 +328,7 @@
         private Label label9;
         private TextBox txtBuscar;
         private Label label10;
+        private Button btnPagarEmp;
+        private Button btnRegisHora;
     }
 }

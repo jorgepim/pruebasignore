@@ -85,6 +85,14 @@ namespace farmacia.Formularios
             Clientes.Show();
          }
 
+        public String EncontrarSeleccion(ComboBox combo)
+        {
+            String selectedItem = combo.SelectedItem.ToString();
+            String[] parts = selectedItem.Split('|');
+            String dato = parts[0].Trim();
+            return dato;
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             CRUDmembresias actualizar = new CRUDmembresias();
