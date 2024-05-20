@@ -125,7 +125,7 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.White;
-            label9.Location = new Point(411, 216);
+            label9.Location = new Point(375, 216);
             label9.Name = "label9";
             label9.Size = new Size(58, 15);
             label9.TabIndex = 8;
@@ -150,7 +150,7 @@
             MaskFechaV.Location = new Point(160, 154);
             MaskFechaV.Mask = "00/00/0000";
             MaskFechaV.Name = "MaskFechaV";
-            MaskFechaV.Size = new Size(156, 23);
+            MaskFechaV.Size = new Size(66, 23);
             MaskFechaV.TabIndex = 20;
             MaskFechaV.TextAlign = HorizontalAlignment.Center;
             MaskFechaV.ValidatingType = typeof(DateTime);
@@ -181,10 +181,10 @@
             // 
             // MaskCanti
             // 
-            MaskCanti.Location = new Point(475, 213);
+            MaskCanti.Location = new Point(439, 213);
             MaskCanti.Mask = "99999";
             MaskCanti.Name = "MaskCanti";
-            MaskCanti.Size = new Size(94, 23);
+            MaskCanti.Size = new Size(35, 23);
             MaskCanti.TabIndex = 25;
             MaskCanti.TextAlign = HorizontalAlignment.Center;
             MaskCanti.ValidatingType = typeof(int);
@@ -194,7 +194,7 @@
             MaskDesc.Location = new Point(309, 213);
             MaskDesc.Mask = "999";
             MaskDesc.Name = "MaskDesc";
-            MaskDesc.Size = new Size(43, 23);
+            MaskDesc.Size = new Size(23, 23);
             MaskDesc.TabIndex = 26;
             MaskDesc.TextAlign = HorizontalAlignment.Center;
             // 
@@ -203,7 +203,7 @@
             MaskPrecioC.Location = new Point(132, 213);
             MaskPrecioC.Mask = "999999.99";
             MaskPrecioC.Name = "MaskPrecioC";
-            MaskPrecioC.Size = new Size(94, 23);
+            MaskPrecioC.Size = new Size(55, 23);
             MaskPrecioC.TabIndex = 27;
             MaskPrecioC.TextAlign = HorizontalAlignment.Center;
             // 
@@ -211,7 +211,7 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.White;
-            label10.Location = new Point(358, 216);
+            label10.Location = new Point(338, 216);
             label10.Name = "label10";
             label10.Size = new Size(17, 15);
             label10.TabIndex = 28;

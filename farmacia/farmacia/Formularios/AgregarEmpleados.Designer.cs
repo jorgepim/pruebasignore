@@ -188,7 +188,7 @@
             this.tablaEmpleados.Name = "tablaEmpleados";
             this.tablaEmpleados.RowHeadersWidth = 51;
             this.tablaEmpleados.RowTemplate.Height = 29;
-            this.tablaEmpleados.Size = new System.Drawing.Size(636, 339);
+            this.tablaEmpleados.Size = new System.Drawing.Size(636, 216);
             this.tablaEmpleados.TabIndex = 20;
             this.tablaEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaEmpleados_CellClick);
             // 
@@ -238,6 +238,7 @@
             // 
             // btnPagarEmp
             // 
+            this.btnPagarEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPagarEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(218)))));
             this.btnPagarEmp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(65)))), ((int)(((byte)(115)))));
             this.btnPagarEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -245,7 +246,7 @@
             this.btnPagarEmp.ForeColor = System.Drawing.Color.White;
             this.btnPagarEmp.Image = ((System.Drawing.Image)(resources.GetObject("btnPagarEmp.Image")));
             this.btnPagarEmp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagarEmp.Location = new System.Drawing.Point(490, 124);
+            this.btnPagarEmp.Location = new System.Drawing.Point(1136, 306);
             this.btnPagarEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPagarEmp.Name = "btnPagarEmp";
             this.btnPagarEmp.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -257,6 +258,7 @@
             // 
             // btnRegisHora
             // 
+            this.btnRegisHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRegisHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(218)))));
             this.btnRegisHora.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(65)))), ((int)(((byte)(115)))));
             this.btnRegisHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -264,7 +266,7 @@
             this.btnRegisHora.ForeColor = System.Drawing.Color.White;
             this.btnRegisHora.Image = ((System.Drawing.Image)(resources.GetObject("btnRegisHora.Image")));
             this.btnRegisHora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegisHora.Location = new System.Drawing.Point(490, 43);
+            this.btnRegisHora.Location = new System.Drawing.Point(841, 309);
             this.btnRegisHora.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegisHora.Name = "btnRegisHora";
             this.btnRegisHora.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -272,6 +274,7 @@
             this.btnRegisHora.TabIndex = 26;
             this.btnRegisHora.Text = "Registrar\r\nHora";
             this.btnRegisHora.UseVisualStyleBackColor = false;
+            this.btnRegisHora.Click += new System.EventHandler(this.btnRegisHora_Click);
             // 
             // AgregarEmpleados
             // 

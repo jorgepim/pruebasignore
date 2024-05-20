@@ -36,11 +36,13 @@ namespace DB
             tablaEmpleados.DataSource = llenador.VerRegistros();
 
             // Establecer el ancho de las columnas
+            tablaEmpleados.Columns["ID"].Width = 80;
             tablaEmpleados.Columns["NOMBRE"].Width = 80;
             tablaEmpleados.Columns["DIRECCION"].Width = 200;
             tablaEmpleados.Columns["CARGO"].Width = 100;
             tablaEmpleados.Columns["SUCURSAL"].Width = 100;
             tablaEmpleados.AllowUserToAddRows = false;
+            tablaEmpleados.Columns["ID"].Width = 80;
             tablaEmpleados.Columns["NOMBRE"].ReadOnly = true;
             tablaEmpleados.Columns["DIRECCION"].ReadOnly = true;
             tablaEmpleados.Columns["CARGO"].ReadOnly = true;
@@ -197,10 +199,27 @@ namespace DB
         {
             if (tablaEmpleados.SelectedRows.Count > 0)
             {
-                PagarEmpleados pago = new PagarEmpleados();
+                string id = tablaEmpleados.SelectedRows[0].Cells["ID"].Value.ToString();
+                string nombre = tablaEmpleados.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
+                PagarEmpleados pago = new PagarEmpleados(id, nombre, menu, this);
                 menu.Hide();
                 this.Hide();
                 pago.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un cliente.");
+            }
+        }
+
+        private void btnRegisHora_Click(object sender, EventArgs e)
+        {
+            if (tablaEmpleados.SelectedRows.Count > 0)
+            {
+                RegistrarHoras hora = new RegistrarHoras();
+                menu.Close();
+                this.Close();
+                hora.Show();
             }
             else
             {

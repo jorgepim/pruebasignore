@@ -17,7 +17,7 @@ namespace farmacia.Clases.DataAccess
         public DataTable VerRegistros()
         {
             DataTable table = new DataTable();
-            string query = @"SELECT 
+            string query = @"SELECT id_Empleado AS ID,
                                 Nombre AS  NOMBRE, 
                                 Direccion AS DIRECCION, 
                                 nombreCargo AS CARGO, 
