@@ -15,7 +15,6 @@ namespace farmacia.Clases.DataAccess
         private Conexion conexion = new Conexion();
         DataTable table = new DataTable();
         SqlCommand comando = new SqlCommand();
-        SqlDataReader lector;
 
         public CRUDmembresias()
         {
