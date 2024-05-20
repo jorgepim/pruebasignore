@@ -26,73 +26,11 @@ namespace farmacia.Clases.DataAccess
             return conexionBD.EjecutarPeticion(consulta);
         }
 
-        public void InsertarCategoria(String nombreCategoria)
-        {
-            String consulta = "INSERT INTO Categorias (NombreCategoria) VALUES (@NombreCategoria)";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@NombreCategoria", nombreCategoria);
-
-            conexionBD.EjecutarComando(comando);
-        }
-
-        public void ActualizarCategoria(int idCategoria, String nombreCategoria)
-        {
-            String consulta = "UPDATE Categorias SET NombreCategoria = @NombreCategoria WHERE id_Categoria = @idCategoria";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@NombreCategoria", nombreCategoria);
-            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
-
-            conexionBD.EjecutarComando(comando);
-        }
-
-        public void EliminarCategoria(int idCategoria)
-        {
-            String consulta = "DELETE FROM Categorias WHERE id_Categoria = @idCategoria";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
-
-            conexionBD.EjecutarComando(comando);
-        }
-
         //Crud de Marcas
         public SqlDataReader ObtenerTodasLasMarcas()
         {
             String consulta = "SELECT * FROM Marcas";
             return conexionBD.EjecutarPeticion(consulta);
-        }
-
-        public void InsertarMarca(String nombreMarca)
-        {
-            String consulta = "INSERT INTO Marcas (NombreMarca) VALUES (@NombreMarca)";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@NombreMarca", nombreMarca);
-
-            conexionBD.EjecutarComando(comando);
-        }
-
-        public void ActualizarMarca(int idMarca, String nombreMarca)
-        {
-            String consulta = "UPDATE Marcas SET NombreMarca = @NombreMarca WHERE id_Marca = @idMarca";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@NombreMarca", nombreMarca);
-            comando.Parameters.AddWithValue("@idMarca", idMarca);
-
-            conexionBD.EjecutarComando(comando);
-        }
-
-        public void EliminarMarca(int idMarca)
-        {
-            String consulta = "DELETE FROM Marcas WHERE id_Marca = @idMarca";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@idMarca", idMarca);
-
-            conexionBD.EjecutarComando(comando);
         }
 
         //Crud de Presentaciones
@@ -101,37 +39,6 @@ namespace farmacia.Clases.DataAccess
         {
             String consulta = "SELECT * FROM Presentaciones";
             return conexionBD.EjecutarPeticion(consulta);
-        }
-
-        public void InsertarPresentacion(String tipoDePre)
-        {
-            String consulta = "INSERT INTO Presentaciones (TipoDePre) VALUES (@TipoDePre)";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@TipoDePre", tipoDePre);
-
-            conexionBD.EjecutarComando(comando);
-        }
-
-        public void ActualizarPresentacion(int idPresentacion, String tipoDePre)
-        {
-            String consulta = "UPDATE Presentaciones SET TipoDePre = @TipoDePre WHERE id_Presentacion = @idPresentacion";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@TipoDePre", tipoDePre);
-            comando.Parameters.AddWithValue("@idPresentacion", idPresentacion);
-
-            conexionBD.EjecutarComando(comando);
-        }
-
-        public void EliminarPresentacion(int idPresentacion)
-        {
-            String consulta = "DELETE FROM Presentaciones WHERE id_Presentacion = @idPresentacion";
-
-            SqlCommand comando = new SqlCommand(consulta, conexionBD.ObtenerConexion());
-            comando.Parameters.AddWithValue("@idPresentacion", idPresentacion);
-
-            conexionBD.EjecutarComando(comando);
         }
 
         //Crud de DetalleCompras
