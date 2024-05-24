@@ -154,7 +154,6 @@ namespace DB
             crudEmpleados datos = new crudEmpleados();
             SqlDataReader llenador;
 
-            // Llenado de cbMembresia
             try
             {
                 llenador = datos.FillcmbCargo();
@@ -216,9 +215,11 @@ namespace DB
         {
             if (tablaEmpleados.SelectedRows.Count > 0)
             {
-                RegistrarHoras hora = new RegistrarHoras();
-                menu.Close();
-                this.Close();
+                string id = tablaEmpleados.SelectedRows[0].Cells["ID"].Value.ToString();
+                string nombre = tablaEmpleados.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
+                RegistrarHoras hora = new RegistrarHoras(id, nombre, menu, this);
+                menu.Hide();
+                this.Hide();
                 hora.Show();
             }
             else

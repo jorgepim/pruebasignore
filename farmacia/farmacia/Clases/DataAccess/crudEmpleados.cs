@@ -10,10 +10,10 @@ namespace farmacia.Clases.DataAccess
 {
     internal class crudEmpleados
     {
-        private Conexion conexion = new Conexion();
-        DataTable table = new DataTable();
-        SqlCommand comando = new SqlCommand();
-        SqlDataReader lector;
+            private Conexion conexion = new Conexion();
+            DataTable table = new DataTable();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
         public DataTable VerRegistros()
         {
             DataTable table = new DataTable();

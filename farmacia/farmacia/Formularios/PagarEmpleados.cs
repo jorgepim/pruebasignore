@@ -26,10 +26,7 @@ namespace DB
             lblNombre.Text = nombre;
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
