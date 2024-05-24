@@ -161,11 +161,11 @@ namespace farmacia.Formularios
         {
             if (tablaClientes.SelectedRows.Count > 0)
             {
-                    string id = tablaClientes.SelectedRows[0].Cells["ID"].Value.ToString();
-                    Factura factura = new Factura(id, menu, this);
-                    menu.Hide();
-                    this.Hide();
-                    factura.Show();
+                string id = tablaClientes.SelectedRows[0].Cells["ID"].Value.ToString();
+                Factura factura = new Factura(id, menu, this);
+                menu.Hide();
+                this.Hide();
+                factura.Show();
             }
             else
             {
@@ -188,6 +188,11 @@ namespace farmacia.Formularios
             {
                 MessageBox.Show("Por favor, selecciona un cliente.");
             }
+        }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

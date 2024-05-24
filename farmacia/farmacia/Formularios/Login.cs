@@ -17,7 +17,7 @@ namespace farmacia.Formularios
     public partial class Login : Form
     {
         String idEmpleado = "";
-        SqlConnection cadenaConexion = new SqlConnection("server=localhost;database=farmacia ; integrated security = true");
+        SqlConnection cadenaConexion = new SqlConnection("server=localhost;database=BDFarmacia ; integrated security = true");
         public Login()
         {
             InitializeComponent();

@@ -11,7 +11,7 @@ namespace farmacia.Clases.DataAccess
 {
     internal class CrudCitas
     {
-       public string connectionString = "server=localhost;database=farmacia;integrated security=true";
+       public string connectionString = "server=localhost;database=BDFarmacia;integrated security=true";
 
         public DataTable GetConsultas()
         {

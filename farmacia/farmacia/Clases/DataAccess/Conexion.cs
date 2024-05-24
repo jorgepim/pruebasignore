@@ -11,7 +11,7 @@ namespace farmacia.Clases.DataAccess
     public class Conexion
     {
         private SqlConnection conexion;
-        private string cadenaConexion = "server=localhost ; database=farmacia ; integrated security = true";
+        private string cadenaConexion = "server=localhost ; database=BDFarmacia ; integrated security = true";
 
         public Conexion()
         {
