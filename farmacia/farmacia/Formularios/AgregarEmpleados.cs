@@ -17,9 +17,8 @@ namespace DB
 {
     public partial class AgregarEmpleados : Form
     {
-        List<int> idsCargo = new List<int>();
-        List<int> idsSucursal = new List<int>();
         crudEmpleados empleados = new crudEmpleados();
+        crudPagarEmpleado pagar = new crudPagarEmpleado();
         Form menu;
         public AgregarEmpleados(Form menu)
         {
@@ -158,10 +157,8 @@ namespace DB
             {
                 llenador = datos.FillcmbCargo();
                 comboBoxCargo.Items.Clear();
-                idsCargo.Clear();
 
                 comboBoxCargo.Items.Add("Seleccionar");
-                idsCargo.Add(-1); // Alinea los índices con el ComboBox
 
                 while (llenador.Read())
                 {
@@ -169,21 +166,18 @@ namespace DB
                     string descripcion = llenador.GetString(1);
                     string displayText = $"{idCargo}| {descripcion}";
                     comboBoxCargo.Items.Add(displayText);
-                    idsCargo.Add(idCargo);
                 }
                 comboBoxCargo.SelectedIndex = 0;
                 llenador.Close();
 
                 llenador = datos.FillcmbSucursal();
                 comboBoxSucursal.Items.Add("Seleccionar");
-                idsSucursal.Add(-1);
                 while (llenador.Read())
                 {
                     int idSucursal = llenador.GetInt32(0); 
                     string descripcion = llenador.GetString(1);
                     string displayText = $"{idSucursal} | {descripcion}";
                     comboBoxSucursal.Items.Add(displayText);
-                    idsSucursal.Add(idSucursal);
                 }
                 comboBoxSucursal.SelectedIndex = 0;
                 llenador.Close();
@@ -200,7 +194,9 @@ namespace DB
             {
                 string id = tablaEmpleados.SelectedRows[0].Cells["ID"].Value.ToString();
                 string nombre = tablaEmpleados.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
-                PagarEmpleados pago = new PagarEmpleados(id, nombre, menu, this);
+                int empleadoId = int.Parse(id);
+                decimal aPagar = pagar.CalcularTotalPagarEmpleado(empleadoId);
+                PagarEmpleados pago = new PagarEmpleados(id, nombre, menu, aPagar, this);
                 menu.Hide();
                 this.Hide();
                 pago.Show();

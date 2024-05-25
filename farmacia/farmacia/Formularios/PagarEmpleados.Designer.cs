@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagarEmpleados));
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPagar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblPago = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPagar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -49,22 +49,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pagar Empleados";
             // 
-            // btnPagar
-            // 
-            this.btnPagar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnPagar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnPagar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnPagar.ForeColor = System.Drawing.Color.White;
-            this.btnPagar.Location = new System.Drawing.Point(0, 432);
-            this.btnPagar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(766, 79);
-            this.btnPagar.TabIndex = 1;
-            this.btnPagar.Text = "Pagar";
-            this.btnPagar.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -72,9 +56,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(102, 353);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 28);
+            this.label3.Size = new System.Drawing.Size(132, 28);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Total a Pagar: $";
+            this.label3.Text = "Total a Pagar: ";
             // 
             // lblPago
             // 
@@ -122,6 +106,23 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "Nombre:";
             // 
+            // btnPagar
+            // 
+            this.btnPagar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPagar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnPagar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPagar.ForeColor = System.Drawing.Color.White;
+            this.btnPagar.Location = new System.Drawing.Point(0, 432);
+            this.btnPagar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(766, 79);
+            this.btnPagar.TabIndex = 1;
+            this.btnPagar.Text = "Ver historial";
+            this.btnPagar.UseVisualStyleBackColor = false;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
+            // 
             // PagarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -147,12 +148,12 @@
         #endregion
 
         private Label label1;
-        private Button btnPagar;
         private Label label3;
         private Label lblPago;
         private TextBox textBox2;
         private Button btnRegresar;
         private Label lblNombre;
         private Label label2;
+        private Button btnPagar;
     }
 }
