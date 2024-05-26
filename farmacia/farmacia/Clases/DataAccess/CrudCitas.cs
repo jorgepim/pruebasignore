@@ -53,17 +53,57 @@ namespace farmacia.Clases.DataAccess
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO ConsultasME (Id_DatConvenios, Id_Cliente, Id_DrEspecialidades, Fecha, DetallesAdicionales) VALUES (@Id_DatConvenios, @Id_Cliente, @Id_DrEspecialidades, @Fecha, @DetallesAdicionales)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Id_DatConvenios", idDatConvenios);
-                command.Parameters.AddWithValue("@Id_Cliente", idCliente);
-                command.Parameters.AddWithValue("@Id_DrEspecialidades", idDrEspecialidades);
-                command.Parameters.AddWithValue("@Fecha", fecha);
-                command.Parameters.AddWithValue("@DetallesAdicionales", detallesAdicionales);
                 connection.Open();
-                command.ExecuteNonQuery();
+
+     
+                string queryCheckCitas = @"
+            SELECT COUNT(*)
+            FROM ConsultasME
+            WHERE Id_Cliente = @Id_Cliente
+            AND Fecha >= DATEADD(month, -1, GETDATE())";
+
+                SqlCommand commandCheck = new SqlCommand(queryCheckCitas, connection);
+                commandCheck.Parameters.AddWithValue("@Id_Cliente", idCliente);
+                int numCitas = (int)commandCheck.ExecuteScalar();
+
+                if (numCitas >= 3)
+                {
+                    throw new InvalidOperationException("El cliente ya tiene más de 3 citas en el último mes y no puede agregar más citas.");
+                }
+
+                string queryInsert = "INSERT INTO ConsultasME (Id_DatConvenios, Id_Cliente, Id_DrEspecialidades, Fecha, DetallesAdicionales) VALUES (@Id_DatConvenios, @Id_Cliente, @Id_DrEspecialidades, @Fecha, @DetallesAdicionales)";
+                SqlCommand commandInsert = new SqlCommand(queryInsert, connection);
+                commandInsert.Parameters.AddWithValue("@Id_DatConvenios", idDatConvenios);
+                commandInsert.Parameters.AddWithValue("@Id_Cliente", idCliente);
+                commandInsert.Parameters.AddWithValue("@Id_DrEspecialidades", idDrEspecialidades);
+                commandInsert.Parameters.AddWithValue("@Fecha", fecha);
+                commandInsert.Parameters.AddWithValue("@DetallesAdicionales", detallesAdicionales);
+
+                string queryUpdate = "UPDATE Clientes SET NumCitasAsis = NumCitasAsis + 1 WHERE id_Cliente = @Id_Cliente";
+                SqlCommand commandUpdate = new SqlCommand(queryUpdate, connection);
+                commandUpdate.Parameters.AddWithValue("@Id_Cliente", idCliente);
+
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                try
+                {
+                    commandInsert.Transaction = transaction;
+                    commandInsert.ExecuteNonQuery();
+
+                    commandUpdate.Transaction = transaction;
+                    commandUpdate.ExecuteNonQuery();
+
+                    transaction.Commit();
+                }
+                catch (Exception)
+                {
+                    transaction.Rollback();
+                    throw;
+                }
             }
         }
+
+
 
 
         public void UpdateConsulta(int id, int idConveniosHC, int idCliente, int idDrEspecialidades, DateTime fecha, string detallesAdicionales)
@@ -137,7 +177,7 @@ namespace farmacia.Clases.DataAccess
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT ConsultasME.Id_Cliente, clientes.NombreCliente FROM ConsultasME  JOIN Clientes ON ConsultasME.Id_Cliente= Clientes.id_Cliente";
+                string query = "SELECT Id_Cliente, NombreCliente FROM Clientes";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
