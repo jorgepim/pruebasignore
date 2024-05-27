@@ -38,6 +38,7 @@ namespace farmacia.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -65,6 +66,33 @@ namespace farmacia.Formularios
             this.cbCliente = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabalCitas)).BeginInit();
             this.SuspendLayout();
+=======
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas));
+            label5 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            txtDetalles = new TextBox();
+            Nombre = new Label();
+            label2 = new Label();
+            colorDialog1 = new ColorDialog();
+            cBhospital = new ComboBox();
+            cbDoctor = new ComboBox();
+            tabalCitas = new DataGridView();
+            CNum = new DataGridViewTextBoxColumn();
+            cHospital = new DataGridViewTextBoxColumn();
+            CDoc = new DataGridViewTextBoxColumn();
+            cEspecialidad = new DataGridViewTextBoxColumn();
+            CFecha = new DataGridViewTextBoxColumn();
+            cDetalles = new DataGridViewTextBoxColumn();
+            btnAgregar = new Button();
+            txtFecha = new DateTimePicker();
+            cbCliente = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)tabalCitas).BeginInit();
+            SuspendLayout();
+>>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
             // 
             // label5
             // 
@@ -143,6 +171,7 @@ namespace farmacia.Formularios
             // 
             // tabalCitas
             // 
+<<<<<<< HEAD
             this.tabalCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -186,6 +215,43 @@ namespace farmacia.Formularios
             this.tabalCitas.RowTemplate.Height = 29;
             this.tabalCitas.Size = new System.Drawing.Size(806, 268);
             this.tabalCitas.TabIndex = 25;
+=======
+            tabalCitas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabalCitas.BackgroundColor = Color.FromArgb(79, 80, 95);
+            tabalCitas.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(34, 36, 49);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            tabalCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            tabalCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tabalCitas.Columns.AddRange(new DataGridViewColumn[] { CNum, cHospital, CDoc, cEspecialidad, CFecha, cDetalles });
+            tabalCitas.EnableHeadersVisualStyles = false;
+            tabalCitas.GridColor = SystemColors.ActiveCaption;
+            tabalCitas.Location = new Point(470, 367);
+            tabalCitas.Name = "tabalCitas";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(34, 36, 49);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            tabalCitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            tabalCitas.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(79, 80, 95);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            tabalCitas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            tabalCitas.RowTemplate.Height = 29;
+            tabalCitas.Size = new Size(806, 268);
+            tabalCitas.TabIndex = 25;
+>>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
             // 
             // CNum
             // 
@@ -229,6 +295,7 @@ namespace farmacia.Formularios
             this.cDetalles.Name = "cDetalles";
             this.cDetalles.Width = 125;
             // 
+<<<<<<< HEAD
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -268,6 +335,23 @@ namespace farmacia.Formularios
             this.btnAgregar.Text = "   Agregar Cita";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
+=======
+            // btnAgregar
+            // 
+            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
+            btnAgregar.Location = new Point(93, 488);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(307, 67);
+            btnAgregar.TabIndex = 29;
+            btnAgregar.Text = "   Agregar Cita";
+            btnAgregar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+>>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
             // 
             // txtFecha
             // 
@@ -289,6 +373,7 @@ namespace farmacia.Formularios
             // 
             // Citas
             // 
+<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -313,6 +398,29 @@ namespace farmacia.Formularios
             this.ResumeLayout(false);
             this.PerformLayout();
 
+=======
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(34, 36, 49);
+            ClientSize = new Size(1325, 711);
+            Controls.Add(cbCliente);
+            Controls.Add(txtFecha);
+            Controls.Add(btnAgregar);
+            Controls.Add(tabalCitas);
+            Controls.Add(cbDoctor);
+            Controls.Add(cBhospital);
+            Controls.Add(label5);
+            Controls.Add(label3);
+            Controls.Add(label4);
+            Controls.Add(txtDetalles);
+            Controls.Add(Nombre);
+            Controls.Add(label2);
+            Name = "Citas";
+            Text = "Citas";
+            ((System.ComponentModel.ISupportInitialize)tabalCitas).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+>>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
         }
 
         #endregion
@@ -327,8 +435,6 @@ namespace farmacia.Formularios
         private ComboBox cBhospital;
         private ComboBox cbDoctor;
         private DataGridView tabalCitas;
-        private Button button2;
-        private TextBox txtBuscar;
         private Button btnAgregar;
         private DateTimePicker txtFecha;
         private DataGridViewTextBoxColumn CNum;

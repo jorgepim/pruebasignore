@@ -50,7 +50,18 @@ namespace farmacia.Clases.DataAccess
         }
 
         public void AddConsulta(int idDatConvenios, int idCliente, int idDrEspecialidades, DateTime fecha, string detallesAdicionales)
+
         {
+            if (fecha.Date < DateTime.Now.Date)
+            {
+                throw new InvalidOperationException("La fecha de la cita debe ser igual o posterior al día actual.");
+            }
+
+            if (ExcedeCitasMensuales(idCliente, fecha))
+            {
+                throw new InvalidOperationException("El cliente ya tiene 3 citas en el mes actual y no puede agregar más citas.");
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -67,21 +78,6 @@ namespace farmacia.Clases.DataAccess
                 if (ExisteCitaEnMismoDia(idDrEspecialidades, idHospital, fecha))
                 {
                     throw new InvalidOperationException("Ya existe una cita con el mismo doctor en el mismo hospital en la misma fecha.");
-                }
-
-                string queryCheckCitas = @"
-            SELECT COUNT(*)
-            FROM ConsultasME
-            WHERE Id_Cliente = @Id_Cliente
-            AND Fecha >= DATEADD(month, -1, GETDATE())";
-
-                SqlCommand commandCheck = new SqlCommand(queryCheckCitas, connection);
-                commandCheck.Parameters.AddWithValue("@Id_Cliente", idCliente);
-                int numCitas = (int)commandCheck.ExecuteScalar();
-
-                if (numCitas >= 3)
-                {
-                    throw new InvalidOperationException("El cliente ya tiene más de 3 citas en el último mes y no puede agregar más citas.");
                 }
 
                 string queryInsert = "INSERT INTO ConsultasME (Id_DatConvenios, Id_Cliente, Id_DrEspecialidades, Fecha, DetallesAdicionales) VALUES (@Id_DatConvenios, @Id_Cliente, @Id_DrEspecialidades, @Fecha, @DetallesAdicionales)";
@@ -240,6 +236,28 @@ namespace farmacia.Clases.DataAccess
                 return count > 0;
             }
         }
+        public bool ExcedeCitasMensuales(int idCliente, DateTime fecha)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+        SELECT COUNT(*)
+        FROM ConsultasME
+        WHERE Id_Cliente = @Id_Cliente
+        AND YEAR(Fecha) = @Year
+        AND MONTH(Fecha) = @Month";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id_Cliente", idCliente);
+                command.Parameters.AddWithValue("@Year", fecha.Year);
+                command.Parameters.AddWithValue("@Month", fecha.Month);
+
+                connection.Open();
+                int count = (int)command.ExecuteScalar();
+                return count >= 3;
+            }
+        }
+
 
 
 
