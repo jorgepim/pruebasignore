@@ -44,7 +44,7 @@ namespace farmacia.Formularios
             // Llenado de cbMembresia
             try
             {
-                llenador = datos.Fillcmb();
+                llenador = datos.FillcmbTipoMembresia();
                 cbMembresia.Items.Clear();
                 idsMembresia.Clear();
 
@@ -54,7 +54,7 @@ namespace farmacia.Formularios
                 while (llenador.Read())
                 {
                     int idMembresia = llenador.GetInt32(0);
-                    string descripcion = llenador.GetString(2);
+                    string descripcion = llenador.GetString(1);
                     string displayText = $"{idMembresia}| {descripcion} ";
                     cbMembresia.Items.Add(displayText);
                     idsMembresia.Add(idMembresia);
@@ -62,18 +62,18 @@ namespace farmacia.Formularios
                 cbMembresia.SelectedIndex = 0;
                 llenador.Close();
 
-                llenador = datos.Fillcmb();
+                llenador = datos.FillcmbTipoPeriodo();
                 cbPeriodo.Items.Add("Seleccionar");
                 while (llenador.Read())
                 {
-                    cbPeriodo.Items.Add(llenador.GetInt32(1).ToString() + "| " + llenador.GetInt32(3).ToString() + " meses");
+                    cbPeriodo.Items.Add(llenador.GetInt32(0).ToString() + "| " + llenador.GetInt32(1).ToString() + " meses");
                 }
                 cbPeriodo.SelectedIndex = 0;
                 llenador.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al llenar cbMembresia: " + ex.Message);
+                MessageBox.Show("Error al llenar : " + ex.Message);
             }
         }
 

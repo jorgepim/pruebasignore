@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
-            this.TxtDirec = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,15 +77,15 @@
             this.txtTel.Size = new System.Drawing.Size(171, 20);
             this.txtTel.TabIndex = 29;
             // 
-            // TxtDirec
+            // txtEmail
             // 
-            this.TxtDirec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.TxtDirec.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtDirec.ForeColor = System.Drawing.Color.White;
-            this.TxtDirec.Location = new System.Drawing.Point(256, 237);
-            this.TxtDirec.Name = "TxtDirec";
-            this.TxtDirec.Size = new System.Drawing.Size(171, 20);
-            this.TxtDirec.TabIndex = 27;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.Location = new System.Drawing.Point(256, 237);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(171, 20);
+            this.txtEmail.TabIndex = 27;
             // 
             // Nombre
             // 
@@ -166,6 +166,7 @@
             this.btnAgregar.Text = "   Agregar Proveedor";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // tablaProveedores
             // 
@@ -219,7 +220,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTel);
-            this.Controls.Add(this.TxtDirec);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label2);
@@ -237,7 +238,7 @@
         private Label label3;
         private Label label4;
         private TextBox txtTel;
-        private TextBox TxtDirec;
+        private TextBox txtEmail;
         private Label Nombre;
         private TextBox txtDireccion;
         private Label label2;

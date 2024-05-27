@@ -37,5 +37,28 @@ namespace farmacia.Clases.DataAccess
             conexion.CerrarConexion();
             return table;
         }
+        public bool InsertarReg(string NombreProveedor, string Dirección, string Email, string Telefono)
+        {
+            conexion.AbrirConexion();
+
+            string query = "INSERT INTO Proveedores (NombreProveedor, Dirección, Email, Telefono)" +
+                            "VALUES (@NombreProveedor, @Dirección, @Email, @Telefono)";
+            SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
+            comando.Parameters.AddWithValue("@NombreProveedor", NombreProveedor);
+            comando.Parameters.AddWithValue("@Dirección", Dirección);
+            comando.Parameters.AddWithValue("@Email", Email);
+            comando.Parameters.AddWithValue("@Telefono", Telefono);
+            int n = comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            if (n > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

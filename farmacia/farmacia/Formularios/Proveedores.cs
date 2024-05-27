@@ -1,8 +1,10 @@
 ﻿using farmacia.Clases.DataAccess;
+using farmacia.Clases.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,6 +47,40 @@ namespace farmacia.Formularios
                 column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
         }
-
+        public bool Validacion()
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text) ||
+                string.IsNullOrEmpty(txtEmail.Text) ||
+                string.IsNullOrEmpty(txtTel.Text) ||
+                string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (Validacion())
+            {
+                try
+                {
+                    bool estado = proveedor.InsertarReg(txtNombre.Text, txtDireccion.Text, txtEmail.Text, txtTel.Text);
+                    if (estado)
+                        MessageBox.Show("El cliente se ha registrado éxitosamente");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error" + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                LlenadoDeTablas();
+            }
+            else
+            {
+                MessageBox.Show("Llena todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -20,16 +20,20 @@ namespace farmacia.Clases.DataAccess
         {
             conexion = new Conexion();
         }
-        public SqlDataReader Fillcmb()
+        public SqlDataReader FillcmbTipoMembresia()
         {
-            string query = "SELECT m.id_Membresia, pm.id_PeriodoMembresias, m.TipoMembresia, pm.periodoMembresia " +
-               "FROM PagoMembresias p " +
-               "JOIN PeriodoMembresias pm ON p.id_PeriodoMembresias = pm.id_PeriodoMembresias " +
-               "JOIN Membresias m ON p.id_Membresias = m.id_Membresia";
+            string query = "SELECT id_Membresia, TipoMembresia" +
+               " FROM Membresias";
             return conexion.EjecutarPeticion(query);
 
         }
+        public SqlDataReader FillcmbTipoPeriodo()
+        {
+            string query = "SELECT id_PeriodoMembresias, periodoMembresia " +
+               "FROM PeriodoMembresias";
+            return conexion.EjecutarPeticion(query);
 
+        }
         public void ActualizarMembresia(int id_Membresia, String dui)
         {
             String query = "UPDATE Clientes SET id_Membresia = @id_Membresia " +

@@ -198,6 +198,5 @@ namespace farmacia.Formularios
             }
         }
 
-        
     }
 }
