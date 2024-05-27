@@ -17,7 +17,7 @@ namespace farmacia.Clases.DataAccess
 
         public SqlDataReader LlenadoCombo()
         {
-            String consulta = "SELECT *FROM Proveedores;";
+            String consulta = "SELECT * FROM Proveedores;";
             return conexion.EjecutarPeticion(consulta);
         }
     }

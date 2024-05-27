@@ -915,3 +915,56 @@ BEGIN
     WHERE id_Producto = @idProducto;
 END;
 
+CREATE PROCEDURE CalcularPagoEmpleadoHistorial
+    @id_Empleado INT
+AS
+BEGIN
+    SELECT 
+        E.id_Empleado AS ID,
+        E.Nombre AS NOMBRE,
+        C.pagoXHora AS PAGO_POR_HORA,
+        SUM(H.HorasTrabajadas) AS TOTAL_HORAS_TRABAJADAS,
+        (SUM(H.HorasTrabajadas) * C.pagoXHora) AS TOTAL_PAGO,
+        ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.10) AS DESCUENTO_RENTA,
+        ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.07) AS DESCUENTO_ISSS,
+        ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.07) AS DESCUENTO_AFP,
+        ((SUM(H.HorasTrabajadas) * C.pagoXHora) 
+            - ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.10)
+            - ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.07)
+            - ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.07)
+        ) AS TOTAL_A_PAGAR
+    FROM 
+        Empleados E
+    INNER JOIN 
+        Cargo C ON E.Id_Cargo = C.id_cargo
+    INNER JOIN 
+        HorasTrabajadas H ON E.id_Empleado = H.id_Empleado
+    WHERE 
+        H.Fecha >= DATEADD(DAY, -15, GETDATE()) 
+        AND E.id_Empleado = @id_Empleado
+    GROUP BY 
+        E.id_Empleado, E.Nombre, C.pagoXHora;
+END;
+
+CREATE PROCEDURE CalcularTotalPagarEmpleado
+    @id_Empleado INT
+AS
+BEGIN
+    SELECT 
+        ((SUM(H.HorasTrabajadas) * C.pagoXHora) 
+            - ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.10)
+            - ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.07)
+            - ((SUM(H.HorasTrabajadas) * C.pagoXHora) * 0.07) 
+        ) AS PagoNeto
+    FROM 
+        Empleados E
+    INNER JOIN 
+        Cargo C ON E.Id_Cargo = C.id_cargo
+    INNER JOIN 
+        HorasTrabajadas H ON E.id_Empleado = H.id_Empleado
+    WHERE 
+        H.Fecha >= DATEADD(DAY, -15, GETDATE()) 
+        AND E.id_Empleado = @id_Empleado
+    GROUP BY 
+        E.id_Empleado, C.pagoXHora;
+END;

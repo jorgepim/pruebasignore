@@ -18,24 +18,34 @@ namespace DB
         Form Empleado;
         string id;
         string nombre;
-        public PagarEmpleados(string id, string nombre, Form menu, Form Empleado)
+        decimal pagar;
+        public PagarEmpleados(string id, string nombre, Form menu, decimal aPagar, Form Empleado)
         {
             InitializeComponent();
             this.menu = menu;
             this.Empleado = Empleado;
-            lblNombre.Text = nombre;
+            this.nombre = nombre;
+            lblNombre.Text = nombre; 
+            lblPago.Text = "$" + aPagar.ToString("F2");
+            this.id = id;
         }
 
-        private void btnPagar_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
             menu.Show();
             Empleado.Show();
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            int empleadoId = int.Parse(id);
+            Historial historial = new Historial(empleadoId, nombre, menu, Empleado);
+            menu.Hide();
+            this.Hide();
+            historial.Show();
         }
     }
 }
