@@ -25,9 +25,6 @@ namespace farmacia.Formularios
             LoadComboBoxes();
             cbCliente.SelectedIndexChanged += new EventHandler(cbCliente_SelectedIndexChanged);
             cBhospital.SelectedIndexChanged += new EventHandler(cBhospital_SelectedIndexChanged);
-
-
-
         }
         private void LoadData()
         {

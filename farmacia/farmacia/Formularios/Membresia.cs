@@ -55,7 +55,7 @@ namespace farmacia.Formularios
                 {
                     int idMembresia = llenador.GetInt32(0);
                     string descripcion = llenador.GetString(2);
-                    string displayText = $"{idMembresia}| {descripcion}";
+                    string displayText = $"{idMembresia}| {descripcion} ";
                     cbMembresia.Items.Add(displayText);
                     idsMembresia.Add(idMembresia);
                 }
@@ -66,7 +66,7 @@ namespace farmacia.Formularios
                 cbPeriodo.Items.Add("Seleccionar");
                 while (llenador.Read())
                 {
-                    cbPeriodo.Items.Add(llenador.GetInt32(1).ToString() + "| " + llenador.GetInt32(3).ToString());
+                    cbPeriodo.Items.Add(llenador.GetInt32(1).ToString() + "| " + llenador.GetInt32(3).ToString() + " meses");
                 }
                 cbPeriodo.SelectedIndex = 0;
                 llenador.Close();

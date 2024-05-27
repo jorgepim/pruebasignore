@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarEmpleados));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,13 +45,13 @@
             this.txtBoxNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxCargo = new System.Windows.Forms.ComboBox();
-            this.tablaEmpleados = new System.Windows.Forms.DataGridView();
             this.comboBoxSucursal = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnPagarEmp = new System.Windows.Forms.Button();
             this.btnRegisHora = new System.Windows.Forms.Button();
+            this.tablaEmpleados = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tablaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,22 +179,6 @@
             this.comboBoxCargo.Size = new System.Drawing.Size(206, 28);
             this.comboBoxCargo.TabIndex = 17;
             // 
-            // tablaEmpleados
-            // 
-            this.tablaEmpleados.AllowUserToOrderColumns = true;
-            this.tablaEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tablaEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.tablaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaEmpleados.Location = new System.Drawing.Point(841, 70);
-            this.tablaEmpleados.Name = "tablaEmpleados";
-            this.tablaEmpleados.RowHeadersWidth = 51;
-            this.tablaEmpleados.RowTemplate.Height = 29;
-            this.tablaEmpleados.Size = new System.Drawing.Size(636, 216);
-            this.tablaEmpleados.TabIndex = 20;
-            this.tablaEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaEmpleados_CellClick);
-            // 
             // comboBoxSucursal
             // 
             this.comboBoxSucursal.FormattingEnabled = true;
@@ -276,19 +263,58 @@
             this.btnRegisHora.UseVisualStyleBackColor = false;
             this.btnRegisHora.Click += new System.EventHandler(this.btnRegisHora_Click);
             // 
+            // tablaEmpleados
+            // 
+            this.tablaEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablaEmpleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
+            this.tablaEmpleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.tablaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaEmpleados.EnableHeadersVisualStyles = false;
+            this.tablaEmpleados.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tablaEmpleados.Location = new System.Drawing.Point(841, 100);
+            this.tablaEmpleados.Name = "tablaEmpleados";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.tablaEmpleados.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.tablaEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.tablaEmpleados.RowTemplate.Height = 29;
+            this.tablaEmpleados.Size = new System.Drawing.Size(638, 187);
+            this.tablaEmpleados.TabIndex = 44;
+            // 
             // AgregarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1489, 511);
+            this.Controls.Add(this.tablaEmpleados);
             this.Controls.Add(this.btnRegisHora);
             this.Controls.Add(this.btnPagarEmp);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.comboBoxSucursal);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.tablaEmpleados);
             this.Controls.Add(this.comboBoxCargo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtBoxNombre);
@@ -326,12 +352,12 @@
         private TextBox txtBoxNombre;
         private Label label8;
         private ComboBox comboBoxCargo;
-        private DataGridView tablaEmpleados;
         private ComboBox comboBoxSucursal;
         private Label label9;
         private TextBox txtBuscar;
         private Label label10;
         private Button btnPagarEmp;
         private Button btnRegisHora;
+        private DataGridView tablaEmpleados;
     }
 }

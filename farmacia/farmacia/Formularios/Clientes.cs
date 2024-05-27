@@ -175,18 +175,26 @@ namespace farmacia.Formularios
 
         private void btnMembresia_Click_1(object sender, EventArgs e)
         {
-            if (tablaClientes.SelectedRows.Count > 0)
+            string TipoMembresia = tablaClientes.SelectedRows[0].Cells["Membresia"].Value.ToString();
+            if (TipoMembresia == "Ninguna")
             {
-                string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
-                string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
-                Membresia membresia = new Membresia(nombre, dui, menu, this);
-                membresia.Show();
-                menu.Hide();
-                this.Hide();
+                if (tablaClientes.SelectedRows.Count > 0)
+                {
+                    string nombre = tablaClientes.SelectedRows[0].Cells["Nombre"].Value.ToString();
+                    string dui = tablaClientes.SelectedRows[0].Cells["DUI"].Value.ToString();
+                    Membresia membresia = new Membresia(nombre, dui, menu, this);
+                    membresia.Show();
+                    menu.Hide();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona un cliente.");
+                }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona un cliente.");
+                MessageBox.Show("Este cliente ya tiene una suscripción activa");
             }
         }
 

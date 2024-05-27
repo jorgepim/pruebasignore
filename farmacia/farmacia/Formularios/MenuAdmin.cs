@@ -51,9 +51,7 @@ namespace PharmaSync.formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
+            openChildForm(new Proveedores());
         }
 
         
@@ -101,6 +99,13 @@ namespace PharmaSync.formularios
         private void btnConvenio_Click(object sender, EventArgs e)
         {
             openChildForm(new AgregarConvenios());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }
