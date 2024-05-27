@@ -38,7 +38,6 @@ namespace farmacia.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -59,18 +58,11 @@ namespace farmacia.Formularios
             this.cEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDetalles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.cbCliente = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabalCitas)).BeginInit();
             this.SuspendLayout();
-=======
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas));
             label5 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -92,7 +84,6 @@ namespace farmacia.Formularios
             cbCliente = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)tabalCitas).BeginInit();
             SuspendLayout();
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
             // 
             // label5
             // 
@@ -171,51 +162,7 @@ namespace farmacia.Formularios
             // 
             // tabalCitas
             // 
-<<<<<<< HEAD
-            this.tabalCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabalCitas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.tabalCitas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabalCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tabalCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabalCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CNum,
-            this.cHospital,
-            this.CDoc,
-            this.cEspecialidad,
-            this.CFecha,
-            this.cDetalles});
-            this.tabalCitas.EnableHeadersVisualStyles = false;
-            this.tabalCitas.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabalCitas.Location = new System.Drawing.Point(470, 367);
-            this.tabalCitas.Name = "tabalCitas";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabalCitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tabalCitas.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.tabalCitas.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.tabalCitas.RowTemplate.Height = 29;
-            this.tabalCitas.Size = new System.Drawing.Size(806, 268);
-            this.tabalCitas.TabIndex = 25;
-=======
+
             tabalCitas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabalCitas.BackgroundColor = Color.FromArgb(79, 80, 95);
             tabalCitas.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
@@ -251,7 +198,6 @@ namespace farmacia.Formularios
             tabalCitas.RowTemplate.Height = 29;
             tabalCitas.Size = new Size(806, 268);
             tabalCitas.TabIndex = 25;
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
             // 
             // CNum
             // 
@@ -294,32 +240,7 @@ namespace farmacia.Formularios
             this.cDetalles.MinimumWidth = 6;
             this.cDetalles.Name = "cDetalles";
             this.cDetalles.Width = 125;
-            // 
-<<<<<<< HEAD
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1169, 279);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 50);
-            this.button2.TabIndex = 28;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscar.ForeColor = System.Drawing.Color.White;
-            this.txtBuscar.Location = new System.Drawing.Point(470, 294);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(693, 20);
-            this.txtBuscar.TabIndex = 27;
+           
             // 
             // btnAgregar
             // 
@@ -335,7 +256,6 @@ namespace farmacia.Formularios
             this.btnAgregar.Text = "   Agregar Cita";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
-=======
             // btnAgregar
             // 
             btnAgregar.FlatAppearance.BorderSize = 0;
@@ -351,7 +271,6 @@ namespace farmacia.Formularios
             btnAgregar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
             // 
             // txtFecha
             // 
@@ -373,7 +292,6 @@ namespace farmacia.Formularios
             // 
             // Citas
             // 
-<<<<<<< HEAD
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -381,8 +299,6 @@ namespace farmacia.Formularios
             this.Controls.Add(this.cbCliente);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.tabalCitas);
             this.Controls.Add(this.cbDoctor);
             this.Controls.Add(this.cBhospital);
@@ -398,7 +314,6 @@ namespace farmacia.Formularios
             this.ResumeLayout(false);
             this.PerformLayout();
 
-=======
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
@@ -420,7 +335,6 @@ namespace farmacia.Formularios
             ((System.ComponentModel.ISupportInitialize)tabalCitas).EndInit();
             ResumeLayout(false);
             PerformLayout();
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
         }
 
         #endregion
