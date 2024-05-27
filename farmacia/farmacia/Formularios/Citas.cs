@@ -118,26 +118,27 @@ namespace farmacia.Formularios
         {
             try
             {
-           
                 int idCliente = Convert.ToInt32(cbCliente.SelectedValue);
                 int idDrEspecialidades = Convert.ToInt32(cbDoctor.SelectedValue);
                 DateTime fecha = txtFecha.Value;
                 string detallesAdicionales = txtDetalles.Text;
 
-          
                 if (idDatConvenios > 0 && idCliente > 0 && idDrEspecialidades > 0 && !string.IsNullOrEmpty(detallesAdicionales))
                 {
-                  
                     CrudCitas.AddConsulta(idDatConvenios, idCliente, idDrEspecialidades, fecha, detallesAdicionales);
-               
+
                     LoadData();
-                 
+
                     txtDetalles.Clear();
                 }
                 else
                 {
                     MessageBox.Show("Por favor, complete todos los campos antes de agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
