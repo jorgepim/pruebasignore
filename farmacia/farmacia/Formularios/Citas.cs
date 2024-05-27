@@ -24,6 +24,7 @@ namespace farmacia.Formularios
             LoadData();
             LoadComboBoxes();
             cbCliente.SelectedIndexChanged += new EventHandler(cbCliente_SelectedIndexChanged);
+            cBhospital.SelectedIndexChanged += new EventHandler(cBhospital_SelectedIndexChanged);
 
 
 
@@ -50,21 +51,10 @@ namespace farmacia.Formularios
         {
             try
             {
-             
-                cbDoctor.DataSource = null;
                 cBhospital.DataSource = null;
                 cbCliente.DataSource = null;
 
-             
-                DataTable dtDoctors = CrudCitas.GetDoctors();
-                cbDoctor.DataSource = dtDoctors;
-                cbDoctor.DisplayMember = "NombreDr";
-                cbDoctor.ValueMember = "id_DrEspecialidades";
-                if (dtDoctors.Rows.Count > 0)
-                {
-                    cbDoctor.SelectedIndex = 0; 
-                }
-
+                // Obtener hospitales
                 DataTable dtHospitals = CrudCitas.GetHospitals();
                 cBhospital.DataSource = dtHospitals;
                 cBhospital.DisplayMember = "NombreHC";
@@ -74,19 +64,53 @@ namespace farmacia.Formularios
                     cBhospital.SelectedIndex = 0;
                 }
 
-                
+                // Obtener clientes
                 DataTable dtClientes = CrudCitas.GetClientes();
                 cbCliente.DataSource = dtClientes;
                 cbCliente.DisplayMember = "NombreCliente";
                 cbCliente.ValueMember = "id_Cliente";
                 if (dtClientes.Rows.Count > 0)
                 {
-                    cbCliente.SelectedIndex = 0; 
+                    cbCliente.SelectedIndex = 0;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los ComboBox: " + ex.Message);
+            }
+        }
+        private void cBhospital_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cBhospital.SelectedValue != null)
+                {
+                    int idHospital = Convert.ToInt32(cBhospital.SelectedValue);
+                    LoadDoctorsByHospital(idHospital);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los doctores: " + ex.Message);
+            }
+        }
+
+        private void LoadDoctorsByHospital(int idHospital)
+        {
+            try
+            {
+                DataTable dtDoctors = CrudCitas.GetDoctorsByHospital(idHospital);
+                cbDoctor.DataSource = dtDoctors;
+                cbDoctor.DisplayMember = "NombreDr";
+                cbDoctor.ValueMember = "id_DrEspecialidades";
+                if (dtDoctors.Rows.Count > 0)
+                {
+                    cbDoctor.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los doctores: " + ex.Message);
             }
         }
 

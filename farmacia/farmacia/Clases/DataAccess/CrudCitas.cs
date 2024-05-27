@@ -55,7 +55,20 @@ namespace farmacia.Clases.DataAccess
             {
                 connection.Open();
 
-     
+                string queryGetHospitalId = @"
+        SELECT Id_ConveniosHC
+        FROM DrEspecialidades
+        WHERE id_DrEspecialidades = @Id_DrEspecialidades";
+                SqlCommand commandGetHospitalId = new SqlCommand(queryGetHospitalId, connection);
+                commandGetHospitalId.Parameters.AddWithValue("@Id_DrEspecialidades", idDrEspecialidades);
+                int idHospital = (int)commandGetHospitalId.ExecuteScalar();
+
+           
+                if (ExisteCitaEnMismoDia(idDrEspecialidades, idHospital, fecha))
+                {
+                    throw new InvalidOperationException("Ya existe una cita con el mismo doctor en el mismo hospital en la misma fecha.");
+                }
+
                 string queryCheckCitas = @"
             SELECT COUNT(*)
             FROM ConsultasME
@@ -79,6 +92,7 @@ namespace farmacia.Clases.DataAccess
                 commandInsert.Parameters.AddWithValue("@Fecha", fecha);
                 commandInsert.Parameters.AddWithValue("@DetallesAdicionales", detallesAdicionales);
 
+              
                 string queryUpdate = "UPDATE Clientes SET NumCitasAsis = NumCitasAsis + 1 WHERE id_Cliente = @Id_Cliente";
                 SqlCommand commandUpdate = new SqlCommand(queryUpdate, connection);
                 commandUpdate.Parameters.AddWithValue("@Id_Cliente", idCliente);
@@ -102,6 +116,7 @@ namespace farmacia.Clases.DataAccess
                 }
             }
         }
+
 
 
 
@@ -184,6 +199,49 @@ namespace farmacia.Clases.DataAccess
                 return dataTable;
             }
         }
+        public DataTable GetDoctorsByHospital(int idHospital)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+        SELECT DrEspecialidades.id_DrEspecialidades, 
+               DrEspecialidades.NombreDr, 
+               DrEspecialidades.Especialidad
+        FROM DrEspecialidades
+        WHERE DrEspecialidades.Id_ConveniosHC = @Id_ConveniosHC";
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@Id_ConveniosHC", idHospital);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public bool ExisteCitaEnMismoDia(int idDoctor, int idHospital, DateTime fecha)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"
+        SELECT COUNT(*)
+        FROM ConsultasME
+        JOIN DrEspecialidades ON ConsultasME.Id_DrEspecialidades = DrEspecialidades.id_DrEspecialidades
+        WHERE DrEspecialidades.Id_ConveniosHC = @Id_ConveniosHC
+        AND ConsultasME.Id_DrEspecialidades = @Id_DrEspecialidades
+        AND CAST(ConsultasME.Fecha AS DATE) = CAST(@Fecha AS DATE)";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id_ConveniosHC", idHospital);
+                command.Parameters.AddWithValue("@Id_DrEspecialidades", idDoctor);
+                command.Parameters.AddWithValue("@Fecha", fecha);
+
+                connection.Open();
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+
 
     }
 }
