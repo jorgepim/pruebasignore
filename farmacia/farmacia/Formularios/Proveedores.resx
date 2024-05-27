@@ -57,46 +57,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="CNum.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cHospital.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CDoc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cEspecialidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="CFecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="cDetalles.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnRegresar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="btnAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -123,7 +96,4 @@
         j9RNUm5Yfswx9QwM/AFWYpVFi0Qd2wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
 </root>

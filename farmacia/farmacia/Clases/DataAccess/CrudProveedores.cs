@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,10 @@ namespace farmacia.Clases.DataAccess
 {
     internal class CrudProveedores
     {
-        Conexion conexion;
+        private Conexion conexion = new Conexion();
+        DataTable table = new DataTable();
+        SqlCommand comando = new SqlCommand();
+        SqlDataReader lector;
         public CrudProveedores()
         {
             conexion = new Conexion();
@@ -19,6 +23,19 @@ namespace farmacia.Clases.DataAccess
         {
             String consulta = "SELECT * FROM Proveedores;";
             return conexion.EjecutarPeticion(consulta);
+        }
+
+        public DataTable VerRegistros()
+        {
+            DataTable table = new DataTable();
+            string query = @"SELECT * FROM Proveedores";
+            SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
+            comando.CommandType = CommandType.Text;
+            conexion.AbrirConexion();
+            lector = comando.ExecuteReader();
+            table.Load(lector);
+            conexion.CerrarConexion();
+            return table;
         }
     }
 }

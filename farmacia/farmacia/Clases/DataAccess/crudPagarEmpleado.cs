@@ -72,5 +72,56 @@ namespace farmacia.Clases.DataAccess
             return dataTable;
         }
 
+        public bool InsertarRegPagosRealizados(int id_Empleado, double MontoTotal, int id_DetallePago)
+        {
+            
+            conexion.AbrirConexion();
+
+            string query = "INSERT INTO PagosRealizados (id_Empleado, FechaDePago, MontoTotal, id_DetallePago)" +
+                   "VALUES (@id_Empleado, GETDATE(), @MontoTotal, @id_DetallePago)";
+            SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
+
+            comando.Parameters.AddWithValue("@id_Empleado", id_Empleado);
+            comando.Parameters.AddWithValue("@MontoTotal", MontoTotal);
+            comando.Parameters.AddWithValue("@id_DetallePago", id_DetallePago);
+            int n = comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            if (n > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool InsertarRegDetallePagos(int TotXHoras, double TotDescuentos)
+        {
+
+            conexion.AbrirConexion();
+
+            string query = "INSERT INTO DetallePago (TotXHoras, TotDescuentos, Aguinaldo)" +
+                   "VALUES (@TotXHoras, @TotDescuentos, 0.00)";
+            SqlCommand comando = new SqlCommand(query, conexion.ObtenerConexion());
+
+            comando.Parameters.AddWithValue("@TotXHoras", TotXHoras);
+            comando.Parameters.AddWithValue("@TotDescuentos", TotDescuentos);
+            int n = comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            conexion.CerrarConexion();
+            if (n > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
     }
 }

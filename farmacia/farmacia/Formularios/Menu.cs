@@ -137,7 +137,7 @@ namespace farmacia.Formularios.multimedia
         {
             Login login = new Login();
             login.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnClientes_Click_1(object sender, EventArgs e)

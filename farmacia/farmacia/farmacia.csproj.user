@@ -40,6 +40,9 @@
     <Compile Update="Formularios\PagarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Formularios\Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Formularios\RegistrarHoras.cs">
       <SubType>Form</SubType>
     </Compile>

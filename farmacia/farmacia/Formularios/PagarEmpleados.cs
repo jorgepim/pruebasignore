@@ -47,5 +47,7 @@ namespace DB
             this.Hide();
             historial.Show();
         }
+
+       
     }
 }

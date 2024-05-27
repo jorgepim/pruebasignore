@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarEmp = new System.Windows.Forms.Button();
             this.btnLotes = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(65)))), ((int)(((byte)(115)))));
+            this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btnAgregarEmp);
             this.panelMenu.Controls.Add(this.btnLotes);
@@ -65,6 +67,26 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(229, 693);
             this.panelMenu.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(141)))), ((int)(((byte)(218)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(65)))), ((int)(((byte)(115)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 425);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(229, 73);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Salir";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -82,9 +104,9 @@
             this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(229, 73);
             this.button1.TabIndex = 6;
-            this.button1.Text = "Salir";
+            this.button1.Text = "Proveedores";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAgregarEmp
             // 
@@ -191,7 +213,7 @@
             this.btnCerrarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarTodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCerrarTodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCerrarTodo.Location = new System.Drawing.Point(746, 16);
+            this.btnCerrarTodo.Location = new System.Drawing.Point(752, 14);
             this.btnCerrarTodo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCerrarTodo.Name = "btnCerrarTodo";
             this.btnCerrarTodo.Size = new System.Drawing.Size(24, 31);
@@ -207,7 +229,7 @@
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMaximizar.ForeColor = System.Drawing.Color.Yellow;
-            this.btnMaximizar.Location = new System.Drawing.Point(715, 16);
+            this.btnMaximizar.Location = new System.Drawing.Point(721, 14);
             this.btnMaximizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(24, 31);
@@ -223,7 +245,7 @@
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnMinimizar.Location = new System.Drawing.Point(686, 15);
+            this.btnMinimizar.Location = new System.Drawing.Point(692, 13);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(24, 31);
@@ -251,7 +273,7 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(307, 48);
+            this.labelTitle.Location = new System.Drawing.Point(198, 48);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(200, 37);
             this.labelTitle.TabIndex = 0;
@@ -272,7 +294,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(122, 143);
+            this.pictureBox1.Location = new System.Drawing.Point(156, 174);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(471, 147);
@@ -322,5 +344,6 @@
         private Button btnMinimizar;
         private Button btnCerrar;
         private Button button1;
+        private Button button2;
     }
 }
