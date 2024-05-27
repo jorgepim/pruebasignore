@@ -47,6 +47,7 @@
             label10 = new Label();
             tablaDeDatos = new DataGridView();
             BtnModificar = new Button();
+            BtnProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)tablaDeDatos).BeginInit();
             SuspendLayout();
             // 
@@ -238,12 +239,23 @@
             BtnModificar.UseVisualStyleBackColor = true;
             BtnModificar.Click += BtnModificar_Click;
             // 
+            // BtnProducto
+            // 
+            BtnProducto.Location = new Point(663, 216);
+            BtnProducto.Name = "BtnProducto";
+            BtnProducto.Size = new Size(105, 37);
+            BtnProducto.TabIndex = 31;
+            BtnProducto.Text = "Producto";
+            BtnProducto.UseVisualStyleBackColor = true;
+            BtnProducto.Click += BtnProducto_Click;
+            // 
             // AgregarLotes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
             ClientSize = new Size(976, 685);
+            Controls.Add(BtnProducto);
             Controls.Add(BtnModificar);
             Controls.Add(tablaDeDatos);
             Controls.Add(label10);
@@ -291,5 +303,6 @@
         private Label label10;
         private DataGridView tablaDeDatos;
         private Button BtnModificar;
+        private Button BtnProducto;
     }
 }

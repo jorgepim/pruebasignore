@@ -1,5 +1,6 @@
 using farmacia.Clases.DataAccess;
 using farmacia.Clases.Entidades;
+using farmacia.Formularios;
 using System.Data.SqlClient;
 using System.Globalization;
 
@@ -379,6 +380,12 @@ namespace DB
             MaskPrecioC.Text = "     000";
             MaskFechaV.Text = DateTime.Now.ToString("ddMMyyyy");
             LlenadoDeTablas();
+        }
+
+        private void BtnProducto_Click(object sender, EventArgs e)
+        {
+            AgregarProductos abrir = new AgregarProductos();
+            abrir.Show();
         }
     }
 }
