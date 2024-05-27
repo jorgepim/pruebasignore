@@ -38,12 +38,11 @@ namespace farmacia.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
+
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-=======
-<<<<<<< HEAD
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -71,13 +70,8 @@ namespace farmacia.Formularios
             this.cbCliente = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabalCitas)).BeginInit();
             this.SuspendLayout();
-=======
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
->>>>>>> 6dbdc07b9c4713ae6af0aec83d10d06e31080254
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Citas));
-            label5 = new Label();
+         
+           
             label3 = new Label();
             label4 = new Label();
             txtDetalles = new TextBox();
@@ -100,7 +94,7 @@ namespace farmacia.Formularios
             txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)tabalCitas).BeginInit();
             SuspendLayout();
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
+
             // 
             // label5
             // 
@@ -179,7 +173,7 @@ namespace farmacia.Formularios
             // 
             // tabalCitas
             // 
-<<<<<<< HEAD
+
             this.tabalCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -223,7 +217,7 @@ namespace farmacia.Formularios
             this.tabalCitas.RowTemplate.Height = 29;
             this.tabalCitas.Size = new System.Drawing.Size(806, 268);
             this.tabalCitas.TabIndex = 25;
-=======
+
             tabalCitas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabalCitas.BackgroundColor = Color.FromArgb(79, 80, 95);
             tabalCitas.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
@@ -236,7 +230,7 @@ namespace farmacia.Formularios
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             tabalCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             tabalCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tabalCitas.Columns.AddRange(new DataGridViewColumn[] { CNum, cHospital, CDoc, cEspecialidad, CFecha, cDetalles });
+          
             tabalCitas.EnableHeadersVisualStyles = false;
             tabalCitas.GridColor = SystemColors.ActiveCaption;
             tabalCitas.Location = new Point(470, 367);
@@ -259,7 +253,7 @@ namespace farmacia.Formularios
             tabalCitas.RowTemplate.Height = 29;
             tabalCitas.Size = new Size(806, 268);
             tabalCitas.TabIndex = 25;
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
+
             // 
             // CNum
             // 
@@ -303,7 +297,7 @@ namespace farmacia.Formularios
             this.cDetalles.Name = "cDetalles";
             this.cDetalles.Width = 125;
             // 
-<<<<<<< HEAD
+
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -343,7 +337,7 @@ namespace farmacia.Formularios
             this.btnAgregar.Text = "   Agregar Cita";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
-=======
+
             // btnAgregar
             // 
             btnAgregar.FlatAppearance.BorderSize = 0;
@@ -359,7 +353,7 @@ namespace farmacia.Formularios
             btnAgregar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
+
             // 
             // txtFecha
             // 
@@ -407,7 +401,7 @@ namespace farmacia.Formularios
             // 
             // Citas
             // 
-<<<<<<< HEAD
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -432,7 +426,7 @@ namespace farmacia.Formularios
             this.ResumeLayout(false);
             this.PerformLayout();
 
-=======
+
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 49);
@@ -456,7 +450,7 @@ namespace farmacia.Formularios
             ((System.ComponentModel.ISupportInitialize)tabalCitas).EndInit();
             ResumeLayout(false);
             PerformLayout();
->>>>>>> 7cc36f2d26db914b4cae68488a0bc2dec055f96a
+
         }
 
         #endregion
