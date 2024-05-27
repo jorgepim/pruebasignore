@@ -156,7 +156,7 @@ namespace farmacia.Formularios
                 int idDatConvenios = CrudCitas.GetDatConveniosIdByCliente(idCliente);
                 if (idDatConvenios > 0)
                 {
-                   
+
                     this.idDatConvenios = idDatConvenios;
                 }
             }
@@ -166,5 +166,9 @@ namespace farmacia.Formularios
             }
         }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
