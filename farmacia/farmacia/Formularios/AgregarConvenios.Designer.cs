@@ -28,215 +28,209 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBoxNombreConve = new System.Windows.Forms.TextBox();
-            this.txtBoxDireccionConve = new System.Windows.Forms.TextBox();
-            this.txtBoxCorreoConve = new System.Windows.Forms.TextBox();
-            this.btnAgregarConve = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
-            this.BtnMedico = new System.Windows.Forms.Button();
-            this.MaskTel = new System.Windows.Forms.MaskedTextBox();
-            this.TablaDeDatos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.TablaDeDatos)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            txtBoxNombreConve = new TextBox();
+            txtBoxDireccionConve = new TextBox();
+            txtBoxCorreoConve = new TextBox();
+            btnAgregarConve = new Button();
+            BtnModificar = new Button();
+            BtnMedico = new Button();
+            MaskTel = new MaskedTextBox();
+            TablaDeDatos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)TablaDeDatos).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(274, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Agregar Convenios";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(240, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Agregar Convenios";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(56, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Hospital";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(49, 99);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 17);
+            label2.TabIndex = 1;
+            label2.Text = "Hospital";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(56, 235);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 23);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Dirección";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(49, 176);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 17);
+            label3.TabIndex = 2;
+            label3.Text = "Dirección";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(382, 132);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Telefono";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(334, 99);
+            label4.Name = "label4";
+            label4.Size = new Size(58, 17);
+            label4.TabIndex = 3;
+            label4.Text = "Telefono";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(56, 327);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 23);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Correo";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(49, 245);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 17);
+            label5.TabIndex = 4;
+            label5.Text = "Correo";
             // 
             // txtBoxNombreConve
             // 
-            this.txtBoxNombreConve.Location = new System.Drawing.Point(133, 124);
-            this.txtBoxNombreConve.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxNombreConve.Name = "txtBoxNombreConve";
-            this.txtBoxNombreConve.Size = new System.Drawing.Size(223, 27);
-            this.txtBoxNombreConve.TabIndex = 5;
+            txtBoxNombreConve.Location = new Point(116, 93);
+            txtBoxNombreConve.Name = "txtBoxNombreConve";
+            txtBoxNombreConve.Size = new Size(196, 23);
+            txtBoxNombreConve.TabIndex = 5;
             // 
             // txtBoxDireccionConve
             // 
-            this.txtBoxDireccionConve.Location = new System.Drawing.Point(134, 227);
-            this.txtBoxDireccionConve.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxDireccionConve.Name = "txtBoxDireccionConve";
-            this.txtBoxDireccionConve.Size = new System.Drawing.Size(492, 27);
-            this.txtBoxDireccionConve.TabIndex = 6;
+            txtBoxDireccionConve.Location = new Point(117, 170);
+            txtBoxDireccionConve.Name = "txtBoxDireccionConve";
+            txtBoxDireccionConve.Size = new Size(431, 23);
+            txtBoxDireccionConve.TabIndex = 6;
             // 
             // txtBoxCorreoConve
             // 
-            this.txtBoxCorreoConve.Location = new System.Drawing.Point(134, 319);
-            this.txtBoxCorreoConve.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBoxCorreoConve.Name = "txtBoxCorreoConve";
-            this.txtBoxCorreoConve.Size = new System.Drawing.Size(492, 27);
-            this.txtBoxCorreoConve.TabIndex = 7;
+            txtBoxCorreoConve.Location = new Point(117, 239);
+            txtBoxCorreoConve.Name = "txtBoxCorreoConve";
+            txtBoxCorreoConve.Size = new Size(431, 23);
+            txtBoxCorreoConve.TabIndex = 7;
             // 
             // btnAgregarConve
             // 
-            this.btnAgregarConve.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAgregarConve.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAgregarConve.FlatAppearance.BorderSize = 0;
-            this.btnAgregarConve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarConve.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregarConve.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarConve.Location = new System.Drawing.Point(0, 814);
-            this.btnAgregarConve.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAgregarConve.Name = "btnAgregarConve";
-            this.btnAgregarConve.Size = new System.Drawing.Size(913, 73);
-            this.btnAgregarConve.TabIndex = 9;
-            this.btnAgregarConve.Text = "Agregar";
-            this.btnAgregarConve.UseVisualStyleBackColor = false;
+            btnAgregarConve.BackColor = SystemColors.ActiveCaption;
+            btnAgregarConve.Dock = DockStyle.Bottom;
+            btnAgregarConve.FlatAppearance.BorderSize = 0;
+            btnAgregarConve.FlatStyle = FlatStyle.Flat;
+            btnAgregarConve.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregarConve.ForeColor = Color.White;
+            btnAgregarConve.Location = new Point(0, 610);
+            btnAgregarConve.Name = "btnAgregarConve";
+            btnAgregarConve.Size = new Size(799, 55);
+            btnAgregarConve.TabIndex = 9;
+            btnAgregarConve.Text = "Agregar";
+            btnAgregarConve.UseVisualStyleBackColor = false;
+            btnAgregarConve.Click += btnAgregarConve_Click;
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(743, 117);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(86, 31);
-            this.BtnModificar.TabIndex = 11;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
+            BtnModificar.Location = new Point(650, 88);
+            BtnModificar.Name = "BtnModificar";
+            BtnModificar.Size = new Size(75, 23);
+            BtnModificar.TabIndex = 11;
+            BtnModificar.Text = "Modificar";
+            BtnModificar.UseVisualStyleBackColor = true;
+            BtnModificar.Click += BtnModificar_Click;
             // 
             // BtnMedico
             // 
-            this.BtnMedico.Location = new System.Drawing.Point(743, 225);
-            this.BtnMedico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnMedico.Name = "BtnMedico";
-            this.BtnMedico.Size = new System.Drawing.Size(86, 31);
-            this.BtnMedico.TabIndex = 13;
-            this.BtnMedico.Text = "Medicos";
-            this.BtnMedico.UseVisualStyleBackColor = true;
+            BtnMedico.Location = new Point(650, 169);
+            BtnMedico.Name = "BtnMedico";
+            BtnMedico.Size = new Size(75, 23);
+            BtnMedico.TabIndex = 13;
+            BtnMedico.Text = "Medicos";
+            BtnMedico.UseVisualStyleBackColor = true;
+            BtnMedico.Click += BtnMedico_Click;
             // 
             // MaskTel
             // 
-            this.MaskTel.Location = new System.Drawing.Point(455, 132);
-            this.MaskTel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaskTel.Mask = "9999-9999";
-            this.MaskTel.Name = "MaskTel";
-            this.MaskTel.Size = new System.Drawing.Size(73, 27);
-            this.MaskTel.TabIndex = 14;
-            this.MaskTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MaskTel.Location = new Point(398, 99);
+            MaskTel.Mask = "9999-9999";
+            MaskTel.Name = "MaskTel";
+            MaskTel.Size = new Size(64, 23);
+            MaskTel.TabIndex = 14;
+            MaskTel.TextAlign = HorizontalAlignment.Center;
             // 
             // TablaDeDatos
             // 
-            this.TablaDeDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TablaDeDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.TablaDeDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TablaDeDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.TablaDeDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TablaDeDatos.EnableHeadersVisualStyles = false;
-            this.TablaDeDatos.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TablaDeDatos.Location = new System.Drawing.Point(159, 409);
-            this.TablaDeDatos.Name = "TablaDeDatos";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TablaDeDatos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.TablaDeDatos.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.TablaDeDatos.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.TablaDeDatos.RowTemplate.Height = 29;
-            this.TablaDeDatos.Size = new System.Drawing.Size(565, 333);
-            this.TablaDeDatos.TabIndex = 43;
+            TablaDeDatos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TablaDeDatos.BackgroundColor = Color.FromArgb(79, 80, 95);
+            TablaDeDatos.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(34, 36, 49);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            TablaDeDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            TablaDeDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaDeDatos.EnableHeadersVisualStyles = false;
+            TablaDeDatos.GridColor = SystemColors.ActiveCaption;
+            TablaDeDatos.Location = new Point(139, 307);
+            TablaDeDatos.Margin = new Padding(3, 2, 3, 2);
+            TablaDeDatos.Name = "TablaDeDatos";
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(34, 36, 49);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            TablaDeDatos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            TablaDeDatos.RowHeadersWidth = 51;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(79, 80, 95);
+            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            TablaDeDatos.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            TablaDeDatos.RowTemplate.Height = 29;
+            TablaDeDatos.Size = new Size(494, 250);
+            TablaDeDatos.TabIndex = 43;
+            TablaDeDatos.Click += TablaDeDatos_Click;
             // 
             // AgregarConvenios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(913, 887);
-            this.Controls.Add(this.TablaDeDatos);
-            this.Controls.Add(this.MaskTel);
-            this.Controls.Add(this.BtnMedico);
-            this.Controls.Add(this.BtnModificar);
-            this.Controls.Add(this.btnAgregarConve);
-            this.Controls.Add(this.txtBoxCorreoConve);
-            this.Controls.Add(this.txtBoxDireccionConve);
-            this.Controls.Add(this.txtBoxNombreConve);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "AgregarConvenios";
-            this.Text = "agregar convenios";
-            ((System.ComponentModel.ISupportInitialize)(this.TablaDeDatos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(34, 36, 49);
+            ClientSize = new Size(799, 665);
+            Controls.Add(TablaDeDatos);
+            Controls.Add(MaskTel);
+            Controls.Add(BtnMedico);
+            Controls.Add(BtnModificar);
+            Controls.Add(btnAgregarConve);
+            Controls.Add(txtBoxCorreoConve);
+            Controls.Add(txtBoxDireccionConve);
+            Controls.Add(txtBoxNombreConve);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "AgregarConvenios";
+            Text = "agregar convenios";
+            ((System.ComponentModel.ISupportInitialize)TablaDeDatos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

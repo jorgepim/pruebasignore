@@ -533,8 +533,8 @@ INSERT INTO PeriodoMembresias (periodoMembresia) VALUES
 INSERT INTO Clientes (id_Usuario, NombreCliente, Dui, Dirección, Email, Telefono, id_Membresia, NumCitasAsis) VALUES 
 (4, 'Roberto García', '001234567', 'Colonia 1, San Salvador', 'roberto@example.com', '7777-8888', 1, 3),
 (5, 'María Rodríguez', '001234568', 'Colonia 2, San Salvador', 'maria@example.com', '9999-0000', 2, 5),
-(6, 'José Martínez', '001234569', 'Colonia 3, San Salvador', 'jose@example.com', '1111-2222, 3, 2),
-(7, 'Sofía López', '001234570', 'Colonia 4, San Salvador', 'sofia@example.com', '3333-4444, 4, 4),
+(6, 'José Martínez', '001234569', 'Colonia 3, San Salvador', 'jose@example.com', '1111-2222', 3, 2),
+(7, 'Sofía López', '001234570', 'Colonia 4, San Salvador', 'sofia@example.com', '3333-4444', 4, 4),
 (8, 'Daniel Hernández', '001234571', 'Colonia 5, San Salvador', 'daniel@example.com', '5555-6666', 5, 1);
 
 
@@ -684,6 +684,35 @@ INSERT INTO PagosRealizados (id_Empleado, FechaDePago, MontoTotal, id_DetallePag
 
 
 -- Procedimiento 
+CREATE PROCEDURE VerificarProductoMembresia
+	@idMembresia INT,
+	@idProducto INT,
+	@Respuesta BIT OUTPUT
+AS
+BEGIN
+
+	DECLARE @IdCategoria INT;
+	DECLARE @Existe INT;
+
+	SELECT @IdCategoria = id_Categoria
+	FROM Productos
+	WHERE id_Producto = @idProducto;
+
+	SELECT @Existe = COUNT(*)
+	FROM DescuentosMembresia
+	WHERE id_Categoria = @IdCategoria AND Id_Membresia = @idMembresia;
+
+	IF @Existe != 0
+		SET @Respuesta = 1;
+	ELSE
+		SET @Respuesta = 0;
+
+END;
+
+
+--DECLARE @Resultado BIT;
+--EXEC VerificarProductoMembresia  2,2, @Respuesta = @Resultado OUTPUT;
+--SELECT @Resultado AS Respuesta;
 
 CREATE PROCEDURE InsertarDetalleCompra
     @IdFactura INT,
@@ -789,37 +818,6 @@ END;
 --EXEC InsertarDetalleCompra 3,3,2, @ErrorText OUTPUT;
 --print @ErrorText;
 
-
-CREATE PROCEDURE VerificarProductoMembresia
-	@idMembresia INT,
-	@idProducto INT,
-	@Respuesta BIT OUTPUT
-AS
-BEGIN
-
-	DECLARE @IdCategoria INT;
-	DECLARE @Existe INT;
-
-	SELECT @IdCategoria = id_Categoria
-	FROM Productos
-	WHERE id_Producto = @idProducto;
-
-	SELECT @Existe = COUNT(*)
-	FROM DescuentosMembresia
-	WHERE id_Categoria = @IdCategoria AND Id_Membresia = @idMembresia;
-
-	IF @Existe != 0
-		SET @Respuesta = 1;
-	ELSE
-		SET @Respuesta = 0;
-
-END;
-
-
---DECLARE @Resultado BIT;
---EXEC VerificarProductoMembresia  2,2, @Respuesta = @Resultado OUTPUT;
---SELECT @Resultado AS Respuesta;
-
 CREATE PROCEDURE CalcularTotalesDeDetalle
     @idFactura INT,
     @tipoDePago INT 
@@ -915,6 +913,8 @@ BEGIN
     WHERE id_Producto = @idProducto;
 END;
 
+
+
 CREATE PROCEDURE CalcularPagoEmpleadoHistorial
     @id_Empleado INT
 AS
@@ -945,6 +945,8 @@ BEGIN
     GROUP BY 
         E.id_Empleado, E.Nombre, C.pagoXHora;
 END;
+
+
 
 CREATE PROCEDURE CalcularTotalPagarEmpleado
     @id_Empleado INT

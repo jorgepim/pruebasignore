@@ -163,9 +163,5 @@ namespace farmacia.Formularios
             }
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

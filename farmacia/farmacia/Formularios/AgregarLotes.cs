@@ -140,8 +140,13 @@ namespace DB
                 MessageBox.Show("Por favor, introduzca una cantidad válida.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            string input = MaskDesc.Text.Replace('_', '0').TrimStart('0');
+            if (string.IsNullOrEmpty(input))
+            {
+                input = "0";
+            }
 
-            if (int.TryParse(MaskDesc.Text.Replace('_', '0').TrimStart('0'), out int result3))
+            if (int.TryParse(input, out int result3))
             {
                 if (result3 < 0 | result3 > 100)
                 {

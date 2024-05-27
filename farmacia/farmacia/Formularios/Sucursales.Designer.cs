@@ -28,117 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TXTProducto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.CBDepartamento = new System.Windows.Forms.ComboBox();
-            this.TablaSucursales = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.TablaSucursales)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            label2 = new Label();
+            TXTProducto = new TextBox();
+            label1 = new Label();
+            CBDepartamento = new ComboBox();
+            TablaSucursales = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)TablaSucursales).BeginInit();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(80, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Producto";
+            label2.Anchor = AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(70, 86);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 19);
+            label2.TabIndex = 4;
+            label2.Text = "Producto";
             // 
             // TXTProducto
             // 
-            this.TXTProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TXTProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.TXTProducto.ForeColor = System.Drawing.Color.White;
-            this.TXTProducto.Location = new System.Drawing.Point(80, 168);
-            this.TXTProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TXTProducto.Name = "TXTProducto";
-            this.TXTProducto.Size = new System.Drawing.Size(293, 27);
-            this.TXTProducto.TabIndex = 5;
+            TXTProducto.Anchor = AnchorStyles.Left;
+            TXTProducto.BackColor = Color.FromArgb(79, 80, 95);
+            TXTProducto.ForeColor = Color.White;
+            TXTProducto.Location = new Point(70, 126);
+            TXTProducto.Name = "TXTProducto";
+            TXTProducto.Size = new Size(257, 23);
+            TXTProducto.TabIndex = 5;
+            TXTProducto.TextChanged += TXTProducto_TextChanged;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(570, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 24);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Departamento:";
+            label1.Anchor = AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(499, 86);
+            label1.Name = "label1";
+            label1.Size = new Size(115, 19);
+            label1.TabIndex = 7;
+            label1.Text = "Departamento:";
             // 
             // CBDepartamento
             // 
-            this.CBDepartamento.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.CBDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.CBDepartamento.FormattingEnabled = true;
-            this.CBDepartamento.Location = new System.Drawing.Point(570, 167);
-            this.CBDepartamento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CBDepartamento.Name = "CBDepartamento";
-            this.CBDepartamento.Size = new System.Drawing.Size(196, 28);
-            this.CBDepartamento.TabIndex = 8;
+            CBDepartamento.Anchor = AnchorStyles.Left;
+            CBDepartamento.BackColor = Color.FromArgb(79, 80, 95);
+            CBDepartamento.FormattingEnabled = true;
+            CBDepartamento.Location = new Point(499, 125);
+            CBDepartamento.Name = "CBDepartamento";
+            CBDepartamento.Size = new Size(172, 23);
+            CBDepartamento.TabIndex = 8;
+            CBDepartamento.SelectedIndexChanged += CBDepartamento_SelectedIndexChanged;
             // 
             // TablaSucursales
             // 
-            this.TablaSucursales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TablaSucursales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            this.TablaSucursales.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TablaSucursales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.TablaSucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TablaSucursales.EnableHeadersVisualStyles = false;
-            this.TablaSucursales.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TablaSucursales.Location = new System.Drawing.Point(80, 226);
-            this.TablaSucursales.Name = "TablaSucursales";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TablaSucursales.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.TablaSucursales.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(80)))), ((int)(((byte)(95)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.TablaSucursales.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.TablaSucursales.RowTemplate.Height = 29;
-            this.TablaSucursales.Size = new System.Drawing.Size(811, 334);
-            this.TablaSucursales.TabIndex = 27;
+            TablaSucursales.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            TablaSucursales.BackgroundColor = Color.FromArgb(79, 80, 95);
+            TablaSucursales.CellBorderStyle = DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(34, 36, 49);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            TablaSucursales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            TablaSucursales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TablaSucursales.EnableHeadersVisualStyles = false;
+            TablaSucursales.GridColor = SystemColors.ActiveCaption;
+            TablaSucursales.Location = new Point(70, 170);
+            TablaSucursales.Margin = new Padding(3, 2, 3, 2);
+            TablaSucursales.Name = "TablaSucursales";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(34, 36, 49);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            TablaSucursales.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            TablaSucursales.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(79, 80, 95);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            TablaSucursales.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            TablaSucursales.RowTemplate.Height = 29;
+            TablaSucursales.Size = new Size(710, 250);
+            TablaSucursales.TabIndex = 27;
             // 
             // Sucursales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(1023, 629);
-            this.Controls.Add(this.TablaSucursales);
-            this.Controls.Add(this.CBDepartamento);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.TXTProducto);
-            this.Controls.Add(this.label2);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Sucursales";
-            this.Text = "Sucursales";
-            ((System.ComponentModel.ISupportInitialize)(this.TablaSucursales)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(34, 36, 49);
+            ClientSize = new Size(895, 472);
+            Controls.Add(TablaSucursales);
+            Controls.Add(CBDepartamento);
+            Controls.Add(label1);
+            Controls.Add(TXTProducto);
+            Controls.Add(label2);
+            ForeColor = Color.White;
+            Name = "Sucursales";
+            Text = "Sucursales";
+            ((System.ComponentModel.ISupportInitialize)TablaSucursales).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
